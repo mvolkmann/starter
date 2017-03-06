@@ -1,6 +1,9 @@
+// @flow
 import React, {PropTypes as t} from 'react';
 
-const DataDisplay = ({name = 'World'}) =>
+type PropsType = {name: string};
+
+const DataDisplay = ({name = 'World'}: PropsType) =>
   <div className="data-display">
     <h2>Hello, {name}!</h2>
     <div>
