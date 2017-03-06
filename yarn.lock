@@ -80,6 +80,12 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://npm.platforms.engineering/a/ansi-styles/_attachments/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
+ansi-styles@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.platforms.engineering/a/ansi-styles/_attachments/ansi-styles-3.0.0.tgz#5404e93a544c4fec7f048262977bebfe3155e0c1"
+  dependencies:
+    color-convert "^1.0.0"
+
 ansicolors@~0.2.1:
   version "0.2.1"
   resolved "https://npm.platforms.engineering/a/ansicolors/_attachments/ansicolors-0.2.1.tgz#be089599097b74a5c9c4a84a0cdbcdb62bd87aef"
@@ -188,6 +194,14 @@ assert@^1.1.1:
   dependencies:
     util "0.10.3"
 
+ast-types@0.8.18:
+  version "0.8.18"
+  resolved "https://npm.platforms.engineering/a/ast-types/_attachments/ast-types-0.8.18.tgz#c8b98574898e8914e9d8de74b947564a9fe929af"
+
+ast-types@0.9.4:
+  version "0.9.4"
+  resolved "https://npm.platforms.engineering/a/ast-types/_attachments/ast-types-0.9.4.tgz#410d1f81890aeb8e0a38621558ba5869ae53c91b"
+
 async-each@^1.0.0:
   version "1.0.1"
   resolved "https://npm.platforms.engineering/a/async-each/_attachments/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
@@ -237,7 +251,7 @@ aws4@^1.2.1:
   version "1.6.0"
   resolved "https://npm.platforms.engineering/a/aws4/_attachments/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-babel-code-frame@^6.11.0, babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
+babel-code-frame@6.22.0, babel-code-frame@^6.11.0, babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
   version "6.22.0"
   resolved "https://npm.platforms.engineering/b/babel-code-frame/_attachments/babel-code-frame-6.22.0.tgz#027620bee567a88c32561574e7fd0801d33118e4"
   dependencies:
@@ -893,7 +907,7 @@ babel-runtime@6.22.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0:
+babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0:
   version "6.23.0"
   resolved "https://npm.platforms.engineering/b/babel-runtime/_attachments/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
@@ -932,6 +946,10 @@ babel-types@^6.15.0, babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.22
     esutils "^2.0.2"
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
+
+babylon@6.15.0:
+  version "6.15.0"
+  resolved "https://npm.platforms.engineering/b/babylon/_attachments/babylon-6.15.0.tgz#ba65cfa1a80e1759b0e89fb562e27dccae70348e"
 
 babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0:
   version "6.16.1"
@@ -1230,7 +1248,7 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://npm.platforms.engineering/c/code-point-at/_attachments/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-color-convert@^1.3.0:
+color-convert@^1.0.0, color-convert@^1.3.0:
   version "1.9.0"
   resolved "https://npm.platforms.engineering/c/color-convert/_attachments/color-convert-1.9.0.tgz#1accf97dd739b983bf994d56fec8f95853641b7a"
   dependencies:
@@ -1266,7 +1284,7 @@ colors@1.0.3:
   version "1.0.3"
   resolved "https://npm.platforms.engineering/c/colors/_attachments/colors-1.0.3.tgz#0433f44d809680fdeb60ed260f1b0c262e82a40b"
 
-colors@~1.1.2:
+colors@>=0.6.2, colors@~1.1.2:
   version "1.1.2"
   resolved "https://npm.platforms.engineering/c/colors/_attachments/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
 
@@ -1287,6 +1305,12 @@ commander@~2.8.1:
   resolved "https://npm.platforms.engineering/c/commander/_attachments/commander-2.8.1.tgz#06be367febfda0c330aa1e2a072d3dc9762425d4"
   dependencies:
     graceful-readlink ">= 1.0.0"
+
+common-tags@^1.4.0:
+  version "1.4.0"
+  resolved "https://npm.platforms.engineering/c/common-tags/_attachments/common-tags-1.4.0.tgz#1187be4f3d4cf0c0427d43f74eef1f73501614c0"
+  dependencies:
+    babel-runtime "^6.18.0"
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -1653,6 +1677,10 @@ diff@^3.0.0:
   version "3.2.0"
   resolved "https://npm.platforms.engineering/d/diff/_attachments/diff-3.2.0.tgz#c9ce393a4b7cbd0b058a725c93df299027868ff9"
 
+dlv@^1.1.0:
+  version "1.1.0"
+  resolved "https://npm.platforms.engineering/d/dlv/_attachments/dlv-1.1.0.tgz#fee1a7c43f63be75f3f679e85262da5f102764a7"
+
 doctrine@1.3.x, doctrine@^1.2.2:
   version "1.3.0"
   resolved "https://npm.platforms.engineering/d/doctrine/_attachments/doctrine-1.3.0.tgz#13e75682b55518424276f7c173783456ef913d26"
@@ -1677,7 +1705,7 @@ domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://npm.platforms.engineering/d/domain-browser/_attachments/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
 
-domelementtype@1:
+domelementtype@1, domelementtype@^1.3.0:
   version "1.3.0"
   resolved "https://npm.platforms.engineering/d/domelementtype/_attachments/domelementtype-1.3.0.tgz#b17aed82e8ab59e52dd9c19b1756e0fc187204c2"
 
@@ -1691,13 +1719,19 @@ domhandler@2.1:
   dependencies:
     domelementtype "1"
 
+domhandler@^2.3.0:
+  version "2.3.0"
+  resolved "https://npm.platforms.engineering/d/domhandler/_attachments/domhandler-2.3.0.tgz#2de59a0822d5027fabff6f032c2b25a2a8abe738"
+  dependencies:
+    domelementtype "1"
+
 domutils@1.1:
   version "1.1.6"
   resolved "https://npm.platforms.engineering/d/domutils/_attachments/domutils-1.1.6.tgz#bddc3de099b9a2efacc51c623f28f416ecc57485"
   dependencies:
     domelementtype "1"
 
-domutils@1.5.1:
+domutils@1.5.1, domutils@^1.5.1:
   version "1.5.1"
   resolved "https://npm.platforms.engineering/d/domutils/_attachments/domutils-1.5.1.tgz#dcd8488a26f563d61079e48c9f7b7e32373682cf"
   dependencies:
@@ -1748,7 +1782,7 @@ enhanced-resolve@~0.9.0:
     memory-fs "^0.2.0"
     tapable "^0.1.8"
 
-entities@~1.1.1:
+entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
   resolved "https://npm.platforms.engineering/e/entities/_attachments/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
@@ -1905,6 +1939,12 @@ eslint-plugin-flowtype@2.21.0:
   dependencies:
     lodash "^4.15.0"
 
+eslint-plugin-html@^2.0.1:
+  version "2.0.1"
+  resolved "https://npm.platforms.engineering/e/eslint-plugin-html/_attachments/eslint-plugin-html-2.0.1.tgz#3a829510e82522f1e2e44d55d7661a176121fce1"
+  dependencies:
+    htmlparser2 "^3.8.2"
+
 eslint-plugin-import@2.0.1:
   version "2.0.1"
   resolved "https://npm.platforms.engineering/e/eslint-plugin-import/_attachments/eslint-plugin-import-2.0.1.tgz#dcfe96357d476b3f822570d42c29bec66f5d9c5c"
@@ -1934,6 +1974,10 @@ eslint-plugin-react@6.4.1:
   dependencies:
     doctrine "^1.2.2"
     jsx-ast-utils "^1.3.1"
+
+eslint-plugin-volkmann@^0.3.3:
+  version "0.3.3"
+  resolved "https://npm.platforms.engineering/e/eslint-plugin-volkmann/_attachments/eslint-plugin-volkmann-0.3.3.tgz#b9c4db6360117102873afe880710e57d709c4846"
 
 eslint-rule-documentation@^1.0.0:
   version "1.0.4"
@@ -1977,7 +2021,7 @@ eslint@3.8.1:
     text-table "~0.2.0"
     user-home "^2.0.0"
 
-eslint@^3.17.0:
+eslint@^3.13.1, eslint@^3.17.0:
   version "3.17.0"
   resolved "https://npm.platforms.engineering/e/eslint/_attachments/eslint-3.17.0.tgz#e2704b09c5bae9fb49ee8bafeea3832c7257d498"
   dependencies:
@@ -2054,7 +2098,7 @@ estraverse@~4.1.0:
   version "4.1.1"
   resolved "https://npm.platforms.engineering/e/estraverse/_attachments/estraverse-4.1.1.tgz#f6caca728933a850ef90661d0e17982ba47111a2"
 
-esutils@^2.0.0, esutils@^2.0.2:
+esutils@2.0.2, esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://npm.platforms.engineering/e/esutils/_attachments/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
@@ -2288,6 +2332,12 @@ find-up@^1.0.0, find-up@^1.1.2:
     path-exists "^2.0.0"
     pinkie-promise "^2.0.0"
 
+find-up@^2.1.0:
+  version "2.1.0"
+  resolved "https://npm.platforms.engineering/f/find-up/_attachments/find-up-2.1.0.tgz#45d1b7e506c717ddd482775a2b77920a3c0c57a7"
+  dependencies:
+    locate-path "^2.0.0"
+
 flat-cache@^1.2.1:
   version "1.2.2"
   resolved "https://npm.platforms.engineering/f/flat-cache/_attachments/flat-cache-1.2.2.tgz#fa86714e72c21db88601761ecf2f555d1abc6b96"
@@ -2300,6 +2350,18 @@ flat-cache@^1.2.1:
 flatten@^1.0.2:
   version "1.0.2"
   resolved "https://npm.platforms.engineering/f/flatten/_attachments/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
+
+flow-bin@^0.41.0:
+  version "0.41.0"
+  resolved "https://npm.platforms.engineering/f/flow-bin/_attachments/flow-bin-0.41.0.tgz#8badac9a19da45004997e599bd316518db489b2e"
+
+flow-parser@0.38.0:
+  version "0.38.0"
+  resolved "https://npm.platforms.engineering/f/flow-parser/_attachments/flow-parser-0.38.0.tgz#a631c46170c5b42400d905a75cfc83ce8db29424"
+  dependencies:
+    ast-types "0.8.18"
+    colors ">=0.6.2"
+    minimist ">=0.2.0"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -2414,6 +2476,10 @@ get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://npm.platforms.engineering/g/get-caller-file/_attachments/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
 
+get-stdin@5.0.1, get-stdin@^5.0.1:
+  version "5.0.1"
+  resolved "https://npm.platforms.engineering/g/get-stdin/_attachments/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
+
 get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://npm.platforms.engineering/g/get-stdin/_attachments/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
@@ -2437,9 +2503,20 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@~7.1.1:
+glob@7.1.1, glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@~7.1.1:
   version "7.1.1"
   resolved "https://npm.platforms.engineering/g/glob/_attachments/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.2"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+glob@~7.0.6:
+  version "7.0.6"
+  resolved "https://npm.platforms.engineering/g/glob/_attachments/glob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -2596,6 +2673,17 @@ html-webpack-plugin@2.24.0:
     pretty-error "^2.0.2"
     toposort "^1.0.0"
 
+htmlparser2@^3.8.2:
+  version "3.9.2"
+  resolved "https://npm.platforms.engineering/h/htmlparser2/_attachments/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
+  dependencies:
+    domelementtype "^1.3.0"
+    domhandler "^2.3.0"
+    domutils "^1.5.1"
+    entities "^1.1.1"
+    inherits "^2.0.1"
+    readable-stream "^2.0.2"
+
 htmlparser2@~3.3.0:
   version "3.3.0"
   resolved "https://npm.platforms.engineering/h/htmlparser2/_attachments/htmlparser2-3.3.0.tgz#cc70d05a59f6542e43f0e685c982e14c924a9efe"
@@ -2662,7 +2750,7 @@ ieee754@^1.1.4:
   version "1.1.8"
   resolved "https://npm.platforms.engineering/i/ieee754/_attachments/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
 
-ignore@^3.1.5, ignore@^3.2.0:
+ignore@^3.1.5, ignore@^3.2.0, ignore@^3.2.4:
   version "3.2.4"
   resolved "https://npm.platforms.engineering/i/ignore/_attachments/ignore-3.2.4.tgz#4055e03596729a8fabe45a43c100ad5ed815c4e8"
 
@@ -2679,6 +2767,10 @@ indent-string@^2.1.0:
   resolved "https://npm.platforms.engineering/i/indent-string/_attachments/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"
   dependencies:
     repeating "^2.0.0"
+
+indent-string@^3.1.0:
+  version "3.1.0"
+  resolved "https://npm.platforms.engineering/i/indent-string/_attachments/indent-string-3.1.0.tgz#08ff4334603388399b329e6b9538dc7a3cf5de7d"
 
 indexes-of@^1.0.1:
   version "1.0.1"
@@ -3118,6 +3210,13 @@ jest-matcher-utils@^18.1.0:
     chalk "^1.1.3"
     pretty-format "^18.1.0"
 
+jest-matcher-utils@^19.0.0:
+  version "19.0.0"
+  resolved "https://npm.platforms.engineering/j/jest-matcher-utils/_attachments/jest-matcher-utils-19.0.0.tgz#5ecd9b63565d2b001f61fbf7ec4c7f537964564d"
+  dependencies:
+    chalk "^1.1.3"
+    pretty-format "^19.0.0"
+
 jest-matchers@^18.1.0:
   version "18.1.0"
   resolved "https://npm.platforms.engineering/j/jest-matchers/_attachments/jest-matchers-18.1.0.tgz#0341484bf87a1fd0bac0a4d2c899e2b77a3f1ead"
@@ -3188,6 +3287,15 @@ jest-util@^18.1.0:
     jest-file-exists "^17.0.0"
     jest-mock "^18.0.0"
     mkdirp "^0.5.1"
+
+jest-validate@19.0.0:
+  version "19.0.0"
+  resolved "https://npm.platforms.engineering/j/jest-validate/_attachments/jest-validate-19.0.0.tgz#8c6318a20ecfeaba0ba5378bfbb8277abded4173"
+  dependencies:
+    chalk "^1.1.1"
+    jest-matcher-utils "^19.0.0"
+    leven "^2.0.0"
+    pretty-format "^19.0.0"
 
 jest@18.1.0:
   version "18.1.0"
@@ -3335,6 +3443,10 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
+leven@^2.0.0:
+  version "2.1.0"
+  resolved "https://npm.platforms.engineering/l/leven/_attachments/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
+
 levn@^0.3.0, levn@~0.3.0:
   version "0.3.0"
   resolved "https://npm.platforms.engineering/l/levn/_attachments/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
@@ -3369,6 +3481,13 @@ loader-utils@0.2.x, loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@^0.
     emojis-list "^2.0.0"
     json5 "^0.5.0"
     object-assign "^4.0.1"
+
+locate-path@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.platforms.engineering/l/locate-path/_attachments/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
+  dependencies:
+    p-locate "^2.0.0"
+    path-exists "^3.0.0"
 
 lodash._arraycopy@^3.0.0:
   version "3.0.0"
@@ -3451,7 +3570,7 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash.memoize@^4.1.0:
+lodash.memoize@^4.1.0, lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://npm.platforms.engineering/l/lodash.memoize/_attachments/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
 
@@ -3474,6 +3593,17 @@ lodash.uniq@^4.3.0:
 lodash@~4.16.4:
   version "4.16.6"
   resolved "https://npm.platforms.engineering/l/lodash/_attachments/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
+
+loglevel-colored-level-prefix@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.platforms.engineering/l/loglevel-colored-level-prefix/_attachments/loglevel-colored-level-prefix-1.0.0.tgz#6a40218fdc7ae15fc76c3d0f3e676c465388603e"
+  dependencies:
+    chalk "^1.1.3"
+    loglevel "^1.4.1"
+
+loglevel@^1.4.1:
+  version "1.4.1"
+  resolved "https://npm.platforms.engineering/l/loglevel/_attachments/loglevel-1.4.1.tgz#95b383f91a3c2756fd4ab093667e4309161f2bcd"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -3506,6 +3636,12 @@ lru-cache@^4.0.1:
 macaddress@^0.2.8:
   version "0.2.8"
   resolved "https://npm.platforms.engineering/m/macaddress/_attachments/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
+
+make-plural@~3.0.6:
+  version "3.0.6"
+  resolved "https://npm.platforms.engineering/m/make-plural/_attachments/make-plural-3.0.6.tgz#2033a03bac290b8f3bb91258f65b9df7e8b01ca7"
+  optionalDependencies:
+    minimist "^1.2.0"
 
 makeerror@1.0.x:
   version "1.0.11"
@@ -3584,6 +3720,20 @@ merge@^1.1.3:
   version "1.2.0"
   resolved "https://npm.platforms.engineering/m/merge/_attachments/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
+messageformat-parser@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.platforms.engineering/m/messageformat-parser/_attachments/messageformat-parser-1.0.0.tgz#3dea21419f141c50026a29d4b2239203ad613d3f"
+
+messageformat@^1.0.2:
+  version "1.0.2"
+  resolved "https://npm.platforms.engineering/m/messageformat/_attachments/messageformat-1.0.2.tgz#908f4691f29ff28dae35c45436a24cff93402388"
+  dependencies:
+    glob "~7.0.6"
+    make-plural "~3.0.6"
+    messageformat-parser "^1.0.0"
+    nopt "~3.0.6"
+    reserved-words "^0.1.1"
+
 methods@~1.1.2:
   version "1.1.2"
   resolved "https://npm.platforms.engineering/m/methods/_attachments/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
@@ -3634,7 +3784,7 @@ minimist@0.0.8, minimist@~0.0.1:
   version "0.0.8"
   resolved "https://npm.platforms.engineering/m/minimist/_attachments/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
-minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
+minimist@1.2.0, minimist@>=0.2.0, minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
   version "1.2.0"
   resolved "https://npm.platforms.engineering/m/minimist/_attachments/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
@@ -3968,6 +4118,16 @@ osenv@0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
+p-limit@^1.1.0:
+  version "1.1.0"
+  resolved "https://npm.platforms.engineering/p/p-limit/_attachments/p-limit-1.1.0.tgz#b07ff2d9a5d88bec806035895a2bab66a27988bc"
+
+p-locate@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.platforms.engineering/p/p-locate/_attachments/p-locate-2.0.0.tgz#20a0103b222a70c8fd39cc2e580680f3dde5ec43"
+  dependencies:
+    p-limit "^1.1.0"
+
 pako@~0.2.0:
   version "0.2.9"
   resolved "https://npm.platforms.engineering/p/pako/_attachments/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
@@ -4010,6 +4170,10 @@ path-exists@^2.0.0:
   resolved "https://npm.platforms.engineering/p/path-exists/_attachments/path-exists-2.1.0.tgz#0feb6c64f0fc518d9a754dd5efb62c7022761f4b"
   dependencies:
     pinkie-promise "^2.0.0"
+
+path-exists@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.platforms.engineering/p/path-exists/_attachments/path-exists-3.0.0.tgz#ce0ebeaa5f78cb18925ea7d810d7b59b010fd515"
 
 path-is-absolute@1.0.0, path-is-absolute@^1.0.0:
   version "1.0.0"
@@ -4367,6 +4531,54 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://npm.platforms.engineering/p/preserve/_attachments/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
+prettier-eslint-cli@^3.1.2:
+  version "3.1.2"
+  resolved "https://npm.platforms.engineering/p/prettier-eslint-cli/_attachments/prettier-eslint-cli-3.1.2.tgz#697d21f3ed8ffb41dee499961eb88f1e04f08e36"
+  dependencies:
+    arrify "^1.0.1"
+    babel-runtime "^6.23.0"
+    chalk "^1.1.3"
+    common-tags "^1.4.0"
+    find-up "^2.1.0"
+    get-stdin "^5.0.1"
+    glob "^7.1.1"
+    ignore "^3.2.4"
+    indent-string "^3.1.0"
+    lodash.memoize "^4.1.2"
+    loglevel-colored-level-prefix "^1.0.0"
+    messageformat "^1.0.2"
+    prettier-eslint "^4.1.3"
+    rxjs "^5.2.0"
+    yargs "^6.6.0"
+
+prettier-eslint@^4.1.3:
+  version "4.2.0"
+  resolved "https://npm.platforms.engineering/p/prettier-eslint/_attachments/prettier-eslint-4.2.0.tgz#62c42a3e4c7ef11e4c0d133d0e3af1bccdd18b43"
+  dependencies:
+    common-tags "^1.4.0"
+    dlv "^1.1.0"
+    eslint "^3.13.1"
+    indent-string "^3.1.0"
+    loglevel "^1.4.1"
+    prettier "^0.19.0"
+    pretty-format "^19.0.0"
+    require-relative "^0.8.7"
+
+prettier@^0.19.0:
+  version "0.19.0"
+  resolved "https://npm.platforms.engineering/p/prettier/_attachments/prettier-0.19.0.tgz#8b473989a51c76649ea1e2eb7ea3f055cc4b8422"
+  dependencies:
+    ast-types "0.9.4"
+    babel-code-frame "6.22.0"
+    babylon "6.15.0"
+    chalk "1.1.3"
+    esutils "2.0.2"
+    flow-parser "0.38.0"
+    get-stdin "5.0.1"
+    glob "7.1.1"
+    jest-validate "19.0.0"
+    minimist "1.2.0"
+
 pretty-error@^2.0.2:
   version "2.0.2"
   resolved "https://npm.platforms.engineering/p/pretty-error/_attachments/pretty-error-2.0.2.tgz#a7db19cbb529ca9f0af3d3a2f77d5caf8e5dec23"
@@ -4379,6 +4591,12 @@ pretty-format@^18.1.0:
   resolved "https://npm.platforms.engineering/p/pretty-format/_attachments/pretty-format-18.1.0.tgz#fb65a86f7a7f9194963eee91865c1bcf1039e284"
   dependencies:
     ansi-styles "^2.2.1"
+
+pretty-format@^19.0.0:
+  version "19.0.0"
+  resolved "https://npm.platforms.engineering/p/pretty-format/_attachments/pretty-format-19.0.0.tgz#56530d32acb98a3fa4851c4e2b9d37b420684c84"
+  dependencies:
+    ansi-styles "^3.0.0"
 
 private@^0.1.6:
   version "0.1.7"
@@ -4786,6 +5004,10 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://npm.platforms.engineering/r/require-main-filename/_attachments/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
+require-relative@^0.8.7:
+  version "0.8.7"
+  resolved "https://npm.platforms.engineering/r/require-relative/_attachments/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
+
 require-uncached@^1.0.2:
   version "1.0.3"
   resolved "https://npm.platforms.engineering/r/require-uncached/_attachments/require-uncached-1.0.3.tgz#4e0d56d6c9662fd31e43011c4b95aa49955421d3"
@@ -4796,6 +5018,10 @@ require-uncached@^1.0.2:
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://npm.platforms.engineering/r/requires-port/_attachments/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+reserved-words@^0.1.1:
+  version "0.1.1"
+  resolved "https://npm.platforms.engineering/r/reserved-words/_attachments/reserved-words-0.1.1.tgz#6f7c15e5e5614c50da961630da46addc87c0cef2"
 
 resolve-from@^1.0.0:
   version "1.0.1"
@@ -4849,6 +5075,12 @@ run-async@^0.1.0:
 rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://npm.platforms.engineering/r/rx-lite/_attachments/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
+
+rxjs@^5.2.0:
+  version "5.2.0"
+  resolved "https://npm.platforms.engineering/r/rxjs/_attachments/rxjs-5.2.0.tgz#db537de8767c05fa73721587a29e0085307d318b"
+  dependencies:
+    symbol-observable "^1.0.1"
 
 sane@~1.4.1:
   version "1.4.1"
@@ -5226,6 +5458,10 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
+
+symbol-observable@^1.0.1:
+  version "1.0.4"
+  resolved "https://npm.platforms.engineering/s/symbol-observable/_attachments/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
 symbol-tree@^3.2.1:
   version "3.2.2"
@@ -5767,7 +6003,7 @@ yargs@^5.0.0:
     y18n "^3.2.1"
     yargs-parser "^3.2.0"
 
-yargs@^6.3.0:
+yargs@^6.3.0, yargs@^6.6.0:
   version "6.6.0"
   resolved "https://npm.platforms.engineering/y/yargs/_attachments/yargs-6.6.0.tgz#782ec21ef403345f830a808ca3d513af56065208"
   dependencies:
