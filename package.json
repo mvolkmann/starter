@@ -11,9 +11,17 @@
     "react-dom": "^15.4.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build-css && react-scripts build",
+    "build-css": "node-sass src/ -o src/",
+    "coverage": "cross-env CI=true npm test -- --coverage",
+    "efr": "eslint-find-rules --unused ~/.eslintrc.json --no-error",
+    "lint": "eslint --quiet src __tests__ --ext .js,.jsx",
+    "postbuild": "cd build && npm install --production",
+    "prepush": "npm run verify",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "verify": "npm run lint && cross-env CI=true npm test",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch"
   }
 }
