@@ -18,7 +18,7 @@ class App extends Component {
 
   constructor() {
     super();
-    React.setState = this.setState.bind(this);
+    window.setState = this.setState.bind(this);
     window.addEventListener('hashchange', () => this.forceUpdate());
   }
 
@@ -32,8 +32,8 @@ class App extends Component {
           hash === 'page2' ? <Page2 name={name} /> : <Page1 name={name} />
         }
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;

@@ -1,11 +1,19 @@
+// @flow
 import React, {Component, PropTypes as t} from 'react';
+
+type EventType = {
+  target: {
+    value: string
+  }
+};
 
 class Page1 extends Component {
   static propTypes = {
     name: t.string
   };
 
-  onChange = event => React.setState({name: event.target.value});
+  onChange = (event: EventType) =>
+    window.setState({name: event.target.value});
 
   render() {
     return (
@@ -19,9 +27,7 @@ class Page1 extends Component {
             value={this.props.name}
           />
         </div>
-        <div>
-          <a href="#page2">Go to Page 2</a>
-        </div>
+        <a href="#page2">Go to Page 2</a>
       </div>
     );
   }
