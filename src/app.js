@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
-import Page1 from './page1';
-import Page2 from './page2';
+import DataEntry from './data-entry';
+import DataDisplay from './data-display';
 import URLSearchParams from 'url-search-params'; // a polyfill for IE
 import './app.css';
 
@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="app">
         {
-          hash === 'page2' ? <Page2 name={name} /> : <Page1 name={name} />
+          hash === 'display' ? <DataDisplay name={name} /> : <DataEntry name={name} />
         }
       </div>
     );

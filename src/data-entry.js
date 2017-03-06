@@ -7,7 +7,7 @@ type EventType = {
   }
 };
 
-class Page1 extends Component {
+class DataEntry extends Component {
   static propTypes = {
     name: t.string
   };
@@ -17,7 +17,7 @@ class Page1 extends Component {
 
   render() {
     return (
-      <div className="page1">
+      <div className="data-entry">
         <div>
           <label>Name</label>
           <input
@@ -27,10 +27,10 @@ class Page1 extends Component {
             value={this.props.name}
           />
         </div>
-        <a href="#page2">Go to Page 2</a>
+        <a href="#display">Go to Page 2</a>
       </div>
     );
   }
 }
 
-export default Page1;
+export default DataEntry;
