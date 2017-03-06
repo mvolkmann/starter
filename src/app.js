@@ -1,3 +1,4 @@
+// @flow
 import React, {Component} from 'react';
 import Page1 from './page1';
 import Page2 from './page2';
@@ -31,8 +32,8 @@ class App extends Component {
           hash === 'page2' ? <Page2 name={name} /> : <Page1 name={name} />
         }
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
