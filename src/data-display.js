@@ -7,12 +7,16 @@ type ProjectType = {
   description: string
 };
 
-type PropsType = {
-  name: string,
-  projectMap: Object
+type ProjectMapType = {
+  [id: string]: ProjectType
 };
 
-const DataDisplay = ({name = 'World', projectMap = {}}: PropsType) => {
+type PropsType = {
+  name: string,
+  projectMap: ProjectMapType
+};
+
+const DataDisplay = ({name = 'World', projectMap}: PropsType) => {
   const sortedProjects = Object.values(projectMap)
     .sort((p1: ProjectType, p2: ProjectType) => p1.name.localeCompare(p2.name));
 
@@ -38,7 +42,7 @@ const DataDisplay = ({name = 'World', projectMap = {}}: PropsType) => {
       </table>
     </div>
   );
-}
+};
 
 DataDisplay.propTypes = {
   name: t.string
