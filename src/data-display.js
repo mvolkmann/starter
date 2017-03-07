@@ -1,5 +1,5 @@
 // @flow
-import React, {PropTypes as t} from 'react';
+import React, {PropTypes as t} from 'react'
 
 type PropsType = {name: string}
 
@@ -10,10 +10,10 @@ const DataDisplay = ({name = 'World'}: PropsType) => (
       <a href="#entry">Go to Page 1</a>
     </div>
   </div>
-);
+)
 
 DataDisplay.propTypes = {
   name: t.string,
-};
+}
 
-export default DataDisplay;
+export default DataDisplay

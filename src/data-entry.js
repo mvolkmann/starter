@@ -1,5 +1,5 @@
 // @flow
-import React, {Component, PropTypes as t} from 'react';
+import React, {Component, PropTypes as t} from 'react'
 
 type EventType = {
   target: {
@@ -28,8 +28,8 @@ class DataEntry extends Component {
         </div>
         <a href="#display">Go to Page 2</a>
       </div>
-    );
+    )
   }
 }
 
-export default DataEntry;
+export default DataEntry
