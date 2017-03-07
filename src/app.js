@@ -28,9 +28,9 @@ class App extends Component {
 
     return (
       <div className="app">
-        {
-          hash === 'display' ? <DataDisplay name={name} /> : <DataEntry name={name} />
-        }
+        {hash === 'display' ?
+          <DataDisplay name={name} /> :
+            <DataEntry name={name} />}
       </div>
     );
   }
