@@ -28,7 +28,7 @@
     "build-css": "node-sass src/ -o src/",
     "coverage": "cross-env CI=true npm test -- --coverage",
     "efr": "eslint-find-rules --unused ~/.eslintrc.json --no-error",
-    "lint": "eslint --quiet src __tests__ --ext .js,.jsx",
+    "lint": "eslint --quiet src __tests__ --ext .js,.jsx && sass-lint 'src/**/*.scss' -v",
     "flow": "flow",
     "format": "prettier-eslint --write \"src/**/*.js*\"",
     "postbuild": "cd build && npm install --production",
