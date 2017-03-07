@@ -1,11 +1,29 @@
+.data-display {
+  table {
+    border-collapse: collapse;
+
+    caption {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    td,
+    th {
+      border: solid gray 1px;
+      padding: 5px;
+    }
+  }
+}
+
 .data-entry {
   a {
     display: block;
-    margin-top: 10px;
+    margin-top: 0.625em;
   }
 
   label {
     font-weight: bold;
-    margin-right: 5px;
+    margin-right: 0.3125em;
   }
 }

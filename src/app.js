@@ -23,8 +23,33 @@ function handleError(url, res) {
   )
 }
 
+async function loadProjects() {
+  const restUrl = 'https://localhost';
+  const url = `${restUrl}/project`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return handleError(url, res);
+
+    const projects = await res.json();
+    console.log('app.js loadProjects: projects =', projects);
+
+    const projectMap = {};
+    for (const project of projects) {
+      projectMap[project.id] = project;
+    }
+
+    window.setState({projectMap});
+  } catch (e) {
+    console.log('app.js loadProjects: e =', e);
+    handleError.bind(null, url);
+  }
+}
+
 class App extends Component {
-  state = {name: ''};
+  state = {
+    name: '',
+    projectMap: {}
+  };
 
   constructor() {
     super()
@@ -33,6 +58,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     async function loadProjects() {
       const restUrl = 'https://localhost'
       const url = `${restUrl}/project`
@@ -71,6 +97,23 @@ class App extends Component {
         {hash === 'display' ?
           <DataDisplay name={name} /> :
             <DataEntry name={name} />}
+=======
+    loadProjects();
+  }
+
+  render() {
+    const {hash} = getLocationParts();
+    const {name, projectMap} = this.state;
+    console.log('app.js render: projectMap =', projectMap);
+
+    return (
+      <div className="app">
+        {
+          hash === 'display' ?
+            <DataDisplay name={name} projectMap={projectMap} /> :
+            <DataEntry name={name} />
+        }
+>>>>>>> 149bfb8c61ddc57877981330070c4803e6e804ea
       </div>
     )
   }
