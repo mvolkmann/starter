@@ -1,15 +1,44 @@
 // @flow
 import React, {PropTypes as t} from 'react';
 
-type PropsType = {name: string};
+type ProjectType = {
+  id: number,
+  name: string,
+  description: string
+};
 
-const DataDisplay = ({name = 'World'}: PropsType) =>
-  <div className="data-display">
-    <h2>Hello, {name}!</h2>
-    <div>
-      <a href="#entry">Go to Page 1</a>
+type PropsType = {
+  name: string,
+  projectMap: Object
+};
+
+const DataDisplay = ({name = 'World', projectMap = {}}: PropsType) => {
+  const sortedProjects = Object.values(projectMap)
+    .sort((p1: ProjectType, p2: ProjectType) => p1.name.localeCompare(p2.name));
+
+  return (
+    <div className="data-display">
+      <h2>Hello, {name}!</h2>
+      <div>
+        <a href="#entry">Go to Page 1</a>
+      </div>
+      <table>
+        <caption>Projects</caption>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+        {
+          sortedProjects.map((project: ProjectType) =>
+            <tr key={project.id}>
+              <td>{project.name}</td>
+              <td>{project.description}</td>
+            </tr>)
+        }
+      </table>
     </div>
-  </div>;
+  );
+}
 
 DataDisplay.propTypes = {
   name: t.string

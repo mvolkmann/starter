@@ -21,8 +21,33 @@ function handleError(url, res) {
     {error: res.message});
 }
 
+async function loadProjects() {
+  const restUrl = 'https://localhost';
+  const url = `${restUrl}/project`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return handleError(url, res);
+
+    const projects = await res.json();
+    console.log('app.js loadProjects: projects =', projects);
+
+    const projectMap = {};
+    for (const project of projects) {
+      projectMap[project.id] = project;
+    }
+
+    window.setState({projectMap});
+  } catch (e) {
+    console.log('app.js loadProjects: e =', e);
+    handleError.bind(null, url);
+  }
+}
+
 class App extends Component {
-  state = {name: ''};
+  state = {
+    name: '',
+    projectMap: {}
+  };
 
   constructor() {
     super();
@@ -31,44 +56,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    async function loadProjects() {
-      const restUrl = 'https://localhost';
-      const url = `${restUrl}/project`;
-      console.log('app.js componentDidMount: url =', url);
-      try {
-        const res = await fetch(url);
-        console.log('app.js componentDidMount: res =', res);
-        if (!res.ok) return handleError(url, res);
-
-        const projects = await res.json();
-        console.log('app.js componentDidMount: projects =', projects);
-
-        const projectMap = {};
-        for (const project of projects) {
-          projectMap[project.id] = project.flavor;
-        }
-
-        window.setState({projectMap});
-      } catch (e) {
-        console.log('app.js componentDidMount: e =', e);
-        handleError.bind(null, url);
-      }
-
-      console.log('app.js componentDidMount: called fetch');
-    }
-
     loadProjects();
   }
 
   render() {
     const {hash} = getLocationParts();
-    const {name} = this.state;
+    const {name, projectMap} = this.state;
+    console.log('app.js render: projectMap =', projectMap);
 
     return (
       <div className="app">
         {
           hash === 'display' ?
-            <DataDisplay name={name} /> :
+            <DataDisplay name={name} projectMap={projectMap} /> :
             <DataEntry name={name} />
         }
       </div>
