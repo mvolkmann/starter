@@ -45,7 +45,8 @@ const DataDisplay = ({name = 'World', projectMap}: PropsType) => {
 };
 
 DataDisplay.propTypes = {
-  name: t.string
+  name: t.string,
+  projectMap: t.object
 };
 
 export default DataDisplay;

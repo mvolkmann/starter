@@ -1,8 +1,8 @@
 .DS_Store
 npm-debug.log*
 src/**/*.css
-*hot-update.js*
-*.swp
+.eslintrc.json
+.*.swp
 *.log
 *.out
 *.min.js
@@ -13,6 +13,3 @@ node_modules/
 build/
 coverage/
 cached_uglify/
-logs/
-bin/
-idea/

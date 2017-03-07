@@ -5,15 +5,14 @@ type EventType = {
   target: {
     value: string
   }
-};
+}
 
 class DataEntry extends Component {
   static propTypes = {
-    name: t.string
+    name: t.string,
   };
 
-  onChange = (event: EventType) =>
-    window.setState({name: event.target.value});
+  onChange = (event: EventType) => window.setState({name: event.target.value});
 
   render() {
     return (
