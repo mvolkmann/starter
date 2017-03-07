@@ -1,22 +1,39 @@
 // @flow
-import React, {Component} from 'react'
-import logo from './logo.svg'
-import './app.css'
+import React, {Component} from 'react';
+import DataEntry from './data-entry';
+import DataDisplay from './data-display';
+import URLSearchParams from 'url-search-params'; // a polyfill for IE
+import './app.css';
+
+function getLocationParts() {
+  return {
+    hash: location.hash.substring(1),
+    path: location.pathname,
+    query: new URLSearchParams(location.search),
+  };
+}
 
 class App extends Component {
+  state = {name: ''};
+
+  constructor() {
+    super();
+    window.setState = this.setState.bind(this);
+    window.addEventListener('hashchange', () => this.forceUpdate());
+  }
+
   render() {
+    const {hash} = getLocationParts();
+    const {name} = this.state;
+
     return (
       <div className="app">
-        <div className="app-header">
-          <img src={logo} className="app-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="app-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {
+          hash === 'display' ? <DataDisplay name={name} /> : <DataEntry name={name} />
+        }
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
