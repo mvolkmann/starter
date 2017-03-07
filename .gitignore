@@ -1,15 +1,14 @@
+*.js.map
+*.log
+*.min.css
+*.min.js
+*.out
+.*.swp
 .DS_Store
+.eslintrc.json
 npm-debug.log*
 src/**/*.css
-.eslintrc.json
-.*.swp
-*.log
-*.out
-*.min.js
-*.min.css
-*.js.map
 
-node_modules/
 build/
 coverage/
-cached_uglify/
+node_modules/

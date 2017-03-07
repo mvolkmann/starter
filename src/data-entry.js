@@ -5,7 +5,7 @@ type EventType = {
   target: {
     value: string
   }
-}
+};
 
 class DataEntry extends Component {
   static propTypes = {
