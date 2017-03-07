@@ -29,6 +29,7 @@
     }],
     "comment-no-empty": true,
     "comment-whitespace-inside": "always",
+    "comment-word-blacklist": "/^TODO[:\\s\\-]/",
     "custom-property-empty-line-before": [ "always", {
       except: [
         "after-custom-property",
