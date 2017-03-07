@@ -16,9 +16,11 @@ function getLocationParts() {
 
 function handleError(url, res) {
   console.log('app.js handleError: entered');
-  window.setState(res.status === 440 ?
-    {error: 'Session Timeout', route: 'login'} :
-    {error: res.message});
+  window.setState(
+    res.status === 440 ?
+      {error: 'Session Timeout', route: 'login'} :
+      {error: res.message},
+  );
 }
 
 async function loadProjects() {
@@ -46,7 +48,7 @@ async function loadProjects() {
 class App extends Component {
   state = {
     name: '',
-    projectMap: {}
+    projectMap: {},
   };
 
   constructor() {
@@ -66,11 +68,9 @@ class App extends Component {
 
     return (
       <div className="app">
-        {
-          hash === 'display' ?
-            <DataDisplay name={name} projectMap={projectMap} /> :
-            <DataEntry name={name} />
-        }
+        {hash === 'display' ?
+          <DataDisplay name={name} projectMap={projectMap} /> :
+            <DataEntry name={name} />}
       </div>
     );
   }

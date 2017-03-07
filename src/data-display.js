@@ -5,16 +5,16 @@ type ProjectType = {
   id: number,
   name: string,
   description: string
-};
+}
 
 type ProjectMapType = {
   [id: string]: ProjectType
-};
+}
 
 type PropsType = {
   name: string,
   projectMap: ProjectMapType
-};
+}
 
 const DataDisplay = ({name = 'World', projectMap}: PropsType) => {
   const sortedProjects = Object.values(projectMap)
@@ -32,13 +32,12 @@ const DataDisplay = ({name = 'World', projectMap}: PropsType) => {
           <th>Name</th>
           <th>Description</th>
         </tr>
-        {
-          sortedProjects.map((project: ProjectType) =>
-            <tr key={project.id}>
-              <td>{project.name}</td>
-              <td>{project.description}</td>
-            </tr>)
-        }
+        {sortedProjects.map((project: ProjectType) => (
+          <tr key={project.id}>
+            <td>{project.name}</td>
+            <td>{project.description}</td>
+          </tr>
+        ))}
       </table>
     </div>
   );
@@ -46,7 +45,7 @@ const DataDisplay = ({name = 'World', projectMap}: PropsType) => {
 
 DataDisplay.propTypes = {
   name: t.string,
-  projectMap: t.object
+  projectMap: t.object,
 };
 
 export default DataDisplay;
