@@ -67,7 +67,7 @@
     "flowtype/require-parameter-type": "off",
     "flowtype/require-return-type": "off",
     "flowtype/require-valid-file-annotation": "off",
-    "flowtype/semi": ["error", "never"],
+    "flowtype/semi": ["error", "always"],
     "flowtype/sort-keys": "off",
     "flowtype/space-after-type-colon": ["error", "always"],
     "flowtype/space-before-generic-bracket": ["error", "never"],

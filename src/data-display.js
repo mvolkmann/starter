@@ -5,16 +5,16 @@ type ProjectType = {
   id: number,
   name: string,
   description: string
-}
+};
 
 type ProjectMapType = {
   [id: string]: ProjectType
-}
+};
 
 type PropsType = {
   name: string,
   projectMap: ProjectMapType
-}
+};
 
 const DataDisplay = ({name = 'World', projectMap}: PropsType) => {
   const sortedProjects = Object.values(projectMap)
