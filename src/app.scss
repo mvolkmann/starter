@@ -1,6 +1,11 @@
 $space: 5px;
 
 .data-display {
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+  }
+
   table {
     border-collapse: collapse;
 
@@ -35,4 +40,9 @@ $space: 5px;
     display: block;
     margin-top: 10px;
   }
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }

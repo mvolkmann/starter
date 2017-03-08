@@ -5,10 +5,7 @@ type ResponseType = {
   status: number
 };
 
-export function handleError(url: string, res: ResponseType) {
-  window.setState(
-    res.status === 440 ?
-      {error: 'Session Timeout', route: 'login'} :
-      {error: res.message},
-  );
+export function handleError(url: string, res: ResponseType): void {
+  const error = res.status === 440 ? 'Session Timeout' : res.message;
+  window.setState({error});
 }
