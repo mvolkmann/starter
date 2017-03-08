@@ -1,7 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
 import {handleError} from './error';
-import 'whatwg-fetch'; //TODO: Is this needed?
 
 type EventType = {
   target: {
@@ -10,22 +9,19 @@ type EventType = {
 };
 
 async function addProject(name) {
-  const restUrl = 'https://localhost';
-  const url = `${restUrl}/project?name=${name}`;
+  const url = `${window.BASE_URL}/project?name=${name}`;
   try {
     const res = await fetch(url, {method: 'POST'});
-    if (res.ok) {
-      const id = await res.text();
-      window.setState(state => {
-        const {projectMap} = state;
-        projectMap[id] = {id, name};
-        return {projectMap};
-      });
-    } else {
-      handleError(url, res);
-    }
+    if (!res.ok) return handleError(url, res);
+
+    const id = await res.text();
+    window.setState(state => {
+      const {projectMap} = state;
+      projectMap[id] = {id, name};
+      return {projectMap};
+    });
   } catch (e) {
-    handleError.bind(null, url);
+    handleError(url, e);
   }
 }
 
@@ -54,7 +50,7 @@ class DataEntry extends Component {
           />
           <button onClick={this.onAdd}>Add</button>
         </div>
-        <a href="#display">Go to Page 2</a>
+        <a href="#display">Show Projects</a>
       </div>
     );
   }

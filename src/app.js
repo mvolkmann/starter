@@ -2,22 +2,14 @@
 import React, {Component} from 'react';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
+import {getLocationParts} from './hash-route';
 import {handleError} from './error';
-import URLSearchParams from 'url-search-params'; // a polyfill for IE
-import 'whatwg-fetch'; //TODO: Is this needed?
 import './app.css';
 
-function getLocationParts() {
-  return {
-    hash: location.hash.substring(1),
-    path: location.pathname,
-    query: new URLSearchParams(location.search),
-  };
-}
+window.BASE_URL = 'https://localhost';
 
 async function loadProjects() {
-  const restUrl = 'https://localhost';
-  const url = `${restUrl}/project`;
+  const url = `${window.BASE_URL}/project`;
   try {
     const res = await fetch(url);
     if (!res.ok) return handleError(url, res);
@@ -31,7 +23,7 @@ async function loadProjects() {
 
     window.setState({projectMap});
   } catch (e) {
-    handleError.bind(null, url);
+    handleError(url, e);
   }
 }
 
@@ -43,7 +35,11 @@ class App extends Component {
 
   constructor() {
     super();
+
+    // Allow any component to change the state of this top-most component.
     window.setState = this.setState.bind(this);
+
+    // Re-render any time the URL hash changes.
     window.addEventListener('hashchange', () => this.forceUpdate());
   }
 

@@ -1,7 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
 import {handleError} from './error';
-import 'whatwg-fetch'; //TODO: Is this needed?
 
 type ProjectType = {
   id: number,
@@ -14,21 +13,18 @@ type ProjectMapType = {
 };
 
 async function deleteProject(id: number) {
-  const restUrl = 'https://localhost';
-  const url = `${restUrl}/project/${id}`;
+  const url = `${window.BASE_URL}/project/${id}`;
   try {
     const res = await fetch(url, {method: 'DELETE'});
-    if (res.ok) {
-      window.setState(state => {
-        const {projectMap} = state;
-        delete projectMap[id];
-        return {projectMap};
-      });
-    } else {
-      handleError(url, res);
-    }
+    if (!res.ok) return handleError(url, res);
+
+    window.setState(state => {
+      const {projectMap} = state;
+      delete projectMap[id];
+      return {projectMap};
+    });
   } catch (e) {
-    handleError.bind(null, url);
+    handleError(url, e);
   }
 }
 
@@ -64,8 +60,11 @@ class DataDisplay extends Component {
             {sortedProjects.map((project: ProjectType) => (
               <tr key={project.id}>
                 <td>
-                  <button onClick={() => this.onDelete(project.id)}>
-                    Delete
+                  <button
+                    className="delete-btn"
+                    onClick={() => this.onDelete(project.id)}
+                  >
+                    ✖
                   </button>
                 </td>
                 <td>{project.name}</td>
@@ -74,7 +73,8 @@ class DataDisplay extends Component {
             ))}
           </tbody>
         </table>
-        <a href="#entry">Go to Page 1</a>
+
+        <a href="#entry">Add Projects</a>
       </div>
     );
   }

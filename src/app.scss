@@ -1,6 +1,11 @@
 $space: 5px;
 
 .data-display {
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+  }
+
   table {
     border-collapse: collapse;
 
