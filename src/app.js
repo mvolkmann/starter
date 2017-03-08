@@ -15,7 +15,6 @@ function getLocationParts() {
 }
 
 function handleError(url, res) {
-  console.log('app.js handleError: entered');
   window.setState(
     res.status === 440 ?
       {error: 'Session Timeout', route: 'login'} :
@@ -31,7 +30,6 @@ async function loadProjects() {
     if (!res.ok) return handleError(url, res);
 
     const projects = await res.json();
-    console.log('app.js loadProjects: projects =', projects);
 
     const projectMap = {};
     for (const project of projects) {
@@ -40,7 +38,6 @@ async function loadProjects() {
 
     window.setState({projectMap});
   } catch (e) {
-    console.log('app.js loadProjects: e =', e);
     handleError.bind(null, url);
   }
 }
@@ -64,7 +61,6 @@ class App extends Component {
   render() {
     const {hash} = getLocationParts();
     const {name, projectMap} = this.state;
-    console.log('app.js render: projectMap =', projectMap);
 
     return (
       <div className="app">
