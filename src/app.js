@@ -1,29 +1,33 @@
 // @flow
-import React, {Component} from 'react';
-import DataEntry from './data-entry';
-import DataDisplay from './data-display';
-import {getLocationParts} from './hash-route';
-import {handleError} from './error';
-import './app.css';
+import React, {Component} from 'react'
+import DataEntry from './data-entry'
+import DataDisplay from './data-display'
+import {getLocationParts} from './hash-route'
+import {handleError} from './error'
+import './app.css'
 
-window.BASE_URL = 'https://localhost';
+window.BASE_URL = 'https://localhost'
 
 async function loadProjects() {
-  const url = `${window.BASE_URL}/project`;
+  const url = `${window.BASE_URL}/project`
+  console.log({url})
   try {
-    const res = await fetch(url);
-    if (!res.ok) return handleError(url, res);
+    console.log('try-catch entered')
+    const res = await fetch(url)
+    console.log({res})
+    if (!res.ok) return handleError(url, res)
 
-    const projects = await res.json();
+    const projects = await res.json()
 
-    const projectMap = {};
+    const projectMap = {}
     for (const project of projects) {
-      projectMap[project.id] = project;
+      projectMap[project.id] = project
     }
 
-    window.setState({projectMap});
+    window.setState({projectMap})
   } catch (e) {
-    handleError(url, e);
+    console.log('error occured', {e})
+    handleError(url, e)
   }
 }
 
@@ -35,32 +39,33 @@ class App extends Component {
   };
 
   constructor() {
-    super();
+    super()
 
     // Allow any component to change the state of this top-most component.
-    window.setState = this.setState.bind(this);
+    window.setState = this.setState.bind(this)
 
     // Re-render any time the URL hash changes.
-    window.addEventListener('hashchange', () => this.forceUpdate());
+    window.addEventListener('hashchange', () => this.forceUpdate())
   }
 
   componentDidMount() {
-    loadProjects();
+    loadProjects()
   }
 
   render() {
-    const {hash} = getLocationParts();
-    const {error, name, projectMap} = this.state;
+    const {hash} = getLocationParts()
+    const {error, name, projectMap} = this.state
 
     return (
       <div className="app">
         <div className="error">{error}</div>
         {hash === 'display' ?
           <DataDisplay projectMap={projectMap} /> :
-            <DataEntry name={name} />}
+          <DataEntry name={name} /> // eslint-disable-line react/jsx-indent
+        }
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
