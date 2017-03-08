@@ -1,7 +1,7 @@
 // @flow
 
 type ResponseType = {
-  message: string,
+  message?: string,
   status: number
 };
 
