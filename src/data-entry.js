@@ -1,31 +1,31 @@
 // @flow
-import React, {Component, PropTypes as t} from 'react';
-import {handleError} from './error';
-import 'whatwg-fetch'; //TODO: Is this needed?
+import React, {Component, PropTypes as t} from 'react'
+import {handleError} from './error'
+import 'whatwg-fetch' //TODO: Is this needed?
 
 type EventType = {
   target: {
     value: string
   }
-};
+}
 
 async function addProject(name) {
-  const restUrl = 'https://localhost';
-  const url = `${restUrl}/project?name=${name}`;
+  const restUrl = 'https://localhost'
+  const url = `${restUrl}/project?name=${name}`
   try {
-    const res = await fetch(url, {method: 'POST'});
+    const res = await fetch(url, {method: 'POST'})
     if (res.ok) {
-      const id = await res.text();
+      const id = await res.text()
       window.setState(state => {
-        const {projectMap} = state;
-        projectMap[id] = {id, name};
-        return {projectMap};
-      });
+        const {projectMap} = state
+        projectMap[id] = {id, name}
+        return {projectMap}
+      })
     } else {
-      handleError(url, res);
+      handleError(url, res)
     }
   } catch (e) {
-    handleError.bind(null, url);
+    handleError.bind(null, url)
   }
 }
 
@@ -35,8 +35,8 @@ class DataEntry extends Component {
   };
 
   onAdd = () => {
-    addProject(this.props.name);
-    window.setState({name: ''});
+    addProject(this.props.name)
+    window.setState({name: ''})
   };
 
   onChange = (event: EventType) => window.setState({name: event.target.value});
@@ -56,8 +56,8 @@ class DataEntry extends Component {
         </div>
         <a href="#display">Go to Page 2</a>
       </div>
-    );
+    )
   }
 }
 
-export default DataEntry;
+export default DataEntry
