@@ -1,3 +1,5 @@
+$space: 5px;
+
 .data-display {
   table {
     border-collapse: collapse;
@@ -11,19 +13,26 @@
     td,
     th {
       border: solid gray 1px;
-      padding: 5px;
+      padding: $space;
     }
   }
 }
 
 .data-entry {
-  a {
-    display: block;
-    margin-top: 10px;
+  button {
+    margin-left: $space;
   }
 
   label {
     font-weight: bold;
-    margin-right: 5px;
+    margin-right: $space;
+  }
+}
+
+.data-display,
+.data-entry {
+  a {
+    display: block;
+    margin-top: 10px;
   }
 }

@@ -1,5 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
+import {handleError} from './error';
 import 'whatwg-fetch'; //TODO: Is this needed?
 
 type ProjectType = {
@@ -10,11 +11,6 @@ type ProjectType = {
 
 type ProjectMapType = {
   [id: string]: ProjectType
-};
-
-type ResponseType = {
-  message: string,
-  status: number
 };
 
 async function deleteProject(id: number) {
@@ -36,29 +32,19 @@ async function deleteProject(id: number) {
   }
 }
 
-function handleError(url: string, res: ResponseType) {
-  window.setState(
-    res.status === 440 ?
-      {error: 'Session Timeout', route: 'login'} :
-      {error: res.message},
-  );
-}
-
 class DataDisplay extends Component {
   static propTypes = {
-    name: t.string,
-    projectMap: t.object,
+    projectMap: t.object.isRequired
   };
 
   props: {
-    name: string,
     projectMap: ProjectMapType
   };
 
   onDelete = (projectId: number) => deleteProject(projectId);
 
   render() {
-    const {name = 'World', projectMap} = this.props;
+    const {projectMap} = this.props;
 
     const sortedProjects = Object.keys(projectMap)
       .map(projectId => projectMap[projectId])
@@ -67,10 +53,6 @@ class DataDisplay extends Component {
 
     return (
       <div className="data-display">
-        <h2>Hello, {name}!</h2>
-        <div>
-          <a href="#entry">Go to Page 1</a>
-        </div>
         <table>
           <caption>Projects</caption>
           <tbody>
@@ -79,21 +61,20 @@ class DataDisplay extends Component {
               <th>Name</th>
               <th>Description</th>
             </tr>
-            {
-              sortedProjects.map((project: ProjectType) => (
-                <tr key={project.id}>
-                  <td>
-                    <button onClick={() => this.onDelete(project.id)}>
-                      Delete
-                    </button>
-                  </td>
-                  <td>{project.name}</td>
-                  <td>{project.description}</td>
-                </tr>
-              ))
-            }
+            {sortedProjects.map((project: ProjectType) => (
+              <tr key={project.id}>
+                <td>
+                  <button onClick={() => this.onDelete(project.id)}>
+                    Delete
+                  </button>
+                </td>
+                <td>{project.name}</td>
+                <td>{project.description}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
+        <a href="#entry">Go to Page 1</a>
       </div>
     );
   }

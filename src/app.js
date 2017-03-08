@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
+import {handleError} from './error';
 import URLSearchParams from 'url-search-params'; // a polyfill for IE
 import 'whatwg-fetch'; //TODO: Is this needed?
 import './app.css';
@@ -12,14 +13,6 @@ function getLocationParts() {
     path: location.pathname,
     query: new URLSearchParams(location.search),
   };
-}
-
-function handleError(url, res) {
-  window.setState(
-    res.status === 440 ?
-      {error: 'Session Timeout', route: 'login'} :
-      {error: res.message},
-  );
 }
 
 async function loadProjects() {
@@ -65,7 +58,7 @@ class App extends Component {
     return (
       <div className="app">
         {hash === 'display' ?
-          <DataDisplay name={name} projectMap={projectMap} /> :
+          <DataDisplay projectMap={projectMap} /> :
             <DataEntry name={name} />}
       </div>
     );
