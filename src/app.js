@@ -33,6 +33,7 @@ async function loadProjects() {
 
 class App extends Component {
   state = {
+    description: '',
     error: '',
     name: '',
     projectMap: {},
@@ -54,14 +55,17 @@ class App extends Component {
 
   render() {
     const {hash} = getLocationParts()
-    const {error, name, projectMap} = this.state
+    const {description, error, name, projectMap} = this.state
 
     return (
       <div className="app">
         <div className="error">{error}</div>
         {hash === 'display' ?
           <DataDisplay projectMap={projectMap} /> :
-          <DataEntry name={name} /> // eslint-disable-line react/jsx-indent
+          <DataEntry // eslint-disable-line react/jsx-indent
+            description={description}
+            name={name}
+          />
         }
       </div>
     )

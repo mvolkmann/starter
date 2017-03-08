@@ -1,9 +1,11 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react'
 import {handleError} from './error'
+import DataInput from './data-input'
 
 type EventType = {
   target: {
+    name: string,
     value: string
   }
 }
@@ -27,31 +29,40 @@ async function addProject(name) {
 
 class DataEntry extends Component {
   static propTypes = {
-    name: t.string,
+    description: t.string,
+    name: t.string
   };
 
   onAdd = () => {
     addProject(this.props.name)
-    window.setState({name: ''})
+    window.setState({name: '', description: ''})
   };
 
   onKeyPress = (event: EventType) => {
     if (event.which === 13) this.onAdd()
   };
 
-  onChange = (event: EventType) => window.setState({name: event.target.value});
+  onChange = (event: EventType) => {
+    const {name, value} = event.target
+    console.log({name, value})
+    window.setState({[name]: value})
+  }
 
   render() {
     return (
       <div className="data-entry">
         <div>
-          <label>Project Name</label>
-          <input
-            autoFocus
+          <DataInput
+            label="Project Name"
+            name="name"
             onChange={this.onChange}
-            onKeyPress={this.onKeyPress}
-            type="text"
             value={this.props.name}
+          />
+          <DataInput
+            label="Project Description"
+            name="description"
+            onChange={this.onChange}
+            value={this.props.description}
           />
           <button onClick={this.onAdd}>Add</button>
         </div>
