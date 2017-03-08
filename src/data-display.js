@@ -34,7 +34,7 @@ async function deleteProject(id: number) {
 
 class DataDisplay extends Component {
   static propTypes = {
-    projectMap: t.object.isRequired
+    projectMap: t.object.isRequired,
   };
 
   props: {

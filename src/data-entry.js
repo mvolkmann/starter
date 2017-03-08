@@ -31,7 +31,7 @@ async function addProject(name) {
 
 class DataEntry extends Component {
   static propTypes = {
-    name: t.string
+    name: t.string,
   };
 
   onAdd = () => {
@@ -39,8 +39,7 @@ class DataEntry extends Component {
     window.setState({name: ''});
   };
 
-  onChange = (event: EventType) =>
-    window.setState({name: event.target.value});
+  onChange = (event: EventType) => window.setState({name: event.target.value});
 
   render() {
     return (
