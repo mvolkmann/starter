@@ -2,7 +2,7 @@
 
 type ResponseType = {
   message?: string,
-  status?: number
+  status: number
 };
 
 export function handleError(url: string, res: ResponseType): void {

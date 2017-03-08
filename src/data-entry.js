@@ -35,6 +35,10 @@ class DataEntry extends Component {
     window.setState({name: ''});
   };
 
+  onKeyPress = (event: EventType) => {
+    if (event.which === 13) this.onAdd();
+  };
+
   onChange = (event: EventType) => window.setState({name: event.target.value});
 
   render() {
@@ -45,6 +49,7 @@ class DataEntry extends Component {
           <input
             autoFocus
             onChange={this.onChange}
+            onKeyPress={this.onKeyPress}
             type="text"
             value={this.props.name}
           />
