@@ -29,6 +29,7 @@ async function loadProjects() {
 
 class App extends Component {
   state = {
+    error: '',
     name: '',
     projectMap: {},
   };
@@ -49,10 +50,11 @@ class App extends Component {
 
   render() {
     const {hash} = getLocationParts();
-    const {name, projectMap} = this.state;
+    const {error, name, projectMap} = this.state;
 
     return (
       <div className="app">
+        <div className="error">{error}</div>
         {hash === 'display' ?
           <DataDisplay projectMap={projectMap} /> :
             <DataEntry name={name} />}
