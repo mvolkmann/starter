@@ -13,7 +13,7 @@ type EventType = {
 };
 
 async function addProject({name, description}) {
-  let url : string = getUrl('project', {name, description});
+  let url: string = getUrl('project', {name, description});
   url += `&description=${description}`;
   try {
     const res = await fetch(url, {method: 'POST'});
