@@ -1,31 +1,31 @@
 // @flow
-import React, {Component, PropTypes as t} from 'react'
-import {handleError} from './error'
-import DataInput from './data-input'
+import React, {Component, PropTypes as t} from 'react';
+import {handleError} from './error';
+import DataInput from './data-input';
 
 type EventType = {
   target: {
     name: string,
     value: string
   }
-}
+};
 
 async function addProject(props) {
-  const {name, description} = props
-  let url = `${window.BASE_URL}/project?name=${name}`
-  url += `&description=${description}`
+  const {name, description} = props;
+  let url = `${window.BASE_URL}/project?name=${name}`;
+  url += `&description=${description}`;
   try {
-    const res = await fetch(url, {method: 'POST'})
-    if (!res.ok) return handleError(url, res)
+    const res = await fetch(url, {method: 'POST'});
+    if (!res.ok) return handleError(url, res);
 
-    const id = await res.text()
+    const id = await res.text();
     window.setState(state => {
-      const {projectMap} = state
-      projectMap[id] = {id, name, description}
-      return {projectMap}
-    })
+      const {projectMap} = state;
+      projectMap[id] = {id, name, description};
+      return {projectMap};
+    });
   } catch (e) {
-    handleError(url, e)
+    handleError(url, e);
   }
 }
 
@@ -36,17 +36,17 @@ class DataEntry extends Component {
   };
 
   onAdd = () => {
-    addProject(this.props)
-    window.setState({name: '', description: ''})
+    addProject(this.props);
+    window.setState({name: '', description: ''});
   };
 
   onKeyPress = (event: EventType) => {
-    if (event.which === 13) this.onAdd()
+    if (event.which === 13) this.onAdd();
   };
 
   onChange = (event: EventType) => {
-    const {name, value} = event.target
-    window.setState({[name]: value})
+    const {name, value} = event.target;
+    window.setState({[name]: value});
   };
 
   render() {
@@ -69,8 +69,8 @@ class DataEntry extends Component {
         </div>
         <a href="#display">Show Projects</a>
       </div>
-    )
+    );
   }
 }
 
-export default DataEntry
+export default DataEntry;
