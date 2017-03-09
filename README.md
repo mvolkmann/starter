@@ -18,7 +18,7 @@ yarn
 3. export HTTPS=true
 4. npm start
 
-Browse https://localhost
+Browse http://localhost:3000
 
 If it fails to fetch data, it could be that the browser doesn't yet trust
 the domain of the REST serves.  To enable this:

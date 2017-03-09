@@ -8,7 +8,9 @@
     "enzyme": "^2.7.1",
     "eslint": "^3.17.0",
     "eslint-find-rules": "^1.14.3",
+    "eslint-plugin-flowtype": "^2.30.3",
     "eslint-plugin-html": "^2.0.1",
+    "eslint-plugin-react": "^6.10.0",
     "eslint-plugin-volkmann": "^0.3.3",
     "flow-bin": "^0.41.0",
     "husky": "^0.13.2",
@@ -21,6 +23,7 @@
     "stylelint": "^7.9.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "url-search-params": "^0.6.1"

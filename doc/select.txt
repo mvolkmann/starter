@@ -1,0 +1,12 @@
+Select component
+
+This renders a dropdown using the HTML select and option elements.
+
+Props:
+- value - a string that is the currently selected value
+- onChange - a function called when the user selects a new value
+- options - an array of objects with "key" and "value" properties (both are strings)
+- length - optional number used to get a scrollable list of values
+
+Notes:
+  The className prop on the select element should be "select".

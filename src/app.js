@@ -57,7 +57,7 @@ class App extends Component {
         <div className="error">{error}</div>
         {hash === 'display' ?
           <DataDisplay projectMap={projectMap} /> :
-            <DataEntry name={name} />}
+          <DataEntry name={name} />}
       </div>
     );
   }
