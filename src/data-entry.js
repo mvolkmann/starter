@@ -39,8 +39,7 @@ class DataEntry extends Component {
     if (event.which === 13) this.onAdd();
   };
 
-  onChange = (event: EventType) =>
-    window.setState({name: event.target.value});
+  onChange = (event: EventType) => window.setState({name: event.target.value});
 
   render() {
     return (

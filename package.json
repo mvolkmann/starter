@@ -18,7 +18,7 @@
     "npm-run-all": "^4.0.2",
     "prettier-eslint-cli": "^3.1.2",
     "react-addons-test-utils": "^15.4.2",
-    "react-scripts": "0.9.3",
+    "react-scripts": "0.9.5",
     "react-test-renderer": "^15.4.2",
     "stylelint": "^7.9.0"
   },
