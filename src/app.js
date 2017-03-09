@@ -1,5 +1,6 @@
 // @flow
 import React, {Component} from 'react';
+import {defineSetState, setState} from './reduxless';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
 import {getLocationParts} from './hash-route';
@@ -21,7 +22,7 @@ async function loadProjects() {
       projectMap[project.id] = project;
     }
 
-    window.setState({projectMap});
+    setState({projectMap});
   } catch (e) {
     handleError(url, e);
   }
@@ -39,7 +40,7 @@ class App extends Component {
     super();
 
     // Allow any component to change the state of this top-most component.
-    window.setState = this.setState.bind(this);
+    defineSetState(this);
 
     // Re-render any time the URL hash changes.
     window.addEventListener('hashchange', () => this.forceUpdate());

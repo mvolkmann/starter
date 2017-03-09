@@ -1,5 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
+import {setState} from './reduxless';
 import {handleError} from './error';
 
 type ProjectType = {
@@ -18,7 +19,7 @@ async function deleteProject(id: number) {
     const res = await fetch(url, {method: 'DELETE'});
     if (!res.ok) return handleError(url, res);
 
-    window.setState(state => {
+    setState(state => {
       const {projectMap} = state;
       delete projectMap[id];
       return {projectMap};

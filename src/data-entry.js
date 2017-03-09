@@ -1,5 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
+import {setState} from './reduxless';
 import {handleError} from './error';
 import DataInput from './data-input';
 
@@ -19,7 +20,7 @@ async function addProject(props) {
     if (!res.ok) return handleError(url, res);
 
     const id = await res.text();
-    window.setState(state => {
+    setState(state => {
       const {projectMap} = state;
       projectMap[id] = {id, name, description};
       return {projectMap};
@@ -37,7 +38,7 @@ class DataEntry extends Component {
 
   onAdd = () => {
     addProject(this.props);
-    window.setState({name: '', description: ''});
+    setState({name: '', description: ''});
   };
 
   onKeyPress = (event: EventType) => {
@@ -46,7 +47,7 @@ class DataEntry extends Component {
 
   onChange = (event: EventType) => {
     const {name, value} = event.target;
-    window.setState({[name]: value});
+    setState({[name]: value});
   };
 
   render() {
@@ -63,6 +64,7 @@ class DataEntry extends Component {
             label="Project Description"
             name="description"
             onChange={this.onChange}
+            onKeyPress={this.onKeyPress}
             value={this.props.description}
           />
           <button onClick={this.onAdd}>Add</button>
