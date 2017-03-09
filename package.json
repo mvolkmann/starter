@@ -43,6 +43,8 @@
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "verify": "npm run lint && cross-env CI=true npm test",
-    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch"
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch",
+    "dbuild": "docker build -t launchpad_ui .",
+    "drun": "docker run --name ui -d -p 3000:3000 launchpad_ui"
   }
 }

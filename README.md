@@ -29,3 +29,7 @@ To see a list of color names supported by all browsers with CSS3 support, includ
 
 > NOTE: Rules do not have defaults with stylelint. Any rule not present is not enforced.
 > If you had a `.stylelintrc` with `{ "rules": {} }` then it would do nothing.
+
+## Docker
+`npm run dbuild` will build the docker image for the web server
+`npm run drun` will start the web server container and expose port 3000 to the host
