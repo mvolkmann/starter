@@ -3,6 +3,7 @@ import React, {Component, PropTypes as t} from 'react';
 import {setState} from './reduxless';
 import {handleError} from './error';
 import DataInput from './data-input';
+import getUrl from './url-util';
 
 type EventType = {
   target: {
@@ -11,9 +12,8 @@ type EventType = {
   }
 };
 
-async function addProject(props) {
-  const {name, description} = props;
-  let url = `${window.BASE_URL}/project?name=${name}`;
+async function addProject({name, description}) {
+  let url : string = getUrl('project', {name, description});
   url += `&description=${description}`;
   try {
     const res = await fetch(url, {method: 'POST'});

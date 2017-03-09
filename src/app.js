@@ -6,11 +6,10 @@ import DataDisplay from './data-display';
 import {getLocationParts} from './hash-route';
 import {handleError} from './error';
 import './app.css';
-
-window.BASE_URL = 'https://localhost';
+import getUrl from './url-util';
 
 async function loadProjects() {
-  const url = `${window.BASE_URL}/project`;
+  const url = getUrl('project');
   try {
     const res = await fetch(url);
     if (!res.ok) return handleError(url, res);
