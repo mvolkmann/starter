@@ -65,8 +65,7 @@ class App extends Component {
           <DataEntry // eslint-disable-line react/jsx-indent
             description={description}
             name={name}
-          />
-        }
+            />}
       </div>
     )
   }

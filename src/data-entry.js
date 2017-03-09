@@ -10,8 +10,10 @@ type EventType = {
   }
 }
 
-async function addProject(name) {
-  const url = `${window.BASE_URL}/project?name=${name}`
+async function addProject(props) {
+  const {name, description} = props
+  let url = `${window.BASE_URL}/project?name=${name}`
+  url += `&description=${description}`
   try {
     const res = await fetch(url, {method: 'POST'})
     if (!res.ok) return handleError(url, res)
@@ -19,7 +21,7 @@ async function addProject(name) {
     const id = await res.text()
     window.setState(state => {
       const {projectMap} = state
-      projectMap[id] = {id, name}
+      projectMap[id] = {id, name, description}
       return {projectMap}
     })
   } catch (e) {
@@ -30,11 +32,11 @@ async function addProject(name) {
 class DataEntry extends Component {
   static propTypes = {
     description: t.string,
-    name: t.string
+    name: t.string,
   };
 
   onAdd = () => {
-    addProject(this.props.name)
+    addProject(this.props)
     window.setState({name: '', description: ''})
   };
 
@@ -44,9 +46,8 @@ class DataEntry extends Component {
 
   onChange = (event: EventType) => {
     const {name, value} = event.target
-    console.log({name, value})
     window.setState({[name]: value})
-  }
+  };
 
   render() {
     return (
