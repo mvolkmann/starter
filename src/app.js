@@ -10,11 +10,8 @@ window.BASE_URL = 'https://localhost';
 
 async function loadProjects() {
   const url = `${window.BASE_URL}/project`;
-  console.log({url});
   try {
-    console.log('try-catch entered');
     const res = await fetch(url);
-    console.log({res});
     if (!res.ok) return handleError(url, res);
 
     const projects = await res.json();
@@ -26,7 +23,6 @@ async function loadProjects() {
 
     window.setState({projectMap});
   } catch (e) {
-    console.log('error occured', {e});
     handleError(url, e);
   }
 }
