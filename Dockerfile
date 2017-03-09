@@ -3,6 +3,7 @@ FROM node:7.7.1-alpine
 RUN mkdir -p /usr/local/ui \
 && apk update \
 && apk upgrade \
+&& apk add -q alpine-sdk \
 && apk add -q vim \
 && apk add -q nano;
 
@@ -12,7 +13,8 @@ COPY package.json package.json
 COPY yarn.lock yarn.lock
 RUN yarn
 
-COPY . . # We are doing this on purpose -- see comment below
+# We are doing this on purpose -- see comment below
+COPY . .
 RUN yarn run build
 
 # These copy steps are done separately because Docker works using layers that can be cached.
@@ -20,4 +22,4 @@ RUN yarn run build
 # taken from https://blog.risingstack.com/minimal-docker-containers-for-node-js/
 
 EXPOSE 3000
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["npm", "run", "start-prod"]

@@ -18,6 +18,8 @@
     "stylelint": "^7.9.0"
   },
   "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "url-search-params": "^0.6.1"
@@ -38,8 +40,10 @@
     "lint-js": "eslint --quiet src __tests__ --ext .js,.jsx",
     "postbuild": "cd build && npm install --production",
     "postcommit": "npm run _format",
+    "preinstall": "yarn global add nodemon",
     "prepush": "npm run verify",
     "start": "npm-run-all -p watch-css start-js",
+    "start-prod": "sudo nodemon ./server.js",
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "verify": "npm run lint && cross-env CI=true npm test",
