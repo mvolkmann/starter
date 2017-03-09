@@ -20,6 +20,12 @@ yarn
 
 Browse https://localhost
 
+If it fails to fetch data, it could be that the browser doesn't yet trust
+the domain of the REST serves.  To enable this:
+1. browse https://localhost/project
+2. click "ADVANCED"
+3. click "Proceed to localhost (unsafe)"
+
 ## Sass Linting
 For all the rules and options for `stylelint` see:
 [Stylelint Rules](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/example-config.md)

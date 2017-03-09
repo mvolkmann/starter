@@ -39,7 +39,8 @@ class DataEntry extends Component {
     if (event.which === 13) this.onAdd();
   };
 
-  onChange = (event: EventType) => window.setState({name: event.target.value});
+  onChange = (event: EventType) =>
+    window.setState({name: event.target.value});
 
   render() {
     return (
@@ -53,7 +54,7 @@ class DataEntry extends Component {
             type="text"
             value={this.props.name}
           />
-          <button onClick={this.onAdd}>Add</button>
+          <button className="add-btn" onClick={this.onAdd}>Add</button>
         </div>
         <a href="#display">Show Projects</a>
       </div>
