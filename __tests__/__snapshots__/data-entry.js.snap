@@ -1,0 +1,25 @@
+exports[`DataEntry should render 1`] = `
+<div
+  className="data-entry">
+  <div>
+    <label>
+      Project Name
+    </label>
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      type="text"
+      value="My Project" />
+    <button
+      className="add-btn"
+      onClick={[Function]}>
+      Add
+    </button>
+  </div>
+  <a
+    href="#display">
+    Show Projects
+  </a>
+</div>
+`;

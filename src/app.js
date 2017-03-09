@@ -50,18 +50,20 @@ class App extends Component {
   }
 
   render() {
-    const {hash} = getLocationParts();
-    const {description, error, name, projectMap} = this.state;
+    const {hash} = getLocationParts(window.location);
+    const {error, name, projectMap} = this.state;
 
     return (
       <div className="app">
         <div className="error">{error}</div>
-        {hash === 'display' ?
+        {
+          hash === 'display' ?
           <DataDisplay projectMap={projectMap} /> :
           <DataEntry // eslint-disable-line react/jsx-indent
             description={description}
             name={name}
-            />}
+          />
+        }
       </div>
     );
   }

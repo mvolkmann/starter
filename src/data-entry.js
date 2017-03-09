@@ -67,7 +67,7 @@ class DataEntry extends Component {
             onKeyPress={this.onKeyPress}
             value={this.props.description}
           />
-          <button onClick={this.onAdd}>Add</button>
+          <button className="add-btn" onClick={this.onAdd}>Add</button>
         </div>
         <a href="#display">Show Projects</a>
       </div>
