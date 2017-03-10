@@ -1,6 +1,6 @@
 // @flow
 import React, {Component} from 'react';
-import {defineSetState, setState} from './reduxless';
+import {defineSetState, setState} from './state-util';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
 import {getLocationParts} from './hash-route';
@@ -51,18 +51,18 @@ class App extends Component {
 
   render() {
     const {hash} = getLocationParts(window.location);
-    const {error, name, projectMap} = this.state;
+    const {description, error, name, projectMap} = this.state;
 
     return (
       <div className="app">
         <div className="error">{error}</div>
         {
           hash === 'display' ?
-          <DataDisplay projectMap={projectMap} /> :
-          <DataEntry // eslint-disable-line react/jsx-indent
-            description={description}
-            name={name}
-          />
+            <DataDisplay projectMap={projectMap} /> :
+            <DataEntry // eslint-disable-line react/jsx-indent
+              description={description}
+              name={name}
+            />
         }
       </div>
     );

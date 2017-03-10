@@ -1,6 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
-import {setState} from './reduxless';
+import {setState} from './state-util';
 import {handleError} from './error';
 import DataInput from './data-input';
 import getUrl from './url-util';

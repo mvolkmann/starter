@@ -1,5 +1,5 @@
 // @flow
-import {setState} from './reduxless';
+import {setState} from './state-util';
 
 type ResponseType = {
   message?: string,
