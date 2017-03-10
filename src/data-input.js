@@ -1,17 +1,18 @@
 import React, {PropTypes as t} from 'react';
 
 const DataInput = ({autoFocus, label, name, onChange, onKeyPress, value}) => (
-  <span>
+  <div className="data-input">
     <label>{label}</label>
     <input
       autoFocus={autoFocus}
+      className="form-control"
       name={name}
       onChange={onChange}
       onKeyPress={onKeyPress}
       type="text"
       value={value}
     />
-  </span>
+  </div>
 );
 
 DataInput.propTypes = {

@@ -2,32 +2,36 @@ exports[`DataEntry should render 1`] = `
 <div
   className="data-entry">
   <div>
-    <span>
+    <div
+      className="data-input">
       <label>
         Project Name
       </label>
       <input
         autoFocus={undefined}
+        className="form-control"
         name="name"
         onChange={[Function]}
         onKeyPress={undefined}
         type="text"
         value="My Project" />
-    </span>
-    <span>
+    </div>
+    <div
+      className="data-input">
       <label>
         Project Description
       </label>
       <input
         autoFocus={undefined}
+        className="form-control"
         name="description"
         onChange={[Function]}
         onKeyPress={[Function]}
         type="text"
         value={undefined} />
-    </span>
+    </div>
     <button
-      className="add-btn"
+      className="add-btn btn"
       onClick={[Function]}>
       Add
     </button>

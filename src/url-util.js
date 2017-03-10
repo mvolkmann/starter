@@ -3,22 +3,17 @@ type ParamsType = {
   description: string
 };
 
-export default function getUrl(
+export function getUrl(
   path: string,
   queryParams: ParamsType,
   BASE_URL: string = 'https://localhost',
 ) {
   if (!queryParams) return `${BASE_URL}/${path}`;
-  const queryKeys = Object.keys(queryParams);
-  let queryString;
-  for (const i in queryKeys) {
-    if (i < queryKeys.length - 1) {
-      queryString += `${queryKeys[i]}&`;
-    } else {
-      queryString += queryKeys[i];
-    }
+
+  let queryString = '';
+  for (const key of Object.keys(queryParams).sort()) {
+    queryString += `&${key}=${queryParams[key]}`;
   }
 
-  console.log({BASE_URL, path, queryString});
-  return `${BASE_URL}/${path}?${queryString}`;
+  return `${BASE_URL}/${path}?${queryString.substring(1)}`;
 }

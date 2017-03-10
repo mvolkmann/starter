@@ -1,9 +1,9 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
-import {setState} from './state-util';
-import {handleError} from './error';
 import DataInput from './data-input';
-import getUrl from './url-util';
+import {getUrl} from './url-util';
+import {handleError} from './error';
+import {setState} from './state-util';
 
 type EventType = {
   target: {
@@ -67,7 +67,7 @@ class DataEntry extends Component {
             onKeyPress={this.onKeyPress}
             value={this.props.description}
           />
-          <button className="add-btn" onClick={this.onAdd}>Add</button>
+          <button className="add-btn btn" onClick={this.onAdd}>Add</button>
         </div>
         <a href="#display">Show Projects</a>
       </div>
