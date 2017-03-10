@@ -1,7 +1,8 @@
 exports[`DataDisplay should render 1`] = `
 <div
   className="data-display">
-  <table>
+  <table
+    className="table table-striped">
     <caption>
       Projects
     </caption>

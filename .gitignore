@@ -1,6 +1,5 @@
 *.js.map
 *.log
-*.min.css
 *.min.js
 *.out
 .*.swp

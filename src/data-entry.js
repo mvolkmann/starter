@@ -71,6 +71,7 @@ class DataEntry extends Component {
           <button className="add-btn btn" onClick={this.onAdd}>Add</button>
         </div>
         <a href="#display">Show Projects</a>
+        <i className="fa fa-snowflake-o" aria-hidden="true" />
       </div>
     );
   }

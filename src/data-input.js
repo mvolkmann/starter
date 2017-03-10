@@ -28,4 +28,3 @@ DataInput.propTypes = {
 };
 
 export default DataInput;
-
