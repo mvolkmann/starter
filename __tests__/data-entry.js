@@ -7,19 +7,19 @@ import snapshot from './snapshot';
 describe('DataEntry', () => {
   const projectMap = {
     1: {id: 1, name: 'Foo', description: 'desc 1'},
-    2: {id: 2, name: 'Bar', description: 'desc 2'}
+    2: {id: 2, name: 'Bar', description: 'desc 2'},
   };
 
   let state;
 
-  function addCheck(state, projectDescription, projectName, done) {
-    setTimeout(() => { // run in next tick
+  function addCheck(state, name, description, done) {
+    setTimeout(() => {
+      // run in next tick
       try {
         expect(state.name).toBe('');
         const id = 3;
         const project = state.projectMap[id];
-        expect(project).toEqual(
-          {id, name: projectName, description: projectDescription});
+        expect(project).toEqual({id, name, description});
         done();
       } catch (e) {
         done.fail(e);
@@ -33,7 +33,7 @@ describe('DataEntry', () => {
       expect(options.method).toBe('POST');
       return Promise.resolve({
         ok: true,
-        text: () => 3 // id of new project
+        text: () => 3, // id of new project
       });
     });
 
@@ -49,47 +49,74 @@ describe('DataEntry', () => {
     snapshot(<DataEntry description={description} name={name} />);
   });
 
-  it('should support name entry', () =>
-    new Promise(resolve => {
-      const expectedName = 'My New Project';
-      defineSetState(newState => {
-        expect(newState).toEqual({name: expectedName});
-        resolve();
-      });
+  it(
+    'should support name entry',
+    () =>
+      new Promise(resolve => {
+        const expected = 'My New Project';
 
-      const wrapper = mount(<DataEntry description="" name="" />);
-      const input = wrapper.find('input').first();
-      input.simulate('change', {target: {value: expectedName}});
-    }));
+        defineSetState(newState => {
+          expect(newState).toEqual({name: expected});
+          resolve();
+        });
+
+        const wrapper = mount(<DataEntry description="" name="" />);
+        const input = wrapper.find('.name-input input');
+        input.simulate('change', {target: {name: 'name', value: expected}});
+      })
+  );
+
+  it(
+    'should support description entry',
+    () =>
+      new Promise(resolve => {
+        const expected = 'My Description';
+
+        defineSetState(newState => {
+          expect(newState).toEqual({description: expected});
+          resolve();
+        });
+
+        const wrapper = mount(<DataEntry description="" name="" />);
+        const input = wrapper.find('.description-input input');
+        input.simulate('change',
+          {target: {name: 'description', value: expected}});
+      })
+  );
 
   it('should add a project by pressing Add button', done => {
     addSetup();
 
     state = {name: '', description: '', projectMap};
     const onKeyPress = jest.fn();
-    const projectName = 'My New Project';
-    const projectDescription = 'My Project desc';
+    const name = 'My New Project';
+    const description = 'My Project desc';
     const wrapper = mount(
-      <DataEntry name="name" value={projectName} onKeyPress={onKeyPress} />
+      <DataEntry
+        description={description}
+        name={name}
+        onKeyPress={onKeyPress}
+      />
     );
     const addBtn = wrapper.find('.add-btn');
     addBtn.simulate('click');
 
-    addCheck(state, projectDescription, projectName, done);
+    addCheck(state, name, description, done);
   });
 
   it('should add a project by pressing enter key', done => {
     addSetup();
 
     state = {name: '', projectMap};
-    const projectName = 'My New Project';
+    const name = 'My New Project';
     const description = 'My description';
     const wrapper = mount(
-      <DataEntry description={description} name={projectName} />
+      <DataEntry description={description} name={name} />
     );
-    const input = wrapper.find('input');
+    const input = wrapper.find('.description-input');
     input.simulate('keyPress', {which: 13});
 
-    addCheck(state, projectName, done);
+    addCheck(state, name, description, done);
   });
 });
+
