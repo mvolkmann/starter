@@ -28,7 +28,7 @@ exports[`DataEntry should render 1`] = `
         onChange={[Function]}
         onKeyPress={[Function]}
         type="text"
-        value={undefined} />
+        value="My description" />
     </div>
     <button
       className="add-btn btn"

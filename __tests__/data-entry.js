@@ -12,13 +12,14 @@ describe('DataEntry', () => {
 
   let state;
 
-  function addCheck(state, projectName, done) {
+  function addCheck(state, projectDescription, projectName, done) {
     setTimeout(() => { // run in next tick
       try {
         expect(state.name).toBe('');
         const id = 3;
         const project = state.projectMap[id];
-        expect(project).toEqual({id, name: projectName});
+        expect(project).toEqual(
+          {id, name: projectName, description: projectDescription});
         done();
       } catch (e) {
         done.fail(e);
@@ -61,19 +62,20 @@ describe('DataEntry', () => {
       input.simulate('change', {target: {value: expectedName}});
     }));
 
-  fit('should add a project by pressing Add button', done => {
+  it('should add a project by pressing Add button', done => {
     addSetup();
 
-    state = {name: '', projectMap};
+    state = {name: '', description: '', projectMap};
+    const onKeyPress = jest.fn();
     const projectName = 'My New Project';
-    const description = 'My description';
+    const projectDescription = 'My Project desc';
     const wrapper = mount(
-      <DataEntry description={description} name={projectName} />
+      <DataEntry name="name" value={projectName} onKeyPress={onKeyPress} />
     );
     const addBtn = wrapper.find('.add-btn');
     addBtn.simulate('click');
 
-    addCheck(state, projectName, done);
+    addCheck(state, projectDescription, projectName, done);
   });
 
   it('should add a project by pressing enter key', done => {
