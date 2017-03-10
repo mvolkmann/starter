@@ -56,14 +56,12 @@ class App extends Component {
     return (
       <div className="app">
         <div className="error">{error}</div>
-        {
-          hash === 'display' ?
-            <DataDisplay projectMap={projectMap} /> :
-            <DataEntry // eslint-disable-line react/jsx-indent
-              description={description}
-              name={name}
-            />
-        }
+        {hash === 'display' ?
+          <DataDisplay projectMap={projectMap} /> :
+          <DataEntry // eslint-disable-line react/jsx-indent
+            description={description}
+            name={name}
+            />}
       </div>
     );
   }
