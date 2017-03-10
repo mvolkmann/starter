@@ -48,9 +48,47 @@ exports[`App should render 1`] = `
         href="#display">
         Show Projects
       </a>
-      <i
-        aria-hidden="true"
-        className="fa fa-snowflake-o" />
+      <div
+        className="icons">
+        <span
+          aria-hidden={true}
+          className="fa fa-envelope-o fa-2x" />
+        <span
+          aria-hidden={true}
+          className="fa fa-check-circle fa-2x"
+          style={
+            Object {
+              "color": "green",
+            }
+          } />
+        <span
+          className="fa-stack">
+          <span
+            aria-hidden={true}
+            className="fa fa-circle-o fa-stack-2x"
+            style={
+              Object {
+                "color": "red",
+              }
+            } />
+          <span
+            aria-hidden={true}
+            className="fa fa-exclamation fa-stack-1x"
+            style={
+              Object {
+                "color": "red",
+              }
+            } />
+        </span>
+        <span
+          aria-hidden={true}
+          className="fa fa-times-circle-o fa-2x fa-inverse"
+          style={
+            Object {
+              "color": "red",
+            }
+          } />
+      </div>
     </div>
     <div>
       <button
