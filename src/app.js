@@ -71,7 +71,7 @@ class App extends Component {
         text: 'Cancel',
         kind: 'danger',
         onClick: () => console.log('cancelled!'),
-      }
+      },
     ];
 
     return (
