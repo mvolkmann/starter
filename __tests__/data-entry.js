@@ -6,19 +6,20 @@ import snapshot from './snapshot';
 
 describe('DataEntry', () => {
   const projectMap = {
-    1: {id: 1, name: 'Foo'},
-    2: {id: 2, name: 'Bar'}
+    1: {id: 1, name: 'Foo', description: 'desc 1'},
+    2: {id: 2, name: 'Bar', description: 'desc 2'}
   };
 
   let state;
 
-  function addCheck(state, projectName, done) {
+  function addCheck(state, projectDescription, projectName, done) {
     setTimeout(() => { // run in next tick
       try {
         expect(state.name).toBe('');
         const id = 3;
         const project = state.projectMap[id];
-        expect(project).toEqual({id, name: projectName});
+        expect(project).toEqual(
+          {id, name: projectName, description: projectDescription});
         done();
       } catch (e) {
         done.fail(e);
@@ -44,7 +45,8 @@ describe('DataEntry', () => {
 
   it('should render', () => {
     const name = 'My Project';
-    snapshot(<DataEntry name={name} />);
+    const description = 'My description';
+    snapshot(<DataEntry description={description} name={name} />);
   });
 
   it('should support name entry', () =>
@@ -55,21 +57,25 @@ describe('DataEntry', () => {
         resolve();
       });
 
-      const wrapper = mount(<DataEntry name="" />);
-      const input = wrapper.find('input');
+      const wrapper = mount(<DataEntry description="" name="" />);
+      const input = wrapper.find('input').first();
       input.simulate('change', {target: {value: expectedName}});
     }));
 
-  fit('should add a project by pressing Add button', done => {
+  it('should add a project by pressing Add button', done => {
     addSetup();
 
-    state = {name: '', projectMap};
+    state = {name: '', description: '', projectMap};
+    const onKeyPress = jest.fn();
     const projectName = 'My New Project';
-    const wrapper = mount(<DataEntry name={projectName} />);
+    const projectDescription = 'My Project desc';
+    const wrapper = mount(
+      <DataEntry name="name" value={projectName} onKeyPress={onKeyPress} />
+    );
     const addBtn = wrapper.find('.add-btn');
     addBtn.simulate('click');
 
-    addCheck(state, projectName, done);
+    addCheck(state, projectDescription, projectName, done);
   });
 
   it('should add a project by pressing enter key', done => {
@@ -77,7 +83,10 @@ describe('DataEntry', () => {
 
     state = {name: '', projectMap};
     const projectName = 'My New Project';
-    const wrapper = mount(<DataEntry name={projectName} />);
+    const description = 'My description';
+    const wrapper = mount(
+      <DataEntry description={description} name={projectName} />
+    );
     const input = wrapper.find('input');
     input.simulate('keyPress', {which: 13});
 

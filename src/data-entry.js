@@ -55,12 +55,14 @@ class DataEntry extends Component {
       <div className="data-entry">
         <div>
           <DataInput
+            className="name-input"
             label="Project Name"
             name="name"
             onChange={this.onChange}
             value={this.props.name}
           />
           <DataInput
+            className="description-input"
             label="Project Description"
             name="description"
             onChange={this.onChange}
