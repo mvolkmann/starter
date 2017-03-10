@@ -53,12 +53,14 @@ class DataDisplay extends Component {
       <div className="data-display">
         <table>
           <caption>Projects</caption>
-          <tbody>
+          <thead>
             <tr>
               <th />
               <th>Name</th>
               <th>Description</th>
             </tr>
+          </thead>
+          <tbody>
             {sortedProjects.map((project: ProjectType) => (
               <tr key={project.id}>
                 <td>
@@ -83,3 +85,4 @@ class DataDisplay extends Component {
 }
 
 export default DataDisplay;
+

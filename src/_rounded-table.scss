@@ -1,0 +1,49 @@
+@mixin rounded-table($borderRadius, $borderColor, $borderWidth) {
+  $halfRadius: ($borderRadius / 2);
+
+  border: solid $borderColor $borderWidth;
+  border-collapse: separate;
+  border-radius: $borderRadius;
+  border-spacing: 0;
+
+  td,
+  th {
+    /* border: solid $borderColor $halfRadius; */
+    border: solid $borderColor 1px;
+    padding: $space;
+  }
+
+  th:first-child {
+    border-top-left-radius: $tableRadius;
+  }
+
+  th:last-child {
+    border-top-right-radius: $tableRadius;
+  }
+
+  tr:last-child td:first-child {
+    border-bottom-left-radius: $tableRadius;
+  }
+
+  tr:last-child td:last-child {
+    border-bottom-right-radius: $tableRadius;
+  }
+
+  td:first-child,
+  th:first-child {
+    border-left: none;
+  }
+
+  td:last-child,
+  th:last-child {
+    border-right: none;
+  }
+
+  tr:first-child th {
+    border-top: none;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
