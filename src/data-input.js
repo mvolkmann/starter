@@ -1,4 +1,4 @@
-import React, {PropTypes as t} from 'react';
+import React, {PropTypes as t} from 'react'
 
 const DataInput = ({autoFocus, label, name, onChange, onKeyPress, value}) => (
   <div className="data-input">
@@ -13,7 +13,7 @@ const DataInput = ({autoFocus, label, name, onChange, onKeyPress, value}) => (
       value={value}
     />
   </div>
-);
+)
 
 DataInput.propTypes = {
   autoFocus: t.bool,
@@ -22,6 +22,6 @@ DataInput.propTypes = {
   onChange: t.func,
   onKeyPress: t.func,
   value: t.string.isRequired,
-};
+}
 
-export default DataInput;
+export default DataInput
