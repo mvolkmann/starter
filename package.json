@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "url-search-params": "^0.6.1"
@@ -46,11 +48,15 @@
     "lint:scss": "stylelint \"src/*.scss\"",
     "postbuild": "cd build && npm install --production",
     "postcommit": "npm run _format",
+    "preinstall": "yarn global add nodemon",
     "prepush": "npm run verify",
     "start": "npm-run-all -p watch-css start-js",
+    "start-prod": "sudo nodemon ./server.js",
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "verify": "npm run lint && cross-env CI=true npm test",
-    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch"
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch",
+    "dbuild": "docker build -t launchpad_ui .",
+    "drun": "docker run --name ui -d -p 3000:3000 launchpad_ui"
   }
 }
