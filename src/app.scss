@@ -58,6 +58,11 @@ $warning-border: #ea9142;
     margin-left: $space;
   }
 
+  .icons > * {
+    margin-right: $space;
+    vertical-align: top;
+  }
+
   input {
     display: inline-block;
     width: 300px;
