@@ -15,9 +15,8 @@ describe('DataDisplay', () => {
 
   it('should delete a project', () => {
     // Mock the fetch call to delete a project.
-    window.BASE_URL = 'https://localhost';
     window.fetch = jest.fn().mockImplementation((url, options) => {
-      expect(url).toContain(`${window.BASE_URL}/project/`);
+      expect(url).toContain('https://localhost/project/');
       expect(options.method).toBe('DELETE');
       return Promise.resolve({ok: true});
     });

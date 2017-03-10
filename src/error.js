@@ -8,6 +8,8 @@ type ResponseType = {
 };
 
 export function handleError(url: string, res: ResponseType): void {
-  const error = res.status === 440 ? 'Session Timeout' : res.message || res.statusText;
+  const error = res.status === 440 ?
+    'Session Timeout' :
+    res.message || res.statusText;
   setState({error});
 }
