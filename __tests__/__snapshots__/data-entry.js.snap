@@ -9,7 +9,7 @@ exports[`DataEntry should render 1`] = `
       </label>
       <input
         autoFocus={undefined}
-        className="form-control"
+        className="form-control name-input"
         name="name"
         onChange={[Function]}
         onKeyPress={undefined}
@@ -23,7 +23,7 @@ exports[`DataEntry should render 1`] = `
       </label>
       <input
         autoFocus={undefined}
-        className="form-control"
+        className="form-control description-input"
         name="description"
         onChange={[Function]}
         onKeyPress={[Function]}
@@ -40,5 +40,8 @@ exports[`DataEntry should render 1`] = `
     href="#display">
     Show Projects
   </a>
+  <i
+    aria-hidden="true"
+    className="fa fa-snowflake-o" />
 </div>
 `;

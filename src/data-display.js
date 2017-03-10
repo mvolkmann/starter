@@ -51,14 +51,16 @@ class DataDisplay extends Component {
 
     return (
       <div className="data-display">
-        <table>
+        <table className="table table-striped">
           <caption>Projects</caption>
-          <tbody>
+          <thead>
             <tr>
               <th />
               <th>Name</th>
               <th>Description</th>
             </tr>
+          </thead>
+          <tbody>
             {sortedProjects.map((project: ProjectType) => (
               <tr key={project.id}>
                 <td>

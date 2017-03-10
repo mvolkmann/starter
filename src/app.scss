@@ -1,4 +1,7 @@
+@import './rounded-table';
+
 $space: 5px;
+$tableRadius: 10px;
 
 /* Velocity colors */
 $danger-bg: #fcf3f3;
@@ -34,7 +37,9 @@ $warning-border: #ea9142;
   }
 
   table {
-    border-collapse: collapse;
+    @include rounded-table();
+
+    width: 400px;
 
     caption {
       font-size: 18px;
@@ -42,10 +47,8 @@ $warning-border: #ea9142;
       margin-top: 10px;
     }
 
-    td,
     th {
-      border: solid gray 1px;
-      padding: $space;
+      background-color: linen;
     }
   }
 }

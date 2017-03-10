@@ -1,11 +1,12 @@
 exports[`DataDisplay should render 1`] = `
 <div
   className="data-display">
-  <table>
+  <table
+    className="table table-striped">
     <caption>
       Projects
     </caption>
-    <tbody>
+    <thead>
       <tr>
         <th />
         <th>
@@ -15,6 +16,8 @@ exports[`DataDisplay should render 1`] = `
           Description
         </th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
         <td>
           <button

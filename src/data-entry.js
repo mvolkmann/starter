@@ -13,8 +13,7 @@ type EventType = {
 };
 
 async function addProject({name, description}) {
-  let url: string = getUrl('project', {name, description});
-  url += `&description=${description}`;
+  const url: string = getUrl('project', {name, description});
   try {
     const res = await fetch(url, {method: 'POST'});
     if (!res.ok) return handleError(url, res);
@@ -72,6 +71,7 @@ class DataEntry extends Component {
           <button className="add-btn btn" onClick={this.onAdd}>Add</button>
         </div>
         <a href="#display">Show Projects</a>
+        <i className="fa fa-snowflake-o" aria-hidden="true" />
       </div>
     );
   }

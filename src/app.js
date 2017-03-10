@@ -22,6 +22,7 @@ async function loadProjects() {
     for (const project of projects) {
       projectMap[project.id] = project;
     }
+    console.log('app.js loadProjects: projectMap =', projectMap);
 
     setState({projectMap});
   } catch (e) {
