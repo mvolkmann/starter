@@ -6,49 +6,69 @@ exports[`App should render 1`] = `
     
   </div>
   <div
-    className="data-entry">
+    className="body">
+    <div
+      className="data-entry">
+      <div>
+        <div
+          className="data-input">
+          <label>
+            Project Name
+          </label>
+          <input
+            autoFocus={undefined}
+            className="form-control name-input"
+            name="name"
+            onChange={[Function]}
+            onKeyPress={undefined}
+            type="text"
+            value="" />
+        </div>
+        <div
+          className="data-input">
+          <label>
+            Project Description
+          </label>
+          <input
+            autoFocus={undefined}
+            className="form-control description-input"
+            name="description"
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            type="text"
+            value="" />
+        </div>
+        <button
+          className="add-btn btn"
+          onClick={[Function]}>
+          Add
+        </button>
+      </div>
+      <a
+        href="#display">
+        Show Projects
+      </a>
+      <i
+        aria-hidden="true"
+        className="fa fa-snowflake-o" />
+    </div>
     <div>
-      <div
-        className="data-input">
-        <label>
-          Project Name
-        </label>
-        <input
-          autoFocus={undefined}
-          className="form-control name-input"
-          name="name"
-          onChange={[Function]}
-          onKeyPress={undefined}
-          type="text"
-          value="" />
-      </div>
-      <div
-        className="data-input">
-        <label>
-          Project Description
-        </label>
-        <input
-          autoFocus={undefined}
-          className="form-control description-input"
-          name="description"
-          onChange={[Function]}
-          onKeyPress={[Function]}
-          type="text"
-          value="" />
-      </div>
       <button
-        className="add-btn btn"
+        className="btn btn-primary"
         onClick={[Function]}>
-        Add
+        Save
+      </button>
+      <button
+        className="btn btn-info"
+        onClick={[Function]}>
+        Info
+      </button>
+      <button
+        className="btn btn-danger"
+        onClick={[Function]}>
+        Cancel
       </button>
     </div>
-    <a
-      href="#display">
-      Show Projects
-    </a>
-    <i
-      aria-hidden="true"
-      className="fa fa-snowflake-o" />
   </div>
 </div>
 `;
