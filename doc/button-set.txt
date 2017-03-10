@@ -1,0 +1,13 @@
+ButtonSet component
+
+This renders a set of buttons and associates onClick handlers.
+
+Props:
+- buttons - an array of objects with "text", "kind", and "onClick" properties
+  * text is a string
+  * kind is one of "default", "primary", "info", "success", "secondary", or "danger"
+    - these correspond to colors defined in app.scss
+  * onClick is a function
+
+Notes:
+  The className prop on the div element that contains all the buttons should be "button-set".

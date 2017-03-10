@@ -49,7 +49,7 @@ class App extends Component {
   }
 
   render() {
-    const {hash} = getLocationParts();
+    const {hash} = getLocationParts(window.location);
     const {error, name, projectMap} = this.state;
 
     return (
@@ -57,7 +57,7 @@ class App extends Component {
         <div className="error">{error}</div>
         {hash === 'display' ?
           <DataDisplay projectMap={projectMap} /> :
-            <DataEntry name={name} />}
+          <DataEntry name={name} />}
       </div>
     );
   }

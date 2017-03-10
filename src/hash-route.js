@@ -2,10 +2,10 @@
 
 import URLSearchParams from 'url-search-params'; // a polyfill for IE
 
-export function getLocationParts() {
+export function getLocationParts(loc) {
   return {
-    hash: location.hash.substring(1),
-    path: location.pathname,
-    query: new URLSearchParams(location.search),
+    hash: loc.hash.substring(1),
+    path: loc.pathname,
+    query: new URLSearchParams(loc.search),
   };
 }
