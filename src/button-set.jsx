@@ -1,4 +1,4 @@
-import React, {PropTypes as t} from 'react'
+import React, {PropTypes as t} from 'react';
 
 type ButtonKindType =
   | 'danger'
@@ -6,13 +6,13 @@ type ButtonKindType =
   | 'info'
   | 'primary'
   | 'secondary'
-  | 'success'
+  | 'success';
 
 type ButtonType = {
   text: string,
   kind: ButtonKindType,
   onClick: () => any
-}
+};
 
 const ButtonSet = ({buttons}: Array<ButtonType>) => (
   <div>
@@ -26,7 +26,7 @@ const ButtonSet = ({buttons}: Array<ButtonType>) => (
       </button>
     ))}
   </div>
-)
+);
 
 ButtonSet.propTypes = {
   buttons: t.arrayOf(
@@ -43,7 +43,7 @@ ButtonSet.propTypes = {
       onClick: t.func,
     }),
   ).isRequired,
-}
+};
 
-export default ButtonSet
+export default ButtonSet;
 

@@ -1,5 +1,5 @@
-export let setState
+export let setState;
 
 export function defineSetState(thing) {
-  setState = typeof thing === 'function' ? thing : thing.setState.bind(thing)
+  setState = typeof thing === 'function' ? thing : thing.setState.bind(thing);
 }

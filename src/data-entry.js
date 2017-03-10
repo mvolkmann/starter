@@ -1,32 +1,32 @@
 // @flow
-import React, {Component, PropTypes as t} from 'react'
-import DataInput from './data-input'
-import {getUrl} from './url-util'
-import {handleError} from './error'
-import {setState} from './state-util'
+import React, {Component, PropTypes as t} from 'react';
+import DataInput from './data-input';
+import {getUrl} from './url-util';
+import {handleError} from './error';
+import {setState} from './state-util';
 
 type EventType = {
   target: {
     name: string,
     value: string
   }
-}
+};
 
 async function addProject({name, description}) {
-  let url: string = getUrl('project', {name, description})
-  url += `&description=${description}`
+  let url: string = getUrl('project', {name, description});
+  url += `&description=${description}`;
   try {
-    const res = await fetch(url, {method: 'POST'})
-    if (!res.ok) return handleError(url, res)
+    const res = await fetch(url, {method: 'POST'});
+    if (!res.ok) return handleError(url, res);
 
-    const id = await res.text()
+    const id = await res.text();
     setState(state => {
-      const {projectMap} = state
-      projectMap[id] = {id, name, description}
-      return {projectMap}
-    })
+      const {projectMap} = state;
+      projectMap[id] = {id, name, description};
+      return {projectMap};
+    });
   } catch (e) {
-    handleError(url, e)
+    handleError(url, e);
   }
 }
 
@@ -37,17 +37,17 @@ class DataEntry extends Component {
   };
 
   onAdd = () => {
-    addProject(this.props)
-    setState({name: '', description: ''})
+    addProject(this.props);
+    setState({name: '', description: ''});
   };
 
   onKeyPress = (event: EventType) => {
-    if (event.which === 13) this.onAdd()
+    if (event.which === 13) this.onAdd();
   };
 
   onChange = (event: EventType) => {
-    const {name, value} = event.target
-    setState({[name]: value})
+    const {name, value} = event.target;
+    setState({[name]: value});
   };
 
   render() {
@@ -73,8 +73,8 @@ class DataEntry extends Component {
         </div>
         <a href="#display">Show Projects</a>
       </div>
-    )
+    );
   }
 }
 
-export default DataEntry
+export default DataEntry;
