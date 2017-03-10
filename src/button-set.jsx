@@ -1,5 +1,7 @@
+// @flow
 import React, {PropTypes as t} from 'react';
 
+// Types
 type ButtonKindType =
   | 'danger'
   | 'default'
@@ -14,11 +16,16 @@ type ButtonType = {
   onClick: () => any
 };
 
-const ButtonSet = ({buttons}: Array<ButtonType>) => (
+type ButtonSetPropType = {
+  buttons: Array<ButtonType>
+};
+
+// View
+const ButtonSet = ({buttons}: ButtonSetPropType) => (
   <div>
     {buttons.map(button => (
       <button
-        className="btn btn-{button.kind}"
+        className={`btn btn-${button.kind}`}
         key={button.text}
         onClick={button.onClick}
       >
@@ -28,6 +35,7 @@ const ButtonSet = ({buttons}: Array<ButtonType>) => (
   </div>
 );
 
+// PropTypes
 ButtonSet.propTypes = {
   buttons: t.arrayOf(
     t.shape({

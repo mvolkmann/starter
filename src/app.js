@@ -59,9 +59,19 @@ class App extends Component {
     const buttons = [
       {
         text: 'Save',
-        type: 'Primary',
-        onClick: () => console.log('clicked!'),
+        kind: 'primary',
+        onClick: () => console.log('saved!'),
       },
+      {
+        text: 'Info',
+        kind: 'info',
+        onClick: () => console.log('info!'),
+      },
+      {
+        text: 'Cancel',
+        kind: 'danger',
+        onClick: () => console.log('cancelled!'),
+      }
     ];
 
     return (
