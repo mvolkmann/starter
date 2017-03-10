@@ -76,16 +76,19 @@ class DataEntry extends Component {
 
         <div className="icons">
           <FontAwesome name="envelope-o" size="2x" />
-          <FontAwesome name="check-circle"
-            size="2x" style={{color: 'green'}} />
+          <FontAwesome name="check-circle" size="2x" style={{color: 'green'}} />
 
           <span className="fa-stack">
             <FontAwesome name="circle-o" stack="2x" style={{color: 'red'}} />
             <FontAwesome name="exclamation" stack="1x" style={{color: 'red'}} />
           </span>
 
-          <FontAwesome name="times-circle-o"
-            inverse size="2x" style={{color: 'red'}} />
+          <FontAwesome
+            name="times-circle-o"
+            inverse
+            size="2x"
+            style={{color: 'red'}}
+          />
         </div>
       </div>
     );
@@ -93,4 +96,3 @@ class DataEntry extends Component {
 }
 
 export default DataEntry;
-
