@@ -85,4 +85,3 @@ class DataDisplay extends Component {
 }
 
 export default DataDisplay;
-
