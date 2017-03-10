@@ -1,4 +1,5 @@
 // @flow
+import {setState} from './reduxless';
 
 type ResponseType = {
   message?: string,
@@ -7,5 +8,5 @@ type ResponseType = {
 
 export function handleError(url: string, res: ResponseType): void {
   const error = res.status === 440 ? 'Session Timeout' : res.message;
-  window.setState({error});
+  setState({error});
 }

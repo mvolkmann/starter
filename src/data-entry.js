@@ -1,23 +1,28 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
+import {setState} from './reduxless';
 import {handleError} from './error';
+import DataInput from './data-input';
+import getUrl from './url-util';
 
 type EventType = {
   target: {
+    name: string,
     value: string
   }
 };
 
-async function addProject(name) {
-  const url = `${window.BASE_URL}/project?name=${name}`;
+async function addProject({name, description}) {
+  let url: string = getUrl('project', {name, description});
+  url += `&description=${description}`;
   try {
     const res = await fetch(url, {method: 'POST'});
     if (!res.ok) return handleError(url, res);
 
     const id = await res.text();
-    window.setState(state => {
+    setState(state => {
       const {projectMap} = state;
-      projectMap[id] = {id, name};
+      projectMap[id] = {id, name, description};
       return {projectMap};
     });
   } catch (e) {
@@ -27,31 +32,40 @@ async function addProject(name) {
 
 class DataEntry extends Component {
   static propTypes = {
+    description: t.string,
     name: t.string,
   };
 
   onAdd = () => {
-    addProject(this.props.name);
-    window.setState({name: ''});
+    addProject(this.props);
+    setState({name: '', description: ''});
   };
 
   onKeyPress = (event: EventType) => {
     if (event.which === 13) this.onAdd();
   };
 
-  onChange = (event: EventType) => window.setState({name: event.target.value});
+  onChange = (event: EventType) => {
+    const {name, value} = event.target;
+    setState({[name]: value});
+  };
 
   render() {
     return (
       <div className="data-entry">
         <div>
-          <label>Project Name</label>
-          <input
-            autoFocus
+          <DataInput
+            label="Project Name"
+            name="name"
+            onChange={this.onChange}
+            value={this.props.name}
+          />
+          <DataInput
+            label="Project Description"
+            name="description"
             onChange={this.onChange}
             onKeyPress={this.onKeyPress}
-            type="text"
-            value={this.props.name}
+            value={this.props.description}
           />
           <button className="add-btn" onClick={this.onAdd}>Add</button>
         </div>

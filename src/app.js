@@ -1,15 +1,15 @@
 // @flow
 import React, {Component} from 'react';
+import {defineSetState, setState} from './reduxless';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
 import {getLocationParts} from './hash-route';
 import {handleError} from './error';
 import './app.css';
-
-window.BASE_URL = 'https://localhost';
+import getUrl from './url-util';
 
 async function loadProjects() {
-  const url = `${window.BASE_URL}/project`;
+  const url = getUrl('project');
   try {
     const res = await fetch(url);
     if (!res.ok) return handleError(url, res);
@@ -21,7 +21,7 @@ async function loadProjects() {
       projectMap[project.id] = project;
     }
 
-    window.setState({projectMap});
+    setState({projectMap});
   } catch (e) {
     handleError(url, e);
   }
@@ -29,6 +29,7 @@ async function loadProjects() {
 
 class App extends Component {
   state = {
+    description: '',
     error: '',
     name: '',
     projectMap: {},
@@ -38,7 +39,7 @@ class App extends Component {
     super();
 
     // Allow any component to change the state of this top-most component.
-    window.setState = this.setState.bind(this);
+    defineSetState(this);
 
     // Re-render any time the URL hash changes.
     window.addEventListener('hashchange', () => this.forceUpdate());
@@ -55,9 +56,14 @@ class App extends Component {
     return (
       <div className="app">
         <div className="error">{error}</div>
-        {hash === 'display' ?
+        {
+          hash === 'display' ?
           <DataDisplay projectMap={projectMap} /> :
-          <DataEntry name={name} />}
+          <DataEntry // eslint-disable-line react/jsx-indent
+            description={description}
+            name={name}
+          />
+        }
       </div>
     );
   }

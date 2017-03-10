@@ -1,14 +1,3 @@
-*.js.map
-*.log
-*.min.css
-*.min.js
-*.out
-.*.swp
-.DS_Store
+flow-typed
 .eslintrc.json
-npm-debug.log*
-src/**/*.css
-
-build/
-coverage/
-node_modules/
+node_modules
