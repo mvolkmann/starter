@@ -51,7 +51,7 @@ class DataDisplay extends Component {
 
     return (
       <div className="data-display">
-        <table>
+        <table className="table table-striped">
           <caption>Projects</caption>
           <thead>
             <tr>

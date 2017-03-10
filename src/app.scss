@@ -37,7 +37,9 @@ $warning-border: #ea9142;
   }
 
   table {
-    @include rounded-table(10px, blue, 3px);
+    @include rounded-table();
+
+    width: 400px;
 
     caption {
       font-size: 18px;

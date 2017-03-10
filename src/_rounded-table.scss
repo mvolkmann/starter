@@ -1,7 +1,12 @@
-@mixin rounded-table($borderRadius, $borderColor, $borderWidth) {
+@mixin rounded-table(
+  $borderRadius: 10px,
+  $borderColor: LightGray,
+  $outerBorderWidth: 1px,
+  $innerBorderWidth: 0) {
+
   $halfRadius: ($borderRadius / 2);
 
-  border: solid $borderColor $borderWidth;
+  border: solid $borderColor $outerBorderWidth;
   border-collapse: separate;
   border-radius: $borderRadius;
   border-spacing: 0;
@@ -9,7 +14,7 @@
   td,
   th {
     /* border: solid $borderColor $halfRadius; */
-    border: solid $borderColor 1px;
+    border: solid $borderColor $innerBorderWidth;
     padding: $space;
   }
 
