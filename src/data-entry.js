@@ -78,4 +78,3 @@ class DataEntry extends Component {
 }
 
 export default DataEntry;
-

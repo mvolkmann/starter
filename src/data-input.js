@@ -1,8 +1,8 @@
 import React, {PropTypes as t} from 'react';
 
 const DataInput = (
-  {autoFocus, className = '', label, name, onChange, onKeyPress, value}
-) =>
+  {autoFocus, className = '', label, name, onChange, onKeyPress, value},
+) => (
   <div className="data-input">
     <label>{label}</label>
     <input
@@ -14,7 +14,8 @@ const DataInput = (
       type="text"
       value={value}
     />
-  </div>;
+  </div>
+);
 
 DataInput.propTypes = {
   autoFocus: t.bool,
@@ -27,4 +28,3 @@ DataInput.propTypes = {
 };
 
 export default DataInput;
-
