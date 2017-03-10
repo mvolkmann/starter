@@ -46,6 +46,9 @@ exports[`App should render 1`] = `
       href="#display">
       Show Projects
     </a>
+    <i
+      aria-hidden="true"
+      className="fa fa-snowflake-o" />
   </div>
 </div>
 `;
