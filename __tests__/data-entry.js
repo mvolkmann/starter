@@ -1,5 +1,6 @@
 import React from 'react';
 import DataEntry from '../src/data-entry';
+import {defineSetState} from '../src/state-util';
 import {mount} from 'enzyme';
 import snapshot from './snapshot';
 
@@ -35,11 +36,10 @@ describe('DataEntry', () => {
       });
     });
 
-    // Mock the React setState method that the app makes global.
-    window.setState = thing => {
+    defineSetState(thing => {
       const newState = typeof thing === 'function' ? thing(state) : thing;
       state = Object.assign(state, newState);
-    };
+    });
   }
 
   it('should render', () => {
@@ -49,19 +49,18 @@ describe('DataEntry', () => {
 
   it('should support name entry', () =>
     new Promise(resolve => {
-      // Mock the React setState method that the app makes global.
       const expectedName = 'My New Project';
-      window.setState = newState => {
+      defineSetState(newState => {
         expect(newState).toEqual({name: expectedName});
         resolve();
-      };
+      });
 
       const wrapper = mount(<DataEntry name="" />);
       const input = wrapper.find('input');
       input.simulate('change', {target: {value: expectedName}});
     }));
 
-  it('should add a project by pressing Add button', done => {
+  fit('should add a project by pressing Add button', done => {
     addSetup();
 
     state = {name: '', projectMap};

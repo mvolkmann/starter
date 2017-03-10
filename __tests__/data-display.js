@@ -1,5 +1,6 @@
 import React from 'react';
 import DataDisplay from '../src/data-display';
+import {defineSetState} from '../src/state-util';
 import {mount} from 'enzyme';
 import snapshot from './snapshot';
 
@@ -21,13 +22,12 @@ describe('DataDisplay', () => {
       return Promise.resolve({ok: true});
     });
 
-    // Mock the React setState method that the app makes global.
-    window.setState = fn => {
+    defineSetState(fn => {
       const state = {projectMap};
       const newState = fn(state);
       expect(newState).toEqual({projectMap: {1: projectMap[1]}});
       return newState;
-    };
+    });
     const wrapper = mount(<DataDisplay projectMap={projectMap} />);
 
     // Find the delete button for "bar".

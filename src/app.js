@@ -22,10 +22,9 @@ async function loadProjects() {
       projectMap[project.id] = project;
     }
 
-    console.log('app.js loadProjects: projectMap =', projectMap);
     setState({projectMap});
   } catch (e) {
-    console.error('app.js loadProjects: e =', e);
+    //console.error('app.js loadProjects: e =', e);
     handleError(url, e);
   }
 }

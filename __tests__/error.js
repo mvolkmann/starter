@@ -1,7 +1,8 @@
+import {defineSetState} from '../src/state-util';
 import {handleError} from '../src/error';
 
 let state;
-window.setState = s => state = s;
+defineSetState(s => state = s);
 
 describe('error', () => {
   it('handleError should work', () => {
