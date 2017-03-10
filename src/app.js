@@ -1,17 +1,18 @@
 // @flow
 import React, {Component} from 'react';
-import {defineSetState, setState} from './state-util';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
+import {defineSetState, setState} from './state-util';
 import {getLocationParts} from './hash-route';
+import {getUrl} from './url-util';
 import {handleError} from './error';
 import './app.css';
-import getUrl from './url-util';
 
 async function loadProjects() {
   const url = getUrl('project');
   try {
     const res = await fetch(url);
+    console.log('app.js loadProjects: res =', res);
     if (!res.ok) return handleError(url, res);
 
     const projects = await res.json();
@@ -23,6 +24,7 @@ async function loadProjects() {
 
     setState({projectMap});
   } catch (e) {
+    //console.error('app.js loadProjects: e =', e);
     handleError(url, e);
   }
 }
@@ -52,7 +54,7 @@ class App extends Component {
   render() {
     const {hash} = getLocationParts(window.location);
     const {description, error, name, projectMap} = this.state;
-    console.log({description});
+
     return (
       <div className="app">
         <div className="error">{error}</div>

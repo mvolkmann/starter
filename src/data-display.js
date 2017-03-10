@@ -1,7 +1,8 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
-import {setState} from './state-util';
+import {getUrl} from './url-util';
 import {handleError} from './error';
+import {setState} from './state-util';
 
 type ProjectType = {
   id: number,
@@ -14,7 +15,7 @@ type ProjectMapType = {
 };
 
 async function deleteProject(id: number) {
-  const url = `${window.BASE_URL}/project/${id}`;
+  const url = getUrl(`project/${id}`);
   try {
     const res = await fetch(url, {method: 'DELETE'});
     if (!res.ok) return handleError(url, res);
