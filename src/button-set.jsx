@@ -16,12 +16,12 @@ type ButtonType = {
   onClick: () => any
 };
 
-type ButtonSetPropType = {
+type ButtonSetPropsType = {
   buttons: Array<ButtonType>
 };
 
 // View
-const ButtonSet = ({buttons}: ButtonSetPropType) => (
+const ButtonSet = ({buttons}: ButtonSetPropsType) => (
   <div>
     {buttons.map(button => (
       <button
