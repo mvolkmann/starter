@@ -1,6 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
-import {setState} from './reduxless';
+import {setState} from './state-util';
 import {handleError} from './error';
 import DataInput from './data-input';
 import getUrl from './url-util';
@@ -55,12 +55,14 @@ class DataEntry extends Component {
       <div className="data-entry">
         <div>
           <DataInput
+            className="name-input"
             label="Project Name"
             name="name"
             onChange={this.onChange}
             value={this.props.name}
           />
           <DataInput
+            className="description-input"
             label="Project Description"
             name="description"
             onChange={this.onChange}

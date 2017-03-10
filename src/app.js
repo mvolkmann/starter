@@ -1,6 +1,6 @@
 // @flow
 import React, {Component} from 'react';
-import {defineSetState, setState} from './reduxless';
+import {defineSetState, setState} from './state-util';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
 import {getLocationParts} from './hash-route';
@@ -50,9 +50,9 @@ class App extends Component {
   }
 
   render() {
-    const {hash} = getLocationParts();
+    const {hash} = getLocationParts(window.location);
     const {description, error, name, projectMap} = this.state;
-
+    console.log({description});
     return (
       <div className="app">
         <div className="error">{error}</div>

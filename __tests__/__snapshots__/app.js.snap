@@ -8,17 +8,31 @@ exports[`App should render 1`] = `
   <div
     className="data-entry">
     <div>
-      <label>
-        Project Name
-      </label>
-      <input
-        autoFocus={true}
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        type="text"
-        value="" />
+      <span>
+        <label>
+          Project Name
+        </label>
+        <input
+          autoFocus={undefined}
+          name="name"
+          onChange={[Function]}
+          onKeyPress={undefined}
+          type="text"
+          value="" />
+      </span>
+      <span>
+        <label>
+          Project Description
+        </label>
+        <input
+          autoFocus={undefined}
+          name="description"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          type="text"
+          value="" />
+      </span>
       <button
-        className="add-btn"
         onClick={[Function]}>
         Add
       </button>

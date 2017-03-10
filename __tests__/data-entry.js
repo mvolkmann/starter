@@ -5,8 +5,8 @@ import snapshot from './snapshot';
 
 describe('DataEntry', () => {
   const projectMap = {
-    1: {id: 1, name: 'Foo'},
-    2: {id: 2, name: 'Bar'}
+    1: {id: 1, name: 'Foo', description: 'desc 1'},
+    2: {id: 2, name: 'Bar', description: 'desc 2'}
   };
 
   let state;
@@ -44,7 +44,8 @@ describe('DataEntry', () => {
 
   it('should render', () => {
     const name = 'My Project';
-    snapshot(<DataEntry name={name} />);
+    const description = 'My description';
+    snapshot(<DataEntry description={description} name={name} />);
   });
 
   it('should support name entry', () =>
@@ -56,17 +57,26 @@ describe('DataEntry', () => {
         resolve();
       };
 
-      const wrapper = mount(<DataEntry name="" />);
-      const input = wrapper.find('input');
+      const wrapper = mount(<DataEntry description="" name="" />);
+      const input = wrapper.find('input').first();
       input.simulate('change', {target: {value: expectedName}});
     }));
+
+  /*
+  it('should support description entry', () => {
+    new Promise(resolve => {
+      const description = 'Project description';
+
+  });
+  */
 
   it('should add a project by pressing Add button', done => {
     addSetup();
 
     state = {name: '', projectMap};
     const projectName = 'My New Project';
-    const wrapper = mount(<DataEntry name={projectName} />);
+    const description = 'My description';
+    const wrapper = mount(<DataEntry description={description} name={projectName} />);
     const addBtn = wrapper.find('.add-btn');
     addBtn.simulate('click');
 
@@ -78,7 +88,8 @@ describe('DataEntry', () => {
 
     state = {name: '', projectMap};
     const projectName = 'My New Project';
-    const wrapper = mount(<DataEntry name={projectName} />);
+    const description = 'My description';
+    const wrapper = mount(<DataEntry description={description} name={projectName} />);
     const input = wrapper.find('input');
     input.simulate('keyPress', {which: 13});
 
