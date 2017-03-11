@@ -1,5 +1,6 @@
 // @flow
 import React, {Component} from 'react';
+import ButtonSet from './button-set';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
 import {defineSetState, setState} from './state-util';
@@ -55,16 +56,33 @@ class App extends Component {
   render() {
     const {hash} = getLocationParts(window.location);
     const {description, error, name, projectMap} = this.state;
+    const buttons = [
+      {
+        text: 'Save',
+        kind: 'primary',
+        onClick: () => console.log('saved!'),
+      },
+      {
+        text: 'Info',
+        kind: 'info',
+        onClick: () => console.log('info!'),
+      },
+      {
+        text: 'Cancel',
+        kind: 'danger',
+        onClick: () => console.log('cancelled!'),
+      },
+    ];
 
     return (
       <div className="app">
         <div className="error">{error}</div>
-        {hash === 'display' ?
-          <DataDisplay projectMap={projectMap} /> :
-          <DataEntry // eslint-disable-line react/jsx-indent
-            description={description}
-            name={name}
-            />}
+        <div className="body">
+          {hash === 'display' ?
+            <DataDisplay projectMap={projectMap} /> :
+            <DataEntry description={description} name={name} />}
+          <ButtonSet buttons={buttons} />
+        </div>
       </div>
     );
   }
