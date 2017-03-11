@@ -90,7 +90,8 @@ exports[`App should render 1`] = `
           } />
       </div>
     </div>
-    <div>
+    <div
+      className="button-set">
       <button
         className="btn btn-primary"
         onClick={[Function]}>

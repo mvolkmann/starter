@@ -30,6 +30,12 @@ $warning-border: #ea9142;
   }
 }
 
+.button-set {
+  .btn {
+    margin-right: $space;
+  }
+}
+
 .data-display {
   .delete-btn {
     background-color: transparent;
