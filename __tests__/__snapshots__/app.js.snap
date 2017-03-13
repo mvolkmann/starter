@@ -1,6 +1,39 @@
 exports[`App should render 1`] = `
 <div
   className="app">
+  <ol
+    aria-label="breadcrumbs"
+    className="breadcrumb"
+    role="navigation">
+    <li
+      className="">
+      <a
+        href="#"
+        onClick={[Function]}
+        role="button"
+        target={undefined}
+        title={undefined}>
+        Foo
+      </a>
+    </li>
+    <li
+      className="">
+      <a
+        href="#"
+        onClick={[Function]}
+        role="button"
+        target={undefined}
+        title={undefined}>
+        Bar
+      </a>
+    </li>
+    <li
+      className="active">
+      <span>
+        Baz
+      </span>
+    </li>
+  </ol>
   <div
     className="error">
     

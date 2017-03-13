@@ -1,5 +1,6 @@
 // @flow
 import React, {Component} from 'react';
+import Breadcrumbs from './breadcrumbs';
 import ButtonSet from './button-set';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
@@ -8,6 +9,11 @@ import {getLocationParts} from './hash-route';
 import {getUrl} from './url-util';
 import {handleError} from './error';
 import './app.css';
+
+type BreadcrumbType = {
+  id: number,
+  label: string
+};
 
 async function loadProjects() {
   const url = getUrl('project');
@@ -22,22 +28,28 @@ async function loadProjects() {
     for (const project of projects) {
       projectMap[project.id] = project;
     }
-    console.log('app.js loadProjects: projectMap =', projectMap);
 
     setState({projectMap});
   } catch (e) {
-    //console.error('app.js loadProjects: e =', e);
     handleError(url, e);
   }
 }
 
 class App extends Component {
   state = {
+    activeCrumb: undefined,
     description: '',
     error: '',
     name: '',
     projectMap: {},
   };
+
+
+  breadcrumbs = [
+    {id: 1, label: 'Foo'},
+    {id: 2, label: 'Bar'},
+    {id: 3, label: 'Baz'}
+  ];
 
   constructor() {
     super();
@@ -53,9 +65,13 @@ class App extends Component {
     loadProjects();
   }
 
+  onNavigate = (crumb: BreadcrumbType) => {
+    this.setState({activeCrumb: crumb});
+  };
+
   render() {
     const {hash} = getLocationParts(window.location);
-    const {description, error, name, projectMap} = this.state;
+    const {activeCrumb, description, error, name, projectMap} = this.state;
     const buttons = [
       {
         text: 'Save',
@@ -76,6 +92,11 @@ class App extends Component {
 
     return (
       <div className="app">
+        <Breadcrumbs
+          activeCrumb={activeCrumb}
+          items={this.breadcrumbs}
+          onNavigate={this.onNavigate}
+        />
         <div className="error">{error}</div>
         <div className="body">
           {hash === 'display' ?
