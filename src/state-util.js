@@ -1,4 +1,4 @@
-export let setState
+export let setState;
 
 /**
  * This sets `setState` to a function that
@@ -9,5 +9,5 @@ export let setState
  * so assertions about state changes can be made.
  */
 export function defineSetState(thing) {
-  setState = typeof thing === 'function' ? thing : thing.setState.bind(thing)
+  setState = typeof thing === 'function' ? thing : thing.setState.bind(thing);
 }
