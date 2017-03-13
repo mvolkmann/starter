@@ -17,3 +17,4 @@ export function getUrl(
 
   return `${BASE_URL}/${path}?${queryString.substring(1)}`;
 }
+

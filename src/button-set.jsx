@@ -23,7 +23,7 @@ type ButtonSetPropsType = {
 
 // View
 const ButtonSet = ({buttons}: ButtonSetPropsType) => (
-  <div>
+  <div className="button-set">
     {buttons.map(button => (
       <button
         className={`btn btn-${button.kind}`}

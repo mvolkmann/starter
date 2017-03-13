@@ -30,6 +30,18 @@ $warning-border: #ea9142;
   }
 }
 
+.button-set {
+  .btn {
+    margin-right: $space;
+  }
+
+  .btn-danger { background-color: $velocity-danger; }
+  .btn-default { background-color: $velocity-default; }
+  .btn-info { background-color: $velocity-info; }
+  .btn-primary { background-color: $velocity-primary; }
+  .btn-success { background-color: $velocity-success; }
+}
+
 .data-display {
   .delete-btn {
     background-color: transparent;
