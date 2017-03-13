@@ -1,0 +1,20 @@
+exports[`DataEntry should render 1`] = `
+<div
+  className="button-set">
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}>
+    Save
+  </button>
+  <button
+    className="btn btn-info"
+    onClick={[Function]}>
+    Info
+  </button>
+  <button
+    className="btn btn-danger"
+    onClick={[Function]}>
+    Cancel
+  </button>
+</div>
+`;
