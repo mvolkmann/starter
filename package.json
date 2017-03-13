@@ -33,7 +33,7 @@
     "url-search-params": "^0.6.1"
   },
   "scripts": {
-    "_format": "prettier-eslint --write \"src/**/*.js\"",
+    "_format": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.jsx\"",
     "build": "npm run build-css && react-scripts build",
     "build-css": "node-sass src/ -o src/",
     "cover": "npm-run-all cover:*",
