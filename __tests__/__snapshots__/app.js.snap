@@ -94,16 +94,19 @@ exports[`App should render 1`] = `
       className="button-set">
       <button
         className="btn btn-primary"
+        disabled={true}
         onClick={[Function]}>
         Save
       </button>
       <button
         className="btn btn-info"
+        disabled={false}
         onClick={[Function]}>
         Info
       </button>
       <button
         className="btn btn-danger"
+        disabled={undefined}
         onClick={[Function]}>
         Cancel
       </button>
