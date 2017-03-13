@@ -1,6 +1,8 @@
 exports[`Select should render 1`] = `
 <select
   className="select"
+  disabled={false}
+  multiple={false}
   onChange={[Function]}
   size={5}
   value="hello">

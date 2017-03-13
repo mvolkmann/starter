@@ -9,7 +9,7 @@ type OptionType = {
 
 type OptionsType = Array<OptionType>;
 
-const Option = (option: OptionType, index: number) => (
+const Option = (option: OptionType) => (
   <option
     key={option.value}
     value={option.value}
@@ -19,6 +19,8 @@ const Option = (option: OptionType, index: number) => (
 );
 
 type SelectPropsType = {
+  disabled: boolean,
+  multiple: boolean,
   onChange: Function,
   options: OptionsType,
   size: number,
@@ -26,6 +28,8 @@ type SelectPropsType = {
 };
 
 export default function Select({
+  disabled,
+  multiple,
   onChange,
   options,
   size,
@@ -37,6 +41,8 @@ export default function Select({
       onChange={onChange}
       size={size}
       value={value}
+      disabled={disabled}
+      multiple={multiple}
     >
       {options.map(Option)}
     </select>
@@ -44,6 +50,8 @@ export default function Select({
 }
 
 Select.propTypes = {
+  disabled: t.bool,
+  multiple: t.bool,
   onChange: t.func.isRequired,
   options: t.arrayOf(t.shape({text: t.string, value: t.string})).isRequired,
   size: t.number,

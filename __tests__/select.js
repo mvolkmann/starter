@@ -5,6 +5,8 @@ import Select from '../src/select';
 import snapshot from './snapshot';
 
 describe('Select', () => {
+  const disabled = false;
+  const multiple = false;
   const onChange = jest.fn();
   const options = [
     {text: 'A', value: 'a'},
@@ -13,7 +15,7 @@ describe('Select', () => {
   ];
   const size = 5;
   const value = 'hello';
-  const props = {onChange, options, size, value};
+  const props = {disabled, multiple, onChange, options, size, value};
 
   it('should render', () => {
     snapshot(<Select {...props} />);
