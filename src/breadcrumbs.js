@@ -27,7 +27,7 @@ Breadcrumbs.displayName = 'Breadcrumbs';
 Breadcrumbs.propTypes = {
   activeCrumb: t.shape({
     id: t.number,
-    label: t.string
+    label: t.string,
   }),
   items: t.arrayOf(
     t.shape({
@@ -39,4 +39,3 @@ Breadcrumbs.propTypes = {
 };
 
 export default Breadcrumbs;
-

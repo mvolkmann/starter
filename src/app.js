@@ -45,11 +45,10 @@ class App extends Component {
     projectMap: {},
   };
 
-
   breadcrumbs = [
     {id: 1, label: 'Foo'},
     {id: 2, label: 'Bar'},
-    {id: 3, label: 'Baz'}
+    {id: 3, label: 'Baz'},
   ];
 
   constructor() {
