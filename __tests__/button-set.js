@@ -1,6 +1,5 @@
 import React from 'react';
 import ButtonSet from '../src/button-set';
-//import {defineSetState} from '../src/state-util';
 import {mount} from 'enzyme';
 import snapshot from './snapshot';
 
