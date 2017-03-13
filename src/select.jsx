@@ -10,10 +10,7 @@ type OptionType = {
 type OptionsType = Array<OptionType>;
 
 const Option = (option: OptionType) => (
-  <option
-    key={option.value}
-    value={option.value}
-  >
+  <option key={option.value} value={option.value}>
     {option.text}
   </option>
 );
@@ -27,14 +24,16 @@ type SelectPropsType = {
   value: string
 };
 
-export default function Select({
-  disabled,
-  multiple,
-  onChange,
-  options,
-  size,
-  value
-}: SelectPropsType) {
+export default function Select(
+  {
+    disabled,
+    multiple,
+    onChange,
+    options,
+    size,
+    value,
+  }: SelectPropsType,
+) {
   return (
     <select
       className="select"

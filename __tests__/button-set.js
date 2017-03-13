@@ -67,5 +67,20 @@ describe('DataEntry', () => {
     btn.simulate('click');
     expect(onClick).toHaveBeenCalled();
   });
+
+  it('button should be able to be disabled', () => {
+    const buttons = [
+      {
+        disabled: true,
+        text: 'Text',
+        kind: 'success',
+        onClick: jest.fn
+      }
+    ];
+
+    const wrapper = mount(<ButtonSet buttons={buttons} />);
+    const disabled = wrapper.find('button[disabled=true]');
+    expect(disabled.length).toBe(1);
+  });
 });
 
