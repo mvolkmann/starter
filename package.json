@@ -56,7 +56,7 @@
     "start-prod": "sudo nodemon ./server.js",
     "start-js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
-    "verify": "npm run fmt && npm run lint && cross-env CI=true npm test",
+    "verify": "npm run lint && npm run fmt && cross-env CI=true npm test",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch",
     "dbuild": "docker build -t launchpad_ui .",
     "drun": "docker run --name ui -d -p 3000:3000 launchpad_ui"
