@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import Breadcrumbs from './breadcrumbs';
 import ButtonSet from './button-set';
+import LookupInput from './lookup-input';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
 import {defineSetState, setState} from './state-util';
@@ -44,11 +45,10 @@ class App extends Component {
     projectMap: {},
   };
 
-
   breadcrumbs = [
     {id: 1, label: 'Foo'},
     {id: 2, label: 'Bar'},
-    {id: 3, label: 'Baz'}
+    {id: 3, label: 'Baz'},
   ];
 
   constructor() {
@@ -74,11 +74,13 @@ class App extends Component {
     const {activeCrumb, description, error, name, projectMap} = this.state;
     const buttons = [
       {
+        disabled: true,
         text: 'Save',
         kind: 'primary',
         onClick: () => console.log('saved!'),
       },
       {
+        disabled: false,
         text: 'Info',
         kind: 'info',
         onClick: () => console.log('info!'),
@@ -89,6 +91,11 @@ class App extends Component {
         onClick: () => console.log('cancelled!'),
       },
     ];
+
+    const input = {
+      img: 'search',
+      onChange: event => console.log(event.target.value),
+    };
 
     return (
       <div className="app">
@@ -103,6 +110,7 @@ class App extends Component {
             <DataDisplay projectMap={projectMap} /> :
             <DataEntry description={description} name={name} />}
           <ButtonSet buttons={buttons} />
+          <LookupInput img={input.img} onChange={input.onChange} />
         </div>
       </div>
     );

@@ -127,19 +127,53 @@ exports[`App should render 1`] = `
       className="button-set">
       <button
         className="btn btn-primary"
+        disabled={true}
         onClick={[Function]}>
         Save
       </button>
       <button
         className="btn btn-info"
+        disabled={false}
         onClick={[Function]}>
         Info
       </button>
       <button
         className="btn btn-danger"
+        disabled={undefined}
         onClick={[Function]}>
         Cancel
       </button>
+    </div>
+    <div
+      className="lookup-input-container"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }>
+      <input
+        className="form-control lookup-input-input"
+        onChange={[Function]}
+        onKeyPress={undefined}
+        style={
+          Object {
+            "flex": "9 9 0px",
+            "paddingRight": "32px",
+            "width": "90%",
+          }
+        }
+        type="text" />
+      <i
+        className="lookup-input-icon fa fa-search"
+        onClick={undefined}
+        style={
+          Object {
+            "flex": "1 1 0px",
+            "left": "-20px",
+            "position": "relative",
+          }
+        } />
     </div>
   </div>
 </div>
