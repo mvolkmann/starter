@@ -1,5 +1,12 @@
 import React, {PropTypes as t} from 'react'
 
+type LookupInputPropsType = {
+  img: string,
+  onChange?: () => any,
+  onClick?: () => any,
+  onKeyPress?: () => any
+}
+
 const styles = {
   container: {
     display: 'flex',
@@ -17,7 +24,8 @@ const styles = {
   }
 }
 
-const LookupInput = ({img, onChange, onClick, onKeyPress}) =>
+const LookupInput = (
+  {img, onChange, onClick, onKeyPress}: LookupInputPropsType) =>
   (
     <div className="lookup-input-container" style={styles.container}>
       <input
@@ -40,7 +48,7 @@ LookupInput.displayName = 'LookupInput'
 
 LookupInput.propTypes = t.shape({
   img: t.string.isRequired,
-  onChange: t.func.isRequired,
+  onChange: t.func,
   onClick: t.func,
   onKeyPress: t.func
 }).isRequired
