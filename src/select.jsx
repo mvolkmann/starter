@@ -11,7 +11,7 @@ type OptionsType = Array<OptionType>;
 
 const Option = (option: OptionType, index: number) => (
   <option
-    key={`option-${index}`}
+    key={option.value}
     value={option.value}
   >
     {option.text}
