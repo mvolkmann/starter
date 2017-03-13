@@ -58,11 +58,13 @@ class App extends Component {
     const {description, error, name, projectMap} = this.state;
     const buttons = [
       {
+        disabled: true,
         text: 'Save',
         kind: 'primary',
         onClick: () => console.log('saved!'),
       },
       {
+        disabled: false,
         text: 'Info',
         kind: 'info',
         onClick: () => console.log('info!'),

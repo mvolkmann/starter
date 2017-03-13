@@ -11,8 +11,9 @@ type ButtonKindType =
   | 'success';
 
 type ButtonType = {
-  text: string,
+  disabled?: boolean,
   kind: ButtonKindType,
+  text: string,
   onClick: () => any
 };
 
@@ -26,6 +27,7 @@ const ButtonSet = ({buttons}: ButtonSetPropsType) => (
     {buttons.map(button => (
       <button
         className={`btn btn-${button.kind}`}
+        disabled={button.disabled}
         key={button.text}
         onClick={button.onClick}
       >
@@ -39,7 +41,7 @@ const ButtonSet = ({buttons}: ButtonSetPropsType) => (
 ButtonSet.propTypes = {
   buttons: t.arrayOf(
     t.shape({
-      text: t.string,
+      disabled: t.bool,
       kind: t.oneOf([
         'danger',
         'default',
@@ -48,9 +50,11 @@ ButtonSet.propTypes = {
         'secondary',
         'success',
       ]),
+      text: t.string,
       onClick: t.func,
     }),
   ).isRequired,
 };
 
 export default ButtonSet;
+
