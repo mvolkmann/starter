@@ -1,8 +1,8 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
-import {getUrl} from './url-util';
-import {handleError} from './error';
-import {setState} from './state-util';
+import {getUrl} from '../util/url-util';
+import {handleError} from '../util/error';
+import {setState} from '../util/state-util';
 
 type ProjectType = {
   id: number,

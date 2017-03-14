@@ -1,10 +1,10 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
-import DataInput from './data-input';
+import DataInput from '../share/data-input';
 import FontAwesome from 'react-fontawesome';
-import {getUrl} from './url-util';
-import {handleError} from './error';
-import {setState} from './state-util';
+import {getUrl} from '../util/url-util';
+import {handleError} from '../util/error';
+import {setState} from '../util/state-util';
 
 type EventType = {
   target: {

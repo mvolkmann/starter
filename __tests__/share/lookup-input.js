@@ -1,7 +1,7 @@
 import React from 'react';
-import LookupInput from '../src/lookup-input';
+import LookupInput from '../../src/share/lookup-input';
 import {mount} from 'enzyme';
-import snapshot from './snapshot';
+import snapshot from '../snapshot';
 
 describe('LookupInput', () => {
   it('should render', () => {

@@ -1,7 +1,7 @@
-import {getLocationParts} from '../src/hash-route';
+import {getLocationParts} from '../../src/util/hash-route';
 
-jest.mock('../src/hash-route', () => {
-  const original = require.requireActual('../src/hash-route');
+jest.mock('../../src/util/hash-route', () => {
+  const original = require.requireActual('../../src/util/hash-route');
   return {
     ...original,
     getLocation: jest.fn(() => ({

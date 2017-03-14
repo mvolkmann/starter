@@ -1,21 +1,36 @@
 // @flow
 import React, {Component} from 'react';
-import Breadcrumbs from './breadcrumbs';
-import ButtonSet from './button-set';
-import DataEntry from './data-entry';
+import Breadcrumbs from '../share/breadcrumbs';
+import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
-import DropupBtn from './dropup-button';
-import LookupInput from './lookup-input';
-import {defineSetState, setState} from './state-util';
-import {getLocationParts} from './hash-route';
-import {getUrl} from './url-util';
-import {handleError} from './error';
+import DataEntry from './data-entry';
+import DropupBtn from '../share/dropup-button';
+import LookupInput from '../share/lookup-input';
+import TargetSelect from './target-select';
+import {defineSetState, setState} from '../util/state-util';
+import {getLocationParts} from '../util/hash-route';
+import {getUrl} from '../util/url-util';
+import {handleError} from '../util/error';
 import './app.css';
 
 type BreadcrumbType = {
   id: number,
   label: string
 };
+
+async function loadProductCategories() {
+  const url = getUrl('product-categories');
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return handleError(url, res);
+
+    const productCategories = await res.json();
+
+    setState({productCategories});
+  } catch (e) {
+    handleError(url, e);
+  }
+}
 
 async function loadProjects() {
   const url = getUrl('project');
@@ -42,7 +57,11 @@ class App extends Component {
     description: '',
     error: '',
     name: '',
+    productCategories: [],
+    productTargets: [],
     projectMap: {},
+    selectedCategory: '',
+    selectedTarget: '',
   };
 
   breadcrumbs = [
@@ -63,7 +82,12 @@ class App extends Component {
 
   componentDidMount() {
     loadProjects();
+    loadProductCategories();
   }
+
+  onCategorySelect = (category: string) => {
+    console.log('app.js onCategorySelect: category =', category);
+  };
 
   onNavigate = (crumb: BreadcrumbType) => {
     this.setState({activeCrumb: crumb});
@@ -71,7 +95,19 @@ class App extends Component {
 
   render() {
     const {hash} = getLocationParts(window.location);
-    const {activeCrumb, description, error, name, projectMap} = this.state;
+
+    const {
+      activeCrumb,
+      description,
+      error,
+      name,
+      productCategories,
+      productTargets,
+      projectMap,
+      selectedCategory,
+      selectedTarget
+    } = this.state;
+
     const buttons = [
       {
         disabled: true,
@@ -118,6 +154,12 @@ class App extends Component {
       ],
     };
 
+    const categoryOptions = productCategories.map(
+      cat => ({text: cat, value: cat}));
+
+    const targetOptions = productTargets.map(
+      target => ({text: target, value: target}));
+
     return (
       <div className="app">
         <Breadcrumbs
@@ -133,6 +175,13 @@ class App extends Component {
           <ButtonSet buttons={buttons} />
           <LookupInput {...input} />
           <DropupBtn {...dropupBtnParams} />
+          <TargetSelect
+            categories={categoryOptions}
+            onChange={this.onCategorySelect}
+            selectedCategory={selectedCategory}
+            selectedTarget={selectedTarget}
+            targets={targetOptions}
+          />
         </div>
       </div>
     );

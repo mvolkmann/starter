@@ -1,8 +1,8 @@
 import React from 'react';
-import DataEntry from '../src/data-entry';
-import {defineSetState} from '../src/state-util';
+import DataEntry from '../../src/app/data-entry';
+import {defineSetState} from '../../src/util/state-util';
 import {mount} from 'enzyme';
-import snapshot from './snapshot';
+import snapshot from '../snapshot';
 
 describe('DataEntry', () => {
   const projectMap = {

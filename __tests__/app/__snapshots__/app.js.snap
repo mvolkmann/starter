@@ -206,6 +206,35 @@ exports[`App should render 1`] = `
         </li>
       </ul>
     </div>
+    <div
+      className="target-select">
+      <div
+        className="select">
+        <label>
+          Product Category
+        </label>
+        <select
+          className="form-control"
+          disabled={undefined}
+          multiple={undefined}
+          onChange={[Function]}
+          size={undefined}
+          value="" />
+      </div>
+      <div
+        className="select">
+        <label>
+          Product Target
+        </label>
+        <select
+          className="form-control"
+          disabled={undefined}
+          multiple={undefined}
+          onChange={[Function]}
+          size={undefined}
+          value="" />
+      </div>
+    </div>
   </div>
 </div>
 `;

@@ -1,0 +1,25 @@
+exports[`Select should render 1`] = `
+<div
+  className="select">
+  <select
+    className="form-control"
+    disabled={false}
+    multiple={false}
+    onChange={[Function]}
+    size={5}
+    value="hello">
+    <option
+      value="a">
+      A
+    </option>
+    <option
+      value="b">
+      B
+    </option>
+    <option
+      value="c">
+      C
+    </option>
+  </select>
+</div>
+`;

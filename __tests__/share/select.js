@@ -1,8 +1,8 @@
 import React from 'react';
 import {mount} from 'enzyme';
 
-import Select from '../src/select';
-import snapshot from './snapshot';
+import Select from '../../src/share/select';
+import snapshot from '../snapshot';
 
 describe('Select', () => {
   const disabled = false;

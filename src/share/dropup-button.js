@@ -2,8 +2,7 @@
 import React, {PropTypes as t, Component} from 'react';
 import {Dropdown} from 'bootstrap.native';
 
-/* eslint-disable react/no-unused-prop-types */
-type ButtonKindType =
+type BtnKindType =
   | 'danger'
   | 'default'
   | 'info'
@@ -18,10 +17,10 @@ type BtnLinkType = {
   text?: string
 };
 
-// eslint throwing an error here. Not sure why
+/* eslint-disable react/no-unused-prop-types */
 type BtnType = {
   disabled: boolean,
-  kind: ButtonKindType,
+  kind: BtnKindType,
   btnText: string
 };
 /* eslint-enable react/no-unused-prop-types */
@@ -71,8 +70,6 @@ class DropupBtn extends Component {
     );
   }
 }
-
-DropupBtn.displayName = 'DropupBtn';
 
 DropupBtn.propTypes = {
   btn: t.shape({

@@ -1,8 +1,8 @@
 import React from 'react';
-import DataDisplay from '../src/data-display';
-import {defineSetState} from '../src/state-util';
+import DataDisplay from '../../src/app/data-display';
+import {defineSetState} from '../../src/util/state-util';
 import {mount} from 'enzyme';
-import snapshot from './snapshot';
+import snapshot from '../snapshot';
 
 describe('DataDisplay', () => {
   const projectMap = {

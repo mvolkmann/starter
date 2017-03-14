@@ -1,6 +1,6 @@
 // @flow
-
 import React, {PropTypes as t} from 'react';
+import './select.css';
 
 type OptionType = {
   text: string,
@@ -15,8 +15,9 @@ const Option = (option: OptionType) => (
   </option>
 );
 
-type SelectPropsType = {
+type PropsType = {
   disabled: boolean,
+  label: string,
   multiple: boolean,
   onChange: Function,
   options: OptionsType,
@@ -27,29 +28,34 @@ type SelectPropsType = {
 export default function Select(
   {
     disabled,
+    label,
     multiple,
     onChange,
     options,
     size,
     value,
-  }: SelectPropsType,
+  }: PropsType,
 ) {
   return (
-    <select
-      className="select"
-      onChange={onChange}
-      size={size}
-      value={value}
-      disabled={disabled}
-      multiple={multiple}
-    >
-      {options.map(Option)}
-    </select>
+    <div className="select">
+      {label ? <label>{label}</label> : null}
+      <select
+        className="form-control"
+        onChange={onChange}
+        size={size}
+        value={value}
+        disabled={disabled}
+        multiple={multiple}
+      >
+        {options.map(Option)}
+      </select>
+    </div>
   );
 }
 
 Select.propTypes = {
   disabled: t.bool,
+  label: t.string,
   multiple: t.bool,
   onChange: t.func.isRequired,
   options: t.arrayOf(t.shape({text: t.string, value: t.string})).isRequired,

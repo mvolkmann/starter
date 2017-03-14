@@ -1,0 +1,19 @@
+.react-datepicker,
+.react-datepicker__current-month {
+  font-size: 14px !important;
+}
+
+.react-datepicker__day,
+.react-datepicker__day-name {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.react-datepicker__input-container {
+  display: block;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
