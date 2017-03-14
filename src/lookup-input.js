@@ -30,9 +30,7 @@ const styles = {
   },
 };
 
-const LookupInput = (
-  {img, onChange, onClick}: LookupInputPropsType,
-) => (
+const LookupInput = ({img, onChange, onClick}: LookupInputPropsType) => (
   <div className="lookup-input-container" style={styles.container}>
     <input
       className="form-control lookup-input-input"
@@ -54,7 +52,7 @@ LookupInput.displayName = 'LookupInput';
 LookupInput.propTypes = t.shape({
   img: t.string.isRequired,
   onChange: t.func,
-  onClick: t.func
+  onClick: t.func,
 }).isRequired;
 
 export default LookupInput;
