@@ -1,0 +1,54 @@
+exports[`DataDisplay should render 1`] = `
+<div
+  className="data-display">
+  <table
+    className="table table-striped">
+    <caption>
+      Projects
+    </caption>
+    <thead>
+      <tr>
+        <th />
+        <th>
+          Name
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <button
+            className="delete-btn"
+            onClick={[Function]}>
+            ✖
+          </button>
+        </td>
+        <td>
+          Bar
+        </td>
+        <td />
+      </tr>
+      <tr>
+        <td>
+          <button
+            className="delete-btn"
+            onClick={[Function]}>
+            ✖
+          </button>
+        </td>
+        <td>
+          Foo
+        </td>
+        <td />
+      </tr>
+    </tbody>
+  </table>
+  <a
+    href="#entry">
+    Add Projects
+  </a>
+</div>
+`;

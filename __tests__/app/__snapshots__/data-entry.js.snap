@@ -1,0 +1,85 @@
+exports[`DataEntry should render 1`] = `
+<div
+  className="data-entry">
+  <div>
+    <div
+      className="data-input">
+      <label>
+        Project Name
+      </label>
+      <input
+        autoFocus={undefined}
+        className="form-control name-input"
+        name="name"
+        onChange={[Function]}
+        onKeyPress={undefined}
+        type="text"
+        value="My Project" />
+    </div>
+    <div
+      className="data-input">
+      <label>
+        Project Description
+      </label>
+      <input
+        autoFocus={undefined}
+        className="form-control description-input"
+        name="description"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        type="text"
+        value="My description" />
+    </div>
+    <button
+      className="add-btn btn"
+      onClick={[Function]}>
+      Add
+    </button>
+  </div>
+  <a
+    href="#display">
+    Show Projects
+  </a>
+  <div
+    className="icons">
+    <span
+      aria-hidden={true}
+      className="fa fa-envelope-o fa-2x" />
+    <span
+      aria-hidden={true}
+      className="fa fa-check-circle fa-2x"
+      style={
+        Object {
+          "color": "green",
+        }
+      } />
+    <span
+      className="fa-stack">
+      <span
+        aria-hidden={true}
+        className="fa fa-circle-o fa-stack-2x"
+        style={
+          Object {
+            "color": "red",
+          }
+        } />
+      <span
+        aria-hidden={true}
+        className="fa fa-exclamation fa-stack-1x"
+        style={
+          Object {
+            "color": "red",
+          }
+        } />
+    </span>
+    <span
+      aria-hidden={true}
+      className="fa fa-times-circle-o fa-2x fa-inverse"
+      style={
+        Object {
+          "color": "red",
+        }
+      } />
+  </div>
+</div>
+`;

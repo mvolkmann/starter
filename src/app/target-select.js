@@ -5,7 +5,7 @@ import {setState} from '../util/state-util';
 class TargetSelect extends Component {
   static propTypes = {
     categories: t.arrayOf(t.string).isRequired,
-    selectedCategory: t.string.isRequired
+    selectedCategory: t.string.isRequired,
   };
 
   onCategorySelect = (event: object) => {

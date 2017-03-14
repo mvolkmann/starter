@@ -59,7 +59,7 @@ class App extends Component {
     name: '',
     productCategories: [],
     projectMap: {},
-    selectedCategory: ''
+    selectedCategory: '',
   };
 
   breadcrumbs = [
@@ -95,8 +95,13 @@ class App extends Component {
     const {hash} = getLocationParts(window.location);
 
     const {
-      activeCrumb, description, error, name,
-      productCategories, projectMap, selectedCategory
+      activeCrumb,
+      description,
+      error,
+      name,
+      productCategories,
+      projectMap,
+      selectedCategory,
     } = this.state;
 
     const buttons = [
@@ -139,8 +144,10 @@ class App extends Component {
       ],
     };
 
-    const categoryOptions =
-      productCategories.map(cat => ({text: cat, value: cat}));
+    const categoryOptions = productCategories.map(cat => ({
+      text: cat,
+      value: cat,
+    }));
 
     return (
       <div className="app">

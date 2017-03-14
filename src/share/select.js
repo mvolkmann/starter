@@ -60,5 +60,5 @@ Select.propTypes = {
   onChange: t.func.isRequired,
   options: t.arrayOf(t.shape({text: t.string, value: t.string})).isRequired,
   size: t.number,
-  value: t.string.isRequired
+  value: t.string.isRequired,
 };
