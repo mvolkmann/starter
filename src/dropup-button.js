@@ -35,14 +35,12 @@ const DropupBtn = ({btn, links}: DropupBtnPropsType) => {
 
   return (
     <div className="btn-group dropup">
-      <button type="button" className={`btn btn-${btn.kind}`}>
-        {btn.text}
-      </button>
       <button
         type="button"
-        className="btn btn-default dropdown-toggle"
+        className={`btn btn-${btn.kind} dropdown-toggle`}
         onClick={() => toggleElement()}
       >
+        {btn.text + ' '}
         <span className="caret" />
         <span className="sr-only">Toggle Dropdown</span>
       </button>
