@@ -93,8 +93,8 @@ class App extends Component {
 
     const input = {
       img: 'search',
-      onChange: event => console.log(event.target.value),
-      onClick: () => console.log('clicked!'),
+      onChange: (event = {}) => console.log(event.target.value),
+      onSubmit: () => console.log('clicked!'),
     };
 
     return (
