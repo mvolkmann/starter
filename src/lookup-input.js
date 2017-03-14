@@ -3,8 +3,14 @@ import React, {PropTypes as t} from 'react';
 type LookupInputPropsType = {
   img: string,
   onChange?: () => any,
-  onClick?: () => any,
-  onKeyPress?: () => any
+  onClick?: () => any
+};
+
+type EventType = {
+  target: {
+    name: string,
+    value: string
+  }
 };
 
 const styles = {
@@ -25,13 +31,13 @@ const styles = {
 };
 
 const LookupInput = (
-  {img, onChange, onClick, onKeyPress}: LookupInputPropsType,
+  {img, onChange, onClick}: LookupInputPropsType,
 ) => (
   <div className="lookup-input-container" style={styles.container}>
     <input
       className="form-control lookup-input-input"
       onChange={onChange}
-      onKeyPress={onKeyPress}
+      onKeyPress={(event: EventType) => event.which === 13 ? onClick() : null}
       type="text"
       style={styles.input}
     />
@@ -48,8 +54,7 @@ LookupInput.displayName = 'LookupInput';
 LookupInput.propTypes = t.shape({
   img: t.string.isRequired,
   onChange: t.func,
-  onClick: t.func,
-  onKeyPress: t.func,
+  onClick: t.func
 }).isRequired;
 
 export default LookupInput;
