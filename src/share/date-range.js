@@ -14,7 +14,7 @@ class DateRange extends Component {
     endDate: t.object.isRequired, // moment
     onEndDateChanged: t.func.isRequired,
     onStartDateChanged: t.func.isRequired,
-    startDate: t.object.isRequired // moment
+    startDate: t.object.isRequired, // moment
   };
 
   isValidStart = startDate => startDate.isBefore(this.props.endDate);
@@ -23,21 +23,24 @@ class DateRange extends Component {
   render() {
     const today = moment();
     const {
-      className = '', endDate = today, startDate = today
-      , onEndDateChanged, onStartDateChanged
+      className = '',
+      endDate = today,
+      startDate = today,
+      onEndDateChanged,
+      onStartDateChanged,
     } = this.props;
 
     const props = {
       endDate,
       showMonthDropdown: true,
       showYearDropdown: true,
-      startDate
+      startDate,
     };
 
     const style = {
       display: 'inline-block',
       marginRight: '10px',
-      width: '100px'
+      width: '100px',
     };
 
     // sr-only is a Bootstrap class that means "screen reader only".
@@ -45,9 +48,7 @@ class DateRange extends Component {
     return (
       <span className={className}>
         <span style={style}>
-          <label className="sr-only control-label"
-            htmlFor="start-date-picker"
-          >
+          <label className="sr-only control-label" htmlFor="start-date-picker">
             Start
           </label>
           <DatePicker
@@ -62,9 +63,7 @@ class DateRange extends Component {
         </span>
 
         <span style={style}>
-          <label className="sr-only control-label"
-            htmlFor="end-date-picker"
-          >
+          <label className="sr-only control-label" htmlFor="end-date-picker">
             End
           </label>
           <DatePicker

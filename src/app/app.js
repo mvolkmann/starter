@@ -65,7 +65,7 @@ class App extends Component {
     projectMap: {},
     selectedCategory: '',
     selectedTarget: '',
-    startDate: moment()
+    startDate: moment(),
   };
 
   breadcrumbs = [
@@ -119,7 +119,7 @@ class App extends Component {
       projectMap,
       selectedCategory,
       selectedTarget,
-      startDate
+      startDate,
     } = this.state;
 
     const buttons = [
@@ -162,11 +162,15 @@ class App extends Component {
       ],
     };
 
-    const categoryOptions = productCategories.map(
-      cat => ({text: cat, value: cat}));
+    const categoryOptions = productCategories.map(cat => ({
+      text: cat,
+      value: cat,
+    }));
 
-    const targetOptions = productTargets.map(
-      target => ({text: target, value: target}));
+    const targetOptions = productTargets.map(target => ({
+      text: target,
+      value: target,
+    }));
 
     return (
       <div className="app">
