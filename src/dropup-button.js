@@ -17,10 +17,12 @@ type BtnLinkType = {
   text: string
 };
 
+/* eslint-disable react/no-unused-prop-types */
 type BtnType = {
   text: string,
   kind: BtnKindType
 };
+/* eslint-enable react/no-unused-prop-types */
 
 type DropupBtnPropsType = {btn: BtnType, links: Array<BtnLinkType>};
 
