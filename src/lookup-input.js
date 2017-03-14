@@ -1,7 +1,7 @@
 // @flow
 import React, {PropTypes as t} from 'react';
 
-type LookupInputPropsType = {
+type PropsType = {
   img: string,
   onChange?: () => any,
   onSubmit: () => any
@@ -31,7 +31,7 @@ const styles = {
   },
 };
 
-const LookupInput = ({img, onChange, onSubmit}: LookupInputPropsType) => (
+const LookupInput = ({img, onChange, onSubmit}: PropsType) => (
   <div className="lookup-input-container" style={styles.container}>
     <input
       className="form-control lookup-input-input"
