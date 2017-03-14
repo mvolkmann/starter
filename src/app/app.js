@@ -1,5 +1,5 @@
 // @flow
-import React, {Component} from 'react';
+import React, {Component, PropTypes as t} from 'react';
 import Breadcrumbs from '../share/breadcrumbs';
 import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
@@ -53,11 +53,19 @@ async function loadProjects() {
   }
 }
 
+type PropsType = {
+  date: Object
+};
+
 class App extends Component {
+  static propTypes = {
+    date: t.object // moment (just for tests)
+  };
+
   state = {
     activeCrumb: undefined,
     description: '',
-    endDate: moment(),
+    endDate: undefined,
     error: '',
     name: '',
     productCategories: [],
@@ -65,7 +73,7 @@ class App extends Component {
     projectMap: {},
     selectedCategory: '',
     selectedTarget: '',
-    startDate: moment(),
+    startDate: undefined
   };
 
   breadcrumbs = [
@@ -74,8 +82,12 @@ class App extends Component {
     {id: 3, label: 'Baz'},
   ];
 
-  constructor() {
-    super();
+  constructor(props: PropsType) {
+    super(props);
+
+    const date = props.date ? props.date : moment();
+    // eslint-disable-next-line react/no-direct-mutation-state
+    this.state.startDate = this.state.endDate = date;
 
     // Allow any component to change the state of this top-most component.
     defineSetState(this);

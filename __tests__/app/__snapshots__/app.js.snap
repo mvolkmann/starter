@@ -83,10 +83,10 @@ ShallowWrapper {
                   ]
             } />
         <DateRange
-            endDate={"2017-03-14T22:29:25.424Z"}
+            endDate={"2017-03-14T22:20:13.846Z"}
             onEndDateChanged={[Function]}
             onStartDateChanged={[Function]}
-            startDate={"2017-03-14T22:29:25.424Z"} />
+            startDate={"2017-03-14T22:20:13.846Z"} />
         <TargetSelect
             categories={Array []}
             onChange={[Function]}
@@ -173,10 +173,10 @@ ShallowWrapper {
                             ]
                   } />
             <DateRange
-                  endDate={"2017-03-14T22:29:25.424Z"}
+                  endDate={"2017-03-14T22:20:13.846Z"}
                   onEndDateChanged={[Function]}
                   onStartDateChanged={[Function]}
-                  startDate={"2017-03-14T22:29:25.424Z"} />
+                  startDate={"2017-03-14T22:20:13.846Z"} />
             <TargetSelect
                   categories={Array []}
                   onChange={[Function]}
@@ -192,7 +192,8 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 0,
       "_context": Object {},
-      "_currentElement": <App />,
+      "_currentElement": <App
+        date={"2017-03-14T22:20:13.846Z"} />,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -217,12 +218,14 @@ ShallowWrapper {
         "onEndDateChanged": [Function],
         "onNavigate": [Function],
         "onStartDateChanged": [Function],
-        "props": Object {},
+        "props": Object {
+          "date": "2017-03-14T22:20:13.846Z",
+        },
         "refs": Object {},
         "state": Object {
           "activeCrumb": undefined,
           "description": "",
-          "endDate": "2017-03-14T22:29:25.424Z",
+          "endDate": "2017-03-14T22:20:13.846Z",
           "error": "",
           "name": "",
           "productCategories": Array [],
@@ -230,7 +233,7 @@ ShallowWrapper {
           "projectMap": Object {},
           "selectedCategory": "",
           "selectedTarget": "",
-          "startDate": "2017-03-14T22:29:25.424Z",
+          "startDate": "2017-03-14T22:20:13.846Z",
         },
         "updater": Object {
           "enqueueCallback": [Function],
@@ -327,10 +330,10 @@ ShallowWrapper {
                                                 ]
                               } />
                     <DateRange
-                              endDate={"2017-03-14T22:29:25.424Z"}
+                              endDate={"2017-03-14T22:20:13.846Z"}
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
-                              startDate={"2017-03-14T22:29:25.424Z"} />
+                              startDate={"2017-03-14T22:20:13.846Z"} />
                     <TargetSelect
                               categories={Array []}
                               onChange={[Function]}
@@ -417,10 +420,10 @@ ShallowWrapper {
                                                 ]
                               } />
                     <DateRange
-                              endDate={"2017-03-14T22:29:25.424Z"}
+                              endDate={"2017-03-14T22:20:13.846Z"}
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
-                              startDate={"2017-03-14T22:29:25.424Z"} />
+                              startDate={"2017-03-14T22:20:13.846Z"} />
                     <TargetSelect
                               categories={Array []}
                               onChange={[Function]}
@@ -440,6 +443,7 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <App />,
+  "unrendered": <App
+    date={"2017-03-14T22:20:13.846Z"} />,
 }
 `;
