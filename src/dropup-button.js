@@ -39,7 +39,7 @@ class DropupBtn extends Component {
     } else {
       this.top.className += ' open';
     }
-  }
+  };
 
   render() {
     const {btn, links}: PropsType = this.props;

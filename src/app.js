@@ -114,7 +114,7 @@ class App extends Component {
           onClick: () => console.log('clicked2'),
           separator: false,
           text: 'link 2',
-        }
+        },
       ],
     };
 
