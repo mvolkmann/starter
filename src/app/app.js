@@ -58,8 +58,10 @@ class App extends Component {
     error: '',
     name: '',
     productCategories: [],
+    productTargets: [],
     projectMap: {},
     selectedCategory: '',
+    selectedTarget: '',
   };
 
   breadcrumbs = [
@@ -100,8 +102,10 @@ class App extends Component {
       error,
       name,
       productCategories,
+      productTargets,
       projectMap,
       selectedCategory,
+      selectedTarget
     } = this.state;
 
     const buttons = [
@@ -144,10 +148,11 @@ class App extends Component {
       ],
     };
 
-    const categoryOptions = productCategories.map(cat => ({
-      text: cat,
-      value: cat,
-    }));
+    const categoryOptions = productCategories.map(
+      cat => ({text: cat, value: cat}));
+
+    const targetOptions = productTargets.map(
+      target => ({text: target, value: target}));
 
     return (
       <div className="app">
@@ -168,6 +173,8 @@ class App extends Component {
             categories={categoryOptions}
             onChange={this.onCategorySelect}
             selectedCategory={selectedCategory}
+            selectedTarget={selectedTarget}
+            targets={targetOptions}
           />
         </div>
       </div>

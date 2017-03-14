@@ -1,0 +1,1 @@
+exports[`DateRange should render 1`] = `"Start<DatePicker />End<DatePicker />"`;

@@ -218,6 +218,19 @@ exports[`App should render 1`] = `
           size={undefined}
           value="" />
       </div>
+      <div
+        className="select">
+        <label>
+          Product Target
+        </label>
+        <select
+          className="form-control"
+          disabled={undefined}
+          multiple={undefined}
+          onChange={[Function]}
+          size={undefined}
+          value="" />
+      </div>
     </div>
   </div>
 </div>

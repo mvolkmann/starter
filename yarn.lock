@@ -4071,6 +4071,10 @@ minimist@1.2.0, minimist@>=0.2.0, minimist@^1.1.0, minimist@^1.1.1, minimist@^1.
   dependencies:
     minimist "0.0.8"
 
+moment@^2.17.1:
+  version "2.17.1"
+  resolved "https://npm.platforms.engineering/m/moment/_attachments/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
+
 ms@0.7.1:
   version "0.7.1"
   resolved "https://npm.platforms.engineering/m/ms/_attachments/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -5096,6 +5100,15 @@ react-bootstrap@^0.30.8:
     uncontrollable "^4.0.1"
     warning "^3.0.0"
 
+react-datepicker@^0.41.1:
+  version "0.41.1"
+  resolved "https://npm.platforms.engineering/r/react-datepicker/_attachments/react-datepicker-0.41.1.tgz#21c26cc3821bee01eb6deb650880fa98f44588ec"
+  dependencies:
+    classnames "^2.2.5"
+    moment "^2.17.1"
+    react-onclickoutside "^5.9.0"
+    tether "^1.4.0"
+
 react-dev-utils@^0.5.2:
   version "0.5.2"
   resolved "https://npm.platforms.engineering/r/react-dev-utils/_attachments/react-dev-utils-0.5.2.tgz#50d0b962d3a94b6c2e8f2011ed6468e4124bc410"
@@ -5122,6 +5135,10 @@ react-dom@^15.4.2:
 react-fontawesome@^1.5.0:
   version "1.5.0"
   resolved "https://npm.platforms.engineering/r/react-fontawesome/_attachments/react-fontawesome-1.5.0.tgz#879d1b2aa5c48bba551e9237f84993217b5645c4"
+
+react-onclickoutside@^5.9.0:
+  version "5.9.0"
+  resolved "https://npm.platforms.engineering/r/react-onclickoutside/_attachments/react-onclickoutside-5.9.0.tgz#c47bb506384adc98d686d134b34412ed17b97437"
 
 react-overlays@^0.6.12:
   version "0.6.12"
@@ -6052,6 +6069,10 @@ test-exclude@^3.3.0:
     object-assign "^4.1.0"
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
+
+tether@^1.4.0:
+  version "1.4.0"
+  resolved "https://npm.platforms.engineering/t/tether/_attachments/tether-1.4.0.tgz#0f9fa171f75bf58485d8149e94799d7ae74d1c1a"
 
 text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
