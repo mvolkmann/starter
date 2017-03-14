@@ -175,6 +175,34 @@ exports[`App should render 1`] = `
           }
         } />
     </div>
+    <div
+      className="btn-group dropup">
+      <button
+        className="btn btn-danger"
+        type="button">
+        My button
+      </button>
+      <button
+        className="btn btn-default dropdown-toggle"
+        onClick={[Function]}
+        type="button">
+        <span
+          className="caret" />
+        <span
+          className="sr-only">
+          Toggle Dropdown
+        </span>
+      </button>
+      <ul
+        className="dropdown-menu">
+        <li
+          className={undefined}
+          onClick={[Function]}
+          role="">
+          link 1
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
