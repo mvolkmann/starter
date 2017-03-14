@@ -13,7 +13,7 @@ describe('LookupInput', () => {
     const wrapper = mount(<LookupInput img="search" onChange={onChange} />);
     const input = wrapper.find('.lookup-input-input');
     input.simulate('change', {target: {value: 'foo'}});
-    expect(onChange).toHaveBeenCalled();
+    /*
     expect(onChange)
       .toHaveBeenCalledWith(
         expect.objectContaining(
@@ -21,6 +21,12 @@ describe('LookupInput', () => {
             {value: expect.stringMatching(/foo/)}
           )}
         )
+      );
+    */
+    // This is shorter way to do the above.
+    expect(onChange)
+      .toHaveBeenCalledWith(
+        expect.objectContaining({target: {value: 'foo'}})
       );
   });
 

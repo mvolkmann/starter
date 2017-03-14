@@ -34,7 +34,7 @@
     "url-search-params": "^0.6.1"
   },
   "scripts": {
-    "_format": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.jsx\"",
+    "_format": "prettier-eslint --write \"src/**/*.js\"",
     "build": "npm run build-css && react-scripts build",
     "build-css": "node-sass src/ -o src/",
     "cover": "npm-run-all cover:*",
@@ -47,7 +47,7 @@
     "link-dev": "ln -sf ~/.eslintrc.json .eslintrc.json",
     "link-project": "ln -sf .eslintrc.project.json .eslintrc.json",
     "lint": "npm-run-all lint:**",
-    "lint:js": "eslint --quiet src __tests__ --ext .js,.jsx",
+    "lint:js": "eslint --quiet src __tests__ --ext .js",
     "lint:scss": "stylelint \"src/*.scss\"",
     "postbuild": "cd build && npm install --production",
     "preinstall": "yarn global add nodemon",
