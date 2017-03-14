@@ -100,8 +100,9 @@ class App extends Component {
 
     const dropupBtnParams = {
       btn: {
-        text: 'My button',
+        disabled: false,
         kind: 'danger',
+        btnText: 'My button',
       },
       links: [
         {
@@ -109,6 +110,11 @@ class App extends Component {
           separator: false,
           text: 'link 1',
         },
+        {
+          onClick: () => console.log('clicked2'),
+          separator: false,
+          text: 'link 2',
+        }
       ],
     };
 
