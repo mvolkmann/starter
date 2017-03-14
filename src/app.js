@@ -20,7 +20,6 @@ async function loadProjects() {
   const url = getUrl('project');
   try {
     const res = await fetch(url);
-    console.log('app.js loadProjects: res =', res);
     if (!res.ok) return handleError(url, res);
 
     const projects = await res.json();
@@ -96,7 +95,7 @@ class App extends Component {
       img: 'search',
       onChange: event => console.log(event.target.value),
       onClick: () => console.log('clicked!'),
-      onKeyPress: () => console.log('key pressed!')
+      onKeyPress: () => console.log('key pressed!'),
     };
 
     return (

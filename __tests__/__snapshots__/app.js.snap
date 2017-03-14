@@ -155,7 +155,7 @@ exports[`App should render 1`] = `
       <input
         className="form-control lookup-input-input"
         onChange={[Function]}
-        onKeyPress={undefined}
+        onKeyPress={[Function]}
         style={
           Object {
             "flex": "9 9 0px",
@@ -166,7 +166,7 @@ exports[`App should render 1`] = `
         type="text" />
       <i
         className="lookup-input-icon fa fa-search"
-        onClick={undefined}
+        onClick={[Function]}
         style={
           Object {
             "flex": "1 1 0px",
