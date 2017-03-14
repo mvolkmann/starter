@@ -22,8 +22,6 @@ const Breadcrumbs = ({activeCrumb, items, onNavigate}) => {
   );
 };
 
-Breadcrumbs.displayName = 'Breadcrumbs';
-
 Breadcrumbs.propTypes = {
   activeCrumb: t.shape({
     id: t.number,

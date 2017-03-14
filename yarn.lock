@@ -978,6 +978,10 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap.native@^2.0.6:
+  version "2.0.6"
+  resolved "https://npm.platforms.engineering/b/bootstrap.native/_attachments/bootstrap.native-2.0.6.tgz#90c4e999fd9745f1c1bb778ab922873e48e3046d"
+
 bootstrap@^3.3.7:
   version "3.3.7"
   resolved "https://npm.platforms.engineering/b/bootstrap/_attachments/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
