@@ -1,7 +1,7 @@
 import React from 'react';
-import ButtonSet from '../src/button-set';
+import ButtonSet from '../../src/share/button-set';
 import {mount} from 'enzyme';
-import snapshot from './snapshot';
+import snapshot from '../snapshot';
 
 describe('DataEntry', () => {
   it('should render', () => {

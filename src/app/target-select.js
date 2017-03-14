@@ -14,7 +14,6 @@ class TargetSelect extends Component {
 
   render() {
     const {categories, selectedCategory} = this.props;
-    console.log('target-select.js render: selectedCategory =', selectedCategory);
 
     return (
       <div className="target-select">

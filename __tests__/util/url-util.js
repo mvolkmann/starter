@@ -1,4 +1,4 @@
-import {getUrl} from '../src/url-util';
+import {getUrl} from '../../src/util/url-util';
 
 describe('getUrl', () => {
   it('should work', () => {

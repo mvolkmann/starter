@@ -1,5 +1,5 @@
-import {defineSetState} from '../src/state-util';
-import {handleError} from '../src/error';
+import {defineSetState} from '../../src/util/state-util';
+import {handleError} from '../../src/util/error';
 
 let state;
 defineSetState(s => state = s);
