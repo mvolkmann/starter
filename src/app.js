@@ -95,6 +95,8 @@ class App extends Component {
     const input = {
       img: 'search',
       onChange: event => console.log(event.target.value),
+      onClick: () => console.log('clicked!'),
+      onKeyPress: () => console.log('key pressed!')
     };
 
     return (
@@ -110,7 +112,7 @@ class App extends Component {
             <DataDisplay projectMap={projectMap} /> :
             <DataEntry description={description} name={name} />}
           <ButtonSet buttons={buttons} />
-          <LookupInput img={input.img} onChange={input.onChange} />
+          <LookupInput {...input} />
         </div>
       </div>
     );
