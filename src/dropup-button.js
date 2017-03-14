@@ -1,6 +1,8 @@
 // @flow
 import React, {PropTypes as t} from 'react';
+import {Dropdown} from 'bootstrap.native';
 
+/* eslint-disable react/no-unused-prop-types */
 type ButtonKindType =
   | 'danger'
   | 'default'
@@ -16,15 +18,22 @@ type BtnLinkType = {
   text: string
 };
 
+// eslint throwing an error here. Not sure why
 type BtnType = {
   text: string,
   kind: ButtonKindType
 };
+/* eslint-enable react/no-unused-prop-types */
 
 type DropupBtnPropsType = {btn: BtnType, links: Array<BtnLinkType>};
 
-const DropupBtn = ({btn, links}: DropupBtnPropsType) =>
-  (
+const DropupBtn = ({btn, links}: DropupBtnPropsType) => {
+  function toggleElement() {
+    const dropdown = document.querySelector('.dropdown-toggle');
+    new Dropdown(dropdown).toggle();
+  }
+
+  return (
     <div className="btn-group dropup">
       <button
         type="button"
@@ -35,9 +44,7 @@ const DropupBtn = ({btn, links}: DropupBtnPropsType) =>
       <button
         type="button"
         className="btn btn-default dropdown-toggle"
-        dataToggle="dropdown"
-        ariaHaspopup="true"
-        ariaExpanded="false"
+        onClick={() => toggleElement()}
       >
         <span className="caret" />
         <span className="sr-only">Toggle Dropdown</span>
@@ -57,6 +64,7 @@ const DropupBtn = ({btn, links}: DropupBtnPropsType) =>
       </ul>
     </div>
   );
+};
 
 DropupBtn.displayName = 'DropupBtn';
 
@@ -70,7 +78,7 @@ DropupBtn.propTypes = {
       'secondary',
       'success'
     ]).isRequired,
-    //text: t.string.isRequired
+    text: t.string.isRequired
   }),
   links: t.arrayOf(
     t.shape({
