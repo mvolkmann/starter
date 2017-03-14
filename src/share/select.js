@@ -40,6 +40,7 @@ export default function Select(
     <div className="select">
       {label ? <label>{label}</label> : null}
       <select
+        className="form-control"
         onChange={onChange}
         size={size}
         value={value}
