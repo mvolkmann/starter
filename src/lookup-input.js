@@ -48,8 +48,6 @@ const LookupInput = ({img, onChange, onSubmit}: LookupInputPropsType) => (
   </div>
 );
 
-LookupInput.displayName = 'LookupInput';
-
 LookupInput.propTypes = t.shape({
   img: t.string.isRequired,
   onChange: t.func,

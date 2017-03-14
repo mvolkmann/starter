@@ -61,8 +61,6 @@ const DropupBtn = ({btn, links}: DropupBtnPropsType) => {
   );
 };
 
-DropupBtn.displayName = 'DropupBtn';
-
 DropupBtn.propTypes = {
   btn: t.shape({
     kind: t.oneOf([
