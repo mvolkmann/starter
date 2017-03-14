@@ -90,7 +90,7 @@ class App extends Component {
   };
 
   onNavigate = (crumb: BreadcrumbType) => {
-    this.setState({activeCrumb: crumb});
+    this.setState({activeCrumb: crumb.id});
   };
 
   render() {
