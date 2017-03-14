@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "bootstrap.native": "^2.0.6",
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",

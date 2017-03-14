@@ -2,9 +2,10 @@
 import React, {Component} from 'react';
 import Breadcrumbs from './breadcrumbs';
 import ButtonSet from './button-set';
-import LookupInput from './lookup-input';
 import DataEntry from './data-entry';
 import DataDisplay from './data-display';
+import DropupBtn from './dropup-button';
+import LookupInput from './lookup-input';
 import {defineSetState, setState} from './state-util';
 import {getLocationParts} from './hash-route';
 import {getUrl} from './url-util';
@@ -20,7 +21,6 @@ async function loadProjects() {
   const url = getUrl('project');
   try {
     const res = await fetch(url);
-    console.log('app.js loadProjects: res =', res);
     if (!res.ok) return handleError(url, res);
 
     const projects = await res.json();
@@ -94,7 +94,22 @@ class App extends Component {
 
     const input = {
       img: 'search',
-      onChange: event => console.log(event.target.value),
+      onChange: (event = {}) => console.log(event.target.value),
+      onSubmit: () => console.log('clicked!'),
+    };
+
+    const dropupBtnParams = {
+      btn: {
+        text: 'My button',
+        kind: 'danger',
+      },
+      links: [
+        {
+          onClick: () => console.log('clicked1'),
+          separator: false,
+          text: 'link 1',
+        },
+      ],
     };
 
     return (
@@ -110,7 +125,8 @@ class App extends Component {
             <DataDisplay projectMap={projectMap} /> :
             <DataEntry description={description} name={name} />}
           <ButtonSet buttons={buttons} />
-          <LookupInput img={input.img} onChange={input.onChange} />
+          <LookupInput {...input} />
+          <DropupBtn {...dropupBtnParams} />
         </div>
       </div>
     );
