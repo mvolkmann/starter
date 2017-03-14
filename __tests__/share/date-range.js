@@ -12,10 +12,10 @@ describe('DateRange', () => {
     const noop = () => null;
     const component = shallow(
       <DateRange className="form"
-        endDate={moment().valueOf()}
+        endDate={moment()}
         onEndDateChanged={noop}
         onStartDateChanged={noop}
-        startDate={moment().valueOf()}
+        startDate={moment()}
       />);
 
     expect(component.text()).toMatchSnapshot();
@@ -29,8 +29,8 @@ describe('DateRange', () => {
     const onEndDateChanged = () => {};
     const jsx =
       <DateRange
-        startDate={startDate.valueOf()}
-        endDate={endDate.valueOf()}
+        startDate={startDate}
+        endDate={endDate}
         onStartDateChanged={onStartDateChanged}
         onEndDateChanged={onEndDateChanged}
       />;

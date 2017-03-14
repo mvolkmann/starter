@@ -4,8 +4,10 @@ import Breadcrumbs from '../share/breadcrumbs';
 import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
 import DataEntry from './data-entry';
+import DateRange from '../share/date-range';
 import DropupBtn from '../share/dropup-button';
 import LookupInput from '../share/lookup-input';
+import moment from 'moment';
 import TargetSelect from './target-select';
 import {defineSetState, setState} from '../util/state-util';
 import {getLocationParts} from '../util/hash-route';
@@ -55,6 +57,7 @@ class App extends Component {
   state = {
     activeCrumb: undefined,
     description: '',
+    endDate: moment(),
     error: '',
     name: '',
     productCategories: [],
@@ -62,6 +65,7 @@ class App extends Component {
     projectMap: {},
     selectedCategory: '',
     selectedTarget: '',
+    startDate: moment()
   };
 
   breadcrumbs = [
@@ -89,8 +93,16 @@ class App extends Component {
     console.log('app.js onCategorySelect: category =', category);
   };
 
+  onEndDateChanged = (endDate: Object) => {
+    this.setState({endDate});
+  };
+
   onNavigate = (crumb: BreadcrumbType) => {
     this.setState({activeCrumb: crumb.id});
+  };
+
+  onStartDateChanged = (startDate: Object) => {
+    this.setState({startDate});
   };
 
   render() {
@@ -99,13 +111,15 @@ class App extends Component {
     const {
       activeCrumb,
       description,
+      endDate,
       error,
       name,
       productCategories,
       productTargets,
       projectMap,
       selectedCategory,
-      selectedTarget
+      selectedTarget,
+      startDate
     } = this.state;
 
     const buttons = [
@@ -166,9 +180,20 @@ class App extends Component {
           {hash === 'display' ?
             <DataDisplay projectMap={projectMap} /> :
             <DataEntry description={description} name={name} />}
+
           <ButtonSet buttons={buttons} />
+
           <LookupInput {...input} />
+
           <DropupBtn {...dropupBtnParams} />
+
+          <DateRange
+            startDate={startDate}
+            endDate={endDate}
+            onStartDateChanged={this.onStartDateChanged}
+            onEndDateChanged={this.onEndDateChanged}
+          />
+
           <TargetSelect
             categories={categoryOptions}
             onChange={this.onCategorySelect}
