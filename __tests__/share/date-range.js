@@ -22,8 +22,9 @@ describe('DateRange', () => {
   });
 
   it('should handle clicks', () => {
-    const date = moment().year(2017).month(2).date(14)
-      .hour(0).minute(0).second(0).millisecond(0);
+    const ms = 1489530013846; // March 14, 2017 5:20PM
+    const date = moment(ms);
+
     /* eslint-disable no-empty-function */
     const startDate = date;
     const endDate = date;
