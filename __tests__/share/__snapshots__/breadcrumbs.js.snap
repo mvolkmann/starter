@@ -1,0 +1,35 @@
+exports[`Breadcrumbs should render 1`] = `
+<ol
+  aria-label="breadcrumbs"
+  className="breadcrumb"
+  role="navigation">
+  <li
+    className="">
+    <a
+      href="#"
+      onClick={[Function]}
+      role="button"
+      target={undefined}
+      title={undefined}>
+      foo
+    </a>
+  </li>
+  <li
+    className="active">
+    <span>
+      bar
+    </span>
+  </li>
+  <li
+    className="">
+    <a
+      href="#"
+      onClick={[Function]}
+      role="button"
+      target={undefined}
+      title={undefined}>
+      baz
+    </a>
+  </li>
+</ol>
+`;

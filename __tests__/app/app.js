@@ -1,9 +1,9 @@
 import React from 'react';
 import App from '../../src/app/app';
-import snapshot from '../snapshot';
+import {shallowSnapshot} from '../snapshot';
 
 describe('App', () => {
   it('should render', () => {
-    snapshot(<App />);
+    shallowSnapshot(<App />);
   });
 });

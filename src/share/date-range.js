@@ -11,17 +11,17 @@ class DateRange extends Component {
 
   static propTypes = {
     className: t.string,
-    endDate: t.number.isRequired,
+    endDate: t.object.isRequired, // moment
     onEndDateChanged: t.func.isRequired,
     onStartDateChanged: t.func.isRequired,
-    startDate: t.number.isRequired,
+    startDate: t.object.isRequired, // moment
   };
 
-  isValidStart = startDate => moment(startDate).isBefore(this.props.endDate);
-  isValidEnd = endDate => moment(endDate).isAfter(this.props.startDate);
+  isValidStart = startDate => startDate.isBefore(this.props.endDate);
+  isValidEnd = endDate => endDate.isAfter(this.props.startDate);
 
   render() {
-    const today = moment().valueOf();
+    const today = moment();
     const {
       className = '',
       endDate = today,
@@ -31,10 +31,10 @@ class DateRange extends Component {
     } = this.props;
 
     const props = {
-      endDate: moment(endDate),
+      endDate,
       showMonthDropdown: true,
       showYearDropdown: true,
-      startDate: moment(startDate),
+      startDate,
     };
 
     const style = {
@@ -57,7 +57,7 @@ class DateRange extends Component {
             className="form-control"
             filterDate={this.isValidStart}
             onChange={onStartDateChanged}
-            selected={moment(startDate)}
+            selected={startDate}
             selectsStart
           />
         </span>
@@ -72,7 +72,7 @@ class DateRange extends Component {
             className="form-control"
             filterDate={this.isValidEnd}
             onChange={onEndDateChanged}
-            selected={moment(endDate)}
+            selected={endDate}
             selectsEnd
           />
         </span>

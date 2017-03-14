@@ -4,13 +4,15 @@ import {Breadcrumb} from 'react-bootstrap';
 const {Item} = Breadcrumb;
 
 const Breadcrumbs = ({activeCrumb, items, onNavigate}) => {
-  const activeId = activeCrumb ?
-    activeCrumb.id :
-    items.length ? items[items.length - 1].id : null;
+  // If no active crumb was specified, make it the last one.
+  if (activeCrumb === undefined && items.length) {
+    activeCrumb = items[items.length - 1].id;
+  }
+
   return (
     <Breadcrumb>
       {items.map(item => {
-        const active = activeId === item.id;
+        const active = item.id === activeCrumb;
         const handlers = active ? {} : {onClick: () => onNavigate(item)};
         return (
           <Item active={active} key={item.id} {...handlers}>
@@ -23,10 +25,7 @@ const Breadcrumbs = ({activeCrumb, items, onNavigate}) => {
 };
 
 Breadcrumbs.propTypes = {
-  activeCrumb: t.shape({
-    id: t.number,
-    label: t.string,
-  }),
+  activeCrumb: t.number,
   items: t.arrayOf(
     t.shape({
       id: t.number.isRequired,

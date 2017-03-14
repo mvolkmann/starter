@@ -1,240 +1,421 @@
 exports[`App should render 1`] = `
-<div
-  className="app">
-  <ol
-    aria-label="breadcrumbs"
-    className="breadcrumb"
-    role="navigation">
-    <li
-      className="">
-      <a
-        href="#"
-        onClick={[Function]}
-        role="button"
-        target={undefined}
-        title={undefined}>
-        Foo
-      </a>
-    </li>
-    <li
-      className="">
-      <a
-        href="#"
-        onClick={[Function]}
-        role="button"
-        target={undefined}
-        title={undefined}>
-        Bar
-      </a>
-    </li>
-    <li
-      className="active">
-      <span>
-        Baz
-      </span>
-    </li>
-  </ol>
-  <div
-    className="error">
-    
-  </div>
-  <div
-    className="body">
-    <div
-      className="data-entry">
-      <div>
-        <div
-          className="data-input">
-          <label>
-            Project Name
-          </label>
-          <input
-            autoFocus={undefined}
-            className="form-control name-input"
-            name="name"
-            onChange={[Function]}
-            onKeyPress={undefined}
-            type="text"
-            value="" />
-        </div>
-        <div
-          className="data-input">
-          <label>
-            Project Description
-          </label>
-          <input
-            autoFocus={undefined}
-            className="form-control description-input"
-            name="description"
-            onChange={[Function]}
-            onKeyPress={[Function]}
-            type="text"
-            value="" />
-        </div>
-        <button
-          className="add-btn btn"
-          onClick={[Function]}>
-          Add
-        </button>
-      </div>
-      <a
-        href="#display">
-        Show Projects
-      </a>
-      <div
-        className="icons">
-        <span
-          aria-hidden={true}
-          className="fa fa-envelope-o fa-2x" />
-        <span
-          aria-hidden={true}
-          className="fa fa-check-circle fa-2x"
-          style={
-            Object {
-              "color": "green",
-            }
-          } />
-        <span
-          className="fa-stack">
-          <span
-            aria-hidden={true}
-            className="fa fa-circle-o fa-stack-2x"
-            style={
-              Object {
-                "color": "red",
-              }
-            } />
-          <span
-            aria-hidden={true}
-            className="fa fa-exclamation fa-stack-1x"
-            style={
-              Object {
-                "color": "red",
-              }
-            } />
-        </span>
-        <span
-          aria-hidden={true}
-          className="fa fa-times-circle-o fa-2x fa-inverse"
-          style={
-            Object {
-              "color": "red",
-            }
-          } />
-      </div>
-    </div>
-    <div
-      className="button-set">
-      <button
-        className="btn btn-primary"
-        disabled={true}
-        onClick={[Function]}>
-        Save
-      </button>
-      <button
-        className="btn btn-info"
-        disabled={false}
-        onClick={[Function]}>
-        Info
-      </button>
-      <button
-        className="btn btn-danger"
-        disabled={undefined}
-        onClick={[Function]}>
-        Cancel
-      </button>
-    </div>
-    <div
-      className="lookup-input-container"
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="app">
+    <Breadcrumbs
+        activeCrumb={undefined}
+        items={
+            Array [
+                Object {
+                  "id": 1,
+                  "label": "Foo",
+                },
+                Object {
+                  "id": 2,
+                  "label": "Bar",
+                },
+                Object {
+                  "id": 3,
+                  "label": "Baz",
+                },
+              ]
         }
-      }>
-      <input
-        className="form-control lookup-input-input"
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        style={
-          Object {
-            "flex": "9 9 0px",
-            "paddingRight": "32px",
-            "width": "90%",
-          }
-        }
-        type="text" />
-      <i
-        className="lookup-input-icon fa fa-search"
-        onClick={[Function]}
-        style={
-          Object {
-            "flex": "1 1 0px",
-            "left": "-20px",
-            "position": "relative",
-          }
-        } />
-    </div>
+        onNavigate={[Function]} />
     <div
-      className="btn-group dropup">
-      <button
-        className="btn btn-danger dropdown-toggle"
-        disabled={false}
-        onClick={[Function]}
-        type="button">
-        My button 
-        <span
-          className="caret" />
-        <span
-          className="sr-only">
-          Toggle Dropdown
-        </span>
-      </button>
-      <ul
-        className="dropdown-menu">
-        <li
-          className={undefined}
-          onClick={[Function]}
-          role="">
-          link 1
-        </li>
-        <li
-          className={undefined}
-          onClick={[Function]}
-          role="">
-          link 2
-        </li>
-      </ul>
-    </div>
+        className="error" />
     <div
-      className="target-select">
-      <div
-        className="select">
-        <label>
-          Product Category
-        </label>
-        <select
-          className="form-control"
-          disabled={undefined}
-          multiple={undefined}
-          onChange={[Function]}
-          size={undefined}
-          value="" />
-      </div>
-      <div
-        className="select">
-        <label>
-          Product Target
-        </label>
-        <select
-          className="form-control"
-          disabled={undefined}
-          multiple={undefined}
-          onChange={[Function]}
-          size={undefined}
-          value="" />
-      </div>
+        className="body">
+        <DataEntry
+            description=""
+            name="" />
+        <ButtonSet
+            buttons={
+                Array [
+                    Object {
+                      "disabled": true,
+                      "kind": "primary",
+                      "onClick": [Function],
+                      "text": "Save",
+                    },
+                    Object {
+                      "disabled": false,
+                      "kind": "info",
+                      "onClick": [Function],
+                      "text": "Info",
+                    },
+                    Object {
+                      "kind": "danger",
+                      "onClick": [Function],
+                      "text": "Cancel",
+                    },
+                  ]
+            } />
+        <LookupInput
+            img="search"
+            onChange={[Function]}
+            onSubmit={[Function]} />
+        <DropupBtn
+            btn={
+                Object {
+                    "kind": "danger",
+                    "text": "My button",
+                  }
+            }
+            links={
+                Array [
+                    Object {
+                      "onClick": [Function],
+                      "separator": false,
+                      "text": "link 1",
+                    },
+                  ]
+            } />
+        <DateRange
+            endDate={"2017-03-14T22:14:55.187Z"}
+            onEndDateChanged={[Function]}
+            onStartDateChanged={[Function]}
+            startDate={"2017-03-14T22:14:55.187Z"} />
+        <TargetSelect
+            categories={Array []}
+            onChange={[Function]}
+            selectedCategory=""
+            selectedTarget=""
+            targets={Array []} />
     </div>
-  </div>
-</div>
+</div>,
+  "nodes": Array [
+    <div
+      className="app">
+      <Breadcrumbs
+            activeCrumb={undefined}
+            items={
+                  Array [
+                        Object {
+                          "id": 1,
+                          "label": "Foo",
+                        },
+                        Object {
+                          "id": 2,
+                          "label": "Bar",
+                        },
+                        Object {
+                          "id": 3,
+                          "label": "Baz",
+                        },
+                      ]
+            }
+            onNavigate={[Function]} />
+      <div
+            className="error" />
+      <div
+            className="body">
+            <DataEntry
+                  description=""
+                  name="" />
+            <ButtonSet
+                  buttons={
+                        Array [
+                              Object {
+                                "disabled": true,
+                                "kind": "primary",
+                                "onClick": [Function],
+                                "text": "Save",
+                              },
+                              Object {
+                                "disabled": false,
+                                "kind": "info",
+                                "onClick": [Function],
+                                "text": "Info",
+                              },
+                              Object {
+                                "kind": "danger",
+                                "onClick": [Function],
+                                "text": "Cancel",
+                              },
+                            ]
+                  } />
+            <LookupInput
+                  img="search"
+                  onChange={[Function]}
+                  onSubmit={[Function]} />
+            <DropupBtn
+                  btn={
+                        Object {
+                              "kind": "danger",
+                              "text": "My button",
+                            }
+                  }
+                  links={
+                        Array [
+                              Object {
+                                "onClick": [Function],
+                                "separator": false,
+                                "text": "link 1",
+                              },
+                            ]
+                  } />
+            <DateRange
+                  endDate={"2017-03-14T22:14:55.187Z"}
+                  onEndDateChanged={[Function]}
+                  onStartDateChanged={[Function]}
+                  startDate={"2017-03-14T22:14:55.187Z"} />
+            <TargetSelect
+                  categories={Array []}
+                  onChange={[Function]}
+                  selectedCategory=""
+                  selectedTarget=""
+                  targets={Array []} />
+      </div>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <App />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": App {
+        "_reactInternalInstance": [Circular],
+        "breadcrumbs": Array [
+          Object {
+            "id": 1,
+            "label": "Foo",
+          },
+          Object {
+            "id": 2,
+            "label": "Bar",
+          },
+          Object {
+            "id": 3,
+            "label": "Baz",
+          },
+        ],
+        "context": Object {},
+        "onCategorySelect": [Function],
+        "onEndDateChanged": [Function],
+        "onNavigate": [Function],
+        "onStartDateChanged": [Function],
+        "props": Object {},
+        "refs": Object {},
+        "state": Object {
+          "activeCrumb": undefined,
+          "description": "",
+          "endDate": "2017-03-14T22:14:55.187Z",
+          "error": "",
+          "name": "",
+          "productCategories": Array [],
+          "productTargets": Array [],
+          "projectMap": Object {},
+          "selectedCategory": "",
+          "selectedTarget": "",
+          "startDate": "2017-03-14T22:14:55.187Z",
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="app">
+          <Breadcrumbs
+                    activeCrumb={undefined}
+                    items={
+                              Array [
+                                        Object {
+                                          "id": 1,
+                                          "label": "Foo",
+                                        },
+                                        Object {
+                                          "id": 2,
+                                          "label": "Bar",
+                                        },
+                                        Object {
+                                          "id": 3,
+                                          "label": "Baz",
+                                        },
+                                      ]
+                    }
+                    onNavigate={[Function]} />
+          <div
+                    className="error" />
+          <div
+                    className="body">
+                    <DataEntry
+                              description=""
+                              name="" />
+                    <ButtonSet
+                              buttons={
+                                        Array [
+                                                  Object {
+                                                    "disabled": true,
+                                                    "kind": "primary",
+                                                    "onClick": [Function],
+                                                    "text": "Save",
+                                                  },
+                                                  Object {
+                                                    "disabled": false,
+                                                    "kind": "info",
+                                                    "onClick": [Function],
+                                                    "text": "Info",
+                                                  },
+                                                  Object {
+                                                    "kind": "danger",
+                                                    "onClick": [Function],
+                                                    "text": "Cancel",
+                                                  },
+                                                ]
+                              } />
+                    <LookupInput
+                              img="search"
+                              onChange={[Function]}
+                              onSubmit={[Function]} />
+                    <DropupBtn
+                              btn={
+                                        Object {
+                                                  "kind": "danger",
+                                                  "text": "My button",
+                                                }
+                              }
+                              links={
+                                        Array [
+                                                  Object {
+                                                    "onClick": [Function],
+                                                    "separator": false,
+                                                    "text": "link 1",
+                                                  },
+                                                ]
+                              } />
+                    <DateRange
+                              endDate={"2017-03-14T22:14:55.187Z"}
+                              onEndDateChanged={[Function]}
+                              onStartDateChanged={[Function]}
+                              startDate={"2017-03-14T22:14:55.187Z"} />
+                    <TargetSelect
+                              categories={Array []}
+                              onChange={[Function]}
+                              selectedCategory=""
+                              selectedTarget=""
+                              targets={Array []} />
+          </div>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          className="app">
+          <Breadcrumbs
+                    activeCrumb={undefined}
+                    items={
+                              Array [
+                                        Object {
+                                          "id": 1,
+                                          "label": "Foo",
+                                        },
+                                        Object {
+                                          "id": 2,
+                                          "label": "Bar",
+                                        },
+                                        Object {
+                                          "id": 3,
+                                          "label": "Baz",
+                                        },
+                                      ]
+                    }
+                    onNavigate={[Function]} />
+          <div
+                    className="error" />
+          <div
+                    className="body">
+                    <DataEntry
+                              description=""
+                              name="" />
+                    <ButtonSet
+                              buttons={
+                                        Array [
+                                                  Object {
+                                                    "disabled": true,
+                                                    "kind": "primary",
+                                                    "onClick": [Function],
+                                                    "text": "Save",
+                                                  },
+                                                  Object {
+                                                    "disabled": false,
+                                                    "kind": "info",
+                                                    "onClick": [Function],
+                                                    "text": "Info",
+                                                  },
+                                                  Object {
+                                                    "kind": "danger",
+                                                    "onClick": [Function],
+                                                    "text": "Cancel",
+                                                  },
+                                                ]
+                              } />
+                    <LookupInput
+                              img="search"
+                              onChange={[Function]}
+                              onSubmit={[Function]} />
+                    <DropupBtn
+                              btn={
+                                        Object {
+                                                  "kind": "danger",
+                                                  "text": "My button",
+                                                }
+                              }
+                              links={
+                                        Array [
+                                                  Object {
+                                                    "onClick": [Function],
+                                                    "separator": false,
+                                                    "text": "link 1",
+                                                  },
+                                                ]
+                              } />
+                    <DateRange
+                              endDate={"2017-03-14T22:14:55.187Z"}
+                              onEndDateChanged={[Function]}
+                              onStartDateChanged={[Function]}
+                              startDate={"2017-03-14T22:14:55.187Z"} />
+                    <TargetSelect
+                              categories={Array []}
+                              onChange={[Function]}
+                              selectedCategory=""
+                              selectedTarget=""
+                              targets={Array []} />
+          </div>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <App />,
+}
 `;

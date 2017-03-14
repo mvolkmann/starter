@@ -8,12 +8,14 @@ type EventType = {
   }
 };
 
+const optionType = t.shape({text: t.string, value: t.string});
+
 class TargetSelect extends Component {
   static propTypes = {
-    categories: t.arrayOf(t.string).isRequired,
+    categories: t.arrayOf(optionType).isRequired,
     selectedCategory: t.string.isRequired,
     selectedTarget: t.string.isRequired,
-    targets: t.arrayOf(t.string).isRequired,
+    targets: t.arrayOf(optionType).isRequired,
   };
 
   onCategorySelect = (event: EventType) => {
