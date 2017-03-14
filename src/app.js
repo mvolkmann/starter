@@ -101,15 +101,15 @@ class App extends Component {
     const dropupBtnParams = {
       btn: {
         text: 'My button',
-        kind: 'danger'
+        kind: 'danger',
       },
       links: [
         {
           onClick: () => console.log('clicked1'),
           separator: false,
-          text: 'link 1'
-        }
-      ]
+          text: 'link 1',
+        },
+      ],
     };
 
     return (
