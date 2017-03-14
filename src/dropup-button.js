@@ -2,8 +2,7 @@
 import React, {PropTypes as t} from 'react';
 import {Dropdown} from 'bootstrap.native';
 
-/* eslint-disable react/no-unused-prop-types */
-type ButtonKindType =
+type BtnKindType =
   | 'danger'
   | 'default'
   | 'info'
@@ -18,12 +17,10 @@ type BtnLinkType = {
   text: string
 };
 
-// eslint throwing an error here. Not sure why
 type BtnType = {
   text: string,
-  kind: ButtonKindType
+  kind: BtnKindType
 };
-/* eslint-enable react/no-unused-prop-types */
 
 type DropupBtnPropsType = {btn: BtnType, links: Array<BtnLinkType>};
 
