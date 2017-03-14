@@ -105,7 +105,7 @@ class App extends Component {
       productTargets,
       projectMap,
       selectedCategory,
-      selectedTarget
+      selectedTarget,
     } = this.state;
 
     const buttons = [
@@ -154,11 +154,15 @@ class App extends Component {
       ],
     };
 
-    const categoryOptions = productCategories.map(
-      cat => ({text: cat, value: cat}));
+    const categoryOptions = productCategories.map(cat => ({
+      text: cat,
+      value: cat,
+    }));
 
-    const targetOptions = productTargets.map(
-      target => ({text: target, value: target}));
+    const targetOptions = productTargets.map(target => ({
+      text: target,
+      value: target,
+    }));
 
     return (
       <div className="app">
