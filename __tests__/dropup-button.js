@@ -1,5 +1,5 @@
 import React from 'react';
-import DropupBtn from '../src/dropup-button';
+import DropupBtn from '../src/share/dropup-button';
 import {mount} from 'enzyme';
 import snapshot from './snapshot';
 

@@ -63,8 +63,9 @@ ShallowWrapper {
         <DropupBtn
             btn={
                 Object {
+                    "btnText": "My button",
+                    "disabled": false,
                     "kind": "danger",
-                    "text": "My button",
                   }
             }
             links={
@@ -74,13 +75,18 @@ ShallowWrapper {
                       "separator": false,
                       "text": "link 1",
                     },
+                    Object {
+                      "onClick": [Function],
+                      "separator": false,
+                      "text": "link 2",
+                    },
                   ]
             } />
         <DateRange
-            endDate={"2017-03-14T22:14:55.187Z"}
+            endDate={"2017-03-14T22:29:25.424Z"}
             onEndDateChanged={[Function]}
             onStartDateChanged={[Function]}
-            startDate={"2017-03-14T22:14:55.187Z"} />
+            startDate={"2017-03-14T22:29:25.424Z"} />
         <TargetSelect
             categories={Array []}
             onChange={[Function]}
@@ -147,8 +153,9 @@ ShallowWrapper {
             <DropupBtn
                   btn={
                         Object {
+                              "btnText": "My button",
+                              "disabled": false,
                               "kind": "danger",
-                              "text": "My button",
                             }
                   }
                   links={
@@ -158,13 +165,18 @@ ShallowWrapper {
                                 "separator": false,
                                 "text": "link 1",
                               },
+                              Object {
+                                "onClick": [Function],
+                                "separator": false,
+                                "text": "link 2",
+                              },
                             ]
                   } />
             <DateRange
-                  endDate={"2017-03-14T22:14:55.187Z"}
+                  endDate={"2017-03-14T22:29:25.424Z"}
                   onEndDateChanged={[Function]}
                   onStartDateChanged={[Function]}
-                  startDate={"2017-03-14T22:14:55.187Z"} />
+                  startDate={"2017-03-14T22:29:25.424Z"} />
             <TargetSelect
                   categories={Array []}
                   onChange={[Function]}
@@ -210,7 +222,7 @@ ShallowWrapper {
         "state": Object {
           "activeCrumb": undefined,
           "description": "",
-          "endDate": "2017-03-14T22:14:55.187Z",
+          "endDate": "2017-03-14T22:29:25.424Z",
           "error": "",
           "name": "",
           "productCategories": Array [],
@@ -218,7 +230,7 @@ ShallowWrapper {
           "projectMap": Object {},
           "selectedCategory": "",
           "selectedTarget": "",
-          "startDate": "2017-03-14T22:14:55.187Z",
+          "startDate": "2017-03-14T22:29:25.424Z",
         },
         "updater": Object {
           "enqueueCallback": [Function],
@@ -295,8 +307,9 @@ ShallowWrapper {
                     <DropupBtn
                               btn={
                                         Object {
+                                                  "btnText": "My button",
+                                                  "disabled": false,
                                                   "kind": "danger",
-                                                  "text": "My button",
                                                 }
                               }
                               links={
@@ -306,13 +319,18 @@ ShallowWrapper {
                                                     "separator": false,
                                                     "text": "link 1",
                                                   },
+                                                  Object {
+                                                    "onClick": [Function],
+                                                    "separator": false,
+                                                    "text": "link 2",
+                                                  },
                                                 ]
                               } />
                     <DateRange
-                              endDate={"2017-03-14T22:14:55.187Z"}
+                              endDate={"2017-03-14T22:29:25.424Z"}
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
-                              startDate={"2017-03-14T22:14:55.187Z"} />
+                              startDate={"2017-03-14T22:29:25.424Z"} />
                     <TargetSelect
                               categories={Array []}
                               onChange={[Function]}
@@ -379,8 +397,9 @@ ShallowWrapper {
                     <DropupBtn
                               btn={
                                         Object {
+                                                  "btnText": "My button",
+                                                  "disabled": false,
                                                   "kind": "danger",
-                                                  "text": "My button",
                                                 }
                               }
                               links={
@@ -390,13 +409,18 @@ ShallowWrapper {
                                                     "separator": false,
                                                     "text": "link 1",
                                                   },
+                                                  Object {
+                                                    "onClick": [Function],
+                                                    "separator": false,
+                                                    "text": "link 2",
+                                                  },
                                                 ]
                               } />
                     <DateRange
-                              endDate={"2017-03-14T22:14:55.187Z"}
+                              endDate={"2017-03-14T22:29:25.424Z"}
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
-                              startDate={"2017-03-14T22:14:55.187Z"} />
+                              startDate={"2017-03-14T22:29:25.424Z"} />
                     <TargetSelect
                               categories={Array []}
                               onChange={[Function]}
