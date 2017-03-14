@@ -6,6 +6,7 @@ import DataEntry from './data-entry'
 import DataDisplay from './data-display'
 import DropupBtn from './dropup-button'
 import LookupInput from './lookup-input'
+import WizardSteps from './share/wizard-steps'
 import {defineSetState, setState} from './state-util'
 import {getLocationParts} from './hash-route'
 import {getUrl} from './url-util'
@@ -118,6 +119,14 @@ class App extends Component {
       ],
     }
 
+    const wizardSteps = {
+      steps: [
+        'Assign Products',
+        'Add Trail Data',
+        'Add Observations'
+      ]
+    }
+
     return (
       <div className="app">
         <Breadcrumbs
@@ -133,6 +142,7 @@ class App extends Component {
           <ButtonSet buttons={buttons} />
           <LookupInput {...input} />
           <DropupBtn {...dropupBtnParams} />
+          <WizardSteps {...wizardSteps} />
         </div>
       </div>
     )
