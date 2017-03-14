@@ -1,19 +1,19 @@
 // @flow
 
-import React, {PropTypes as t} from 'react';
+import React, {PropTypes as t} from 'react'
 
 type OptionType = {
   text: string,
   value: string
-};
+}
 
-type OptionsType = Array<OptionType>;
+type OptionsType = Array<OptionType>
 
 const Option = (option: OptionType) => (
   <option key={option.value} value={option.value}>
     {option.text}
   </option>
-);
+)
 
 type SelectPropsType = {
   disabled: boolean,
@@ -22,7 +22,7 @@ type SelectPropsType = {
   options: OptionsType,
   size: number,
   value: string
-};
+}
 
 export default function Select(
   {
@@ -45,7 +45,7 @@ export default function Select(
     >
       {options.map(Option)}
     </select>
-  );
+  )
 }
 
 Select.propTypes = {
@@ -55,4 +55,4 @@ Select.propTypes = {
   options: t.arrayOf(t.shape({text: t.string, value: t.string})).isRequired,
   size: t.number,
   value: t.string.isRequired,
-};
+}

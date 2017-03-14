@@ -1,5 +1,5 @@
 // @flow
-import React, {PropTypes as t} from 'react';
+import React, {PropTypes as t} from 'react'
 
 // Types
 type ButtonKindType =
@@ -8,18 +8,18 @@ type ButtonKindType =
   | 'info'
   | 'primary'
   | 'secondary'
-  | 'success';
+  | 'success'
 
 type ButtonType = {
   disabled?: boolean,
   kind: ButtonKindType,
   text: string,
   onClick: () => any
-};
+}
 
 type ButtonSetPropsType = {
   buttons: Array<ButtonType>
-};
+}
 
 // View
 const ButtonSet = ({buttons}: ButtonSetPropsType) => (
@@ -35,7 +35,7 @@ const ButtonSet = ({buttons}: ButtonSetPropsType) => (
       </button>
     ))}
   </div>
-);
+)
 
 // PropTypes
 ButtonSet.propTypes = {
@@ -54,6 +54,6 @@ ButtonSet.propTypes = {
       onClick: t.func,
     }),
   ).isRequired,
-};
+}
 
-export default ButtonSet;
+export default ButtonSet
