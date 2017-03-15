@@ -58,51 +58,6 @@ ShallowWrapper {
         buttons={
             Array [
                 Object {
-<<<<<<< HEAD
-                    "btnText": "My button",
-                    "disabled": false,
-                    "kind": "danger",
-                  }
-            }
-            links={
-                Array [
-                    Object {
-                      "onClick": [Function],
-                      "separator": false,
-                      "text": "link 1",
-                    },
-                    Object {
-                      "onClick": [Function],
-                      "separator": false,
-                      "text": "link 2",
-                    },
-                  ]
-            } />
-        <div>
-            <label>
-                Date Range
-            </label>
-            <DateRange
-                endDate={"2017-03-14T22:20:13.846Z"}
-                onEndDateChanged={[Function]}
-                onStartDateChanged={[Function]}
-                startDate={"2017-03-14T22:20:13.846Z"} />
-        </div>
-        <TargetSelect
-            categories={Array []}
-            onChange={[Function]}
-            selectedCategory=""
-            selectedTarget=""
-            targets={Array []} />
-        <WizardSteps
-            steps={
-                Array [
-                    "Assign Products",
-                    "Add Trail Data",
-                    "Add Observations",
-                  ]
-            } />
-=======
                   "disabled": true,
                   "kind": "primary",
                   "onClick": [Function],
@@ -128,8 +83,9 @@ ShallowWrapper {
     <DropupBtn
         btn={
             Object {
+                "btnText": "My button",
+                "disabled": false,
                 "kind": "danger",
-                "text": "My button",
               }
         }
         links={
@@ -138,6 +94,11 @@ ShallowWrapper {
                   "onClick": [Function],
                   "separator": false,
                   "text": "link 1",
+                },
+                Object {
+                  "onClick": [Function],
+                  "separator": false,
+                  "text": "link 2",
                 },
               ]
         } />
@@ -150,7 +111,14 @@ ShallowWrapper {
             onEndDateChanged={[Function]}
             onStartDateChanged={[Function]}
             startDate={"2017-03-14T22:20:13.846Z"} />
->>>>>>> 006d93cdd7706d029b7d9b646fe42333488d30cc
+        <WizardSteps
+            steps={
+                Array [
+                    "Assign Products",
+                    "Add Trail Data",
+                    "Add Observations",
+                  ]
+            } />
     </div>
     <TargetSelect
         categories={Array []}
@@ -212,41 +180,59 @@ ShallowWrapper {
             buttons={
                   Array [
                         Object {
-                              "btnText": "My button",
-                              "disabled": false,
-                              "kind": "danger",
-                            }
-                  }
-                  links={
-                        Array [
-                              Object {
-                                "onClick": [Function],
-                                "separator": false,
-                                "text": "link 1",
-                              },
-                              Object {
-                                "onClick": [Function],
-                                "separator": false,
-                                "text": "link 2",
-                              },
-                            ]
-                  } />
-            <div>
-                  <label>
-                        Date Range
-                  </label>
-                  <DateRange
-                        endDate={"2017-03-14T22:20:13.846Z"}
-                        onEndDateChanged={[Function]}
-                        onStartDateChanged={[Function]}
-                        startDate={"2017-03-14T22:20:13.846Z"} />
-            </div>
-            <TargetSelect
-                  categories={Array []}
-                  onChange={[Function]}
-                  selectedCategory=""
-                  selectedTarget=""
-                  targets={Array []} />
+                          "disabled": true,
+                          "kind": "primary",
+                          "onClick": [Function],
+                          "text": "Save",
+                        },
+                        Object {
+                          "disabled": false,
+                          "kind": "info",
+                          "onClick": [Function],
+                          "text": "Info",
+                        },
+                        Object {
+                          "kind": "danger",
+                          "onClick": [Function],
+                          "text": "Cancel",
+                        },
+                      ]
+            } />
+      <LookupInput
+            img="search"
+            onChange={[Function]}
+            onSubmit={[Function]} />
+      <DropupBtn
+            btn={
+                  Object {
+                        "btnText": "My button",
+                        "disabled": false,
+                        "kind": "danger",
+                      }
+            }
+            links={
+                  Array [
+                        Object {
+                          "onClick": [Function],
+                          "separator": false,
+                          "text": "link 1",
+                        },
+                        Object {
+                          "onClick": [Function],
+                          "separator": false,
+                          "text": "link 2",
+                        },
+                      ]
+            } />
+      <div>
+            <label>
+                  Date Range
+            </label>
+            <DateRange
+                  endDate={"2017-03-14T22:20:13.846Z"}
+                  onEndDateChanged={[Function]}
+                  onStartDateChanged={[Function]}
+                  startDate={"2017-03-14T22:20:13.846Z"} />
             <WizardSteps
                   steps={
                         Array [
@@ -395,51 +381,6 @@ ShallowWrapper {
                                           "text": "Info",
                                         },
                                         Object {
-<<<<<<< HEAD
-                                                  "btnText": "My button",
-                                                  "disabled": false,
-                                                  "kind": "danger",
-                                                }
-                              }
-                              links={
-                                        Array [
-                                                  Object {
-                                                    "onClick": [Function],
-                                                    "separator": false,
-                                                    "text": "link 1",
-                                                  },
-                                                  Object {
-                                                    "onClick": [Function],
-                                                    "separator": false,
-                                                    "text": "link 2",
-                                                  },
-                                                ]
-                              } />
-                    <div>
-                              <label>
-                                        Date Range
-                              </label>
-                              <DateRange
-                                        endDate={"2017-03-14T22:20:13.846Z"}
-                                        onEndDateChanged={[Function]}
-                                        onStartDateChanged={[Function]}
-                                        startDate={"2017-03-14T22:20:13.846Z"} />
-                    </div>
-                    <TargetSelect
-                              categories={Array []}
-                              onChange={[Function]}
-                              selectedCategory=""
-                              selectedTarget=""
-                              targets={Array []} />
-                    <WizardSteps
-                              steps={
-                                        Array [
-                                                  "Assign Products",
-                                                  "Add Trail Data",
-                                                  "Add Observations",
-                                                ]
-                              } />
-=======
                                           "kind": "danger",
                                           "onClick": [Function],
                                           "text": "Cancel",
@@ -453,8 +394,9 @@ ShallowWrapper {
           <DropupBtn
                     btn={
                               Object {
+                                        "btnText": "My button",
+                                        "disabled": false,
                                         "kind": "danger",
-                                        "text": "My button",
                                       }
                     }
                     links={
@@ -463,6 +405,11 @@ ShallowWrapper {
                                           "onClick": [Function],
                                           "separator": false,
                                           "text": "link 1",
+                                        },
+                                        Object {
+                                          "onClick": [Function],
+                                          "separator": false,
+                                          "text": "link 2",
                                         },
                                       ]
                     } />
@@ -475,7 +422,14 @@ ShallowWrapper {
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
                               startDate={"2017-03-14T22:20:13.846Z"} />
->>>>>>> 006d93cdd7706d029b7d9b646fe42333488d30cc
+                    <WizardSteps
+                              steps={
+                                        Array [
+                                                  "Assign Products",
+                                                  "Add Trail Data",
+                                                  "Add Observations",
+                                                ]
+                              } />
           </div>
           <TargetSelect
                     categories={Array []}
@@ -537,51 +491,6 @@ ShallowWrapper {
                     buttons={
                               Array [
                                         Object {
-<<<<<<< HEAD
-                                                  "btnText": "My button",
-                                                  "disabled": false,
-                                                  "kind": "danger",
-                                                }
-                              }
-                              links={
-                                        Array [
-                                                  Object {
-                                                    "onClick": [Function],
-                                                    "separator": false,
-                                                    "text": "link 1",
-                                                  },
-                                                  Object {
-                                                    "onClick": [Function],
-                                                    "separator": false,
-                                                    "text": "link 2",
-                                                  },
-                                                ]
-                              } />
-                    <div>
-                              <label>
-                                        Date Range
-                              </label>
-                              <DateRange
-                                        endDate={"2017-03-14T22:20:13.846Z"}
-                                        onEndDateChanged={[Function]}
-                                        onStartDateChanged={[Function]}
-                                        startDate={"2017-03-14T22:20:13.846Z"} />
-                    </div>
-                    <TargetSelect
-                              categories={Array []}
-                              onChange={[Function]}
-                              selectedCategory=""
-                              selectedTarget=""
-                              targets={Array []} />
-                    <WizardSteps
-                              steps={
-                                        Array [
-                                                  "Assign Products",
-                                                  "Add Trail Data",
-                                                  "Add Observations",
-                                                ]
-                              } />
-=======
                                           "disabled": true,
                                           "kind": "primary",
                                           "onClick": [Function],
@@ -607,8 +516,9 @@ ShallowWrapper {
           <DropupBtn
                     btn={
                               Object {
+                                        "btnText": "My button",
+                                        "disabled": false,
                                         "kind": "danger",
-                                        "text": "My button",
                                       }
                     }
                     links={
@@ -617,6 +527,11 @@ ShallowWrapper {
                                           "onClick": [Function],
                                           "separator": false,
                                           "text": "link 1",
+                                        },
+                                        Object {
+                                          "onClick": [Function],
+                                          "separator": false,
+                                          "text": "link 2",
                                         },
                                       ]
                     } />
@@ -629,7 +544,14 @@ ShallowWrapper {
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
                               startDate={"2017-03-14T22:20:13.846Z"} />
->>>>>>> 006d93cdd7706d029b7d9b646fe42333488d30cc
+                    <WizardSteps
+                              steps={
+                                        Array [
+                                                  "Assign Products",
+                                                  "Add Trail Data",
+                                                  "Add Observations",
+                                                ]
+                              } />
           </div>
           <TargetSelect
                     categories={Array []}
