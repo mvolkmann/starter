@@ -1,0 +1,38 @@
+exports[`WizardSteps should render 1`] = `
+<div
+  className="wizard-steps-container"
+  style={
+    Object {
+      "display": "flex",
+      "justifyContent": "space-around",
+    }
+  }>
+  <div
+    className="step-container">
+    <span
+      className="badge">
+      1
+    </span>
+     
+    Assign Products
+  </div>
+  <div
+    className="step-container">
+    <span
+      className="badge">
+      2
+    </span>
+     
+    Add Trail Data
+  </div>
+  <div
+    className="step-container">
+    <span
+      className="badge">
+      3
+    </span>
+     
+    Add Observations
+  </div>
+</div>
+`;

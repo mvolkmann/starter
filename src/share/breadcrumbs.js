@@ -1,7 +1,7 @@
-import React, {PropTypes as t} from 'react';
-import {Breadcrumb} from 'react-bootstrap';
+import React, {PropTypes as t} from 'react'
+import {Breadcrumb} from 'react-bootstrap'
 
-const {Item} = Breadcrumb;
+const {Item} = Breadcrumb
 
 const Breadcrumbs = ({activeCrumb, items, onNavigate}) => {
   // If no active crumb was specified, make it the last one.
@@ -18,11 +18,11 @@ const Breadcrumbs = ({activeCrumb, items, onNavigate}) => {
           <Item active={active} key={item.id} {...handlers}>
             {item.label}
           </Item>
-        );
+        )
       })}
     </Breadcrumb>
-  );
-};
+  )
+}
 
 Breadcrumbs.propTypes = {
   activeCrumb: t.number,
@@ -33,6 +33,6 @@ Breadcrumbs.propTypes = {
     }),
   ).isRequired,
   onNavigate: t.func.isRequired,
-};
+}
 
-export default Breadcrumbs;
+export default Breadcrumbs

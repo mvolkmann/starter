@@ -1,6 +1,6 @@
 // @flow
-import React, {PropTypes as t, Component} from 'react';
-import {Dropdown} from 'bootstrap.native';
+import React, {PropTypes as t, Component} from 'react'
+import {Dropdown} from 'bootstrap.native'
 
 type BtnKindType =
   | 'danger'
@@ -8,40 +8,40 @@ type BtnKindType =
   | 'info'
   | 'link'
   | 'primary'
-  | 'success';
+  | 'success'
 
 type BtnLinkType = {
   className?: string,
   onClick: () => any,
   separator: boolean,
   text?: string
-};
+}
 
 /* eslint-disable react/no-unused-prop-types */
 type BtnType = {
   disabled: boolean,
   kind: BtnKindType,
   btnText: string
-};
+}
 /* eslint-enable react/no-unused-prop-types */
 
-type PropsType = {btn: BtnType, links: Array<BtnLinkType>};
+type PropsType = {btn: BtnType, links: Array<BtnLinkType>}
 
 class DropupBtn extends Component {
   top = {};
   toggleElement = () => {
-    const dropdown = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown-toggle')
     // this was done to support testing because we cannot query the dom from a
     // test
     if (dropdown) {
-      new Dropdown(dropdown).toggle();
+      new Dropdown(dropdown).toggle()
     } else {
-      this.top.className += ' open';
+      this.top.className += ' open'
     }
   };
 
   render() {
-    const {btn, links}: PropsType = this.props;
+    const {btn, links}: PropsType = this.props
     return (
       <div className="btn-group dropup" ref={top => this.top = top}>
         <button
@@ -67,7 +67,7 @@ class DropupBtn extends Component {
           ))}
         </ul>
       </div>
-    );
+    )
   }
 }
 
@@ -92,6 +92,6 @@ DropupBtn.propTypes = {
       text: t.string,
     }).isRequired,
   ),
-};
+}
 
-export default DropupBtn;
+export default DropupBtn

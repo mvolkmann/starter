@@ -5,15 +5,15 @@ import './select.css';
 type OptionType = {
   text: string,
   value: string
-};
+}
 
-type OptionsType = Array<OptionType>;
+type OptionsType = Array<OptionType>
 
 const Option = (option: OptionType) => (
   <option key={option.value} value={option.value}>
     {option.text}
   </option>
-);
+)
 
 type PropsType = {
   disabled: boolean,
@@ -23,7 +23,7 @@ type PropsType = {
   options: OptionsType,
   size: number,
   value: string
-};
+}
 
 export default function Select(
   {
@@ -61,4 +61,4 @@ Select.propTypes = {
   options: t.arrayOf(t.shape({text: t.string, value: t.string})).isRequired,
   size: t.number,
   value: t.string.isRequired,
-};
+}
