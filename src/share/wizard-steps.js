@@ -5,7 +5,7 @@ import './wizard-steps.css';
 type PropsType = {steps: Array<string>, activeIndex: number};
 
 const WizardSteps = ({steps, activeIndex}: PropsType) => (
-  <div className="wizard-steps" style={styles.container}>
+  <div className="wizard-steps">
     {steps.map((s, i) => (
       <div className="step" key={i}>
         <span className={activeIndex === i ? 'badge active' : 'badge'}>
