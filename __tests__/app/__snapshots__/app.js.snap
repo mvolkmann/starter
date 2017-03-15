@@ -54,6 +54,12 @@ ShallowWrapper {
     </div>
     <div
         className="body" />
+    <hr
+        style={
+            Object {
+                "marginTop": "500px",
+              }
+        } />
     <ButtonSet
         buttons={
             Array [
@@ -177,6 +183,12 @@ ShallowWrapper {
       </div>
       <div
             className="body" />
+      <hr
+            style={
+                  Object {
+                        "marginTop": "500px",
+                      }
+            } />
       <ButtonSet
             buttons={
                   Array [
@@ -367,6 +379,12 @@ ShallowWrapper {
           </div>
           <div
                     className="body" />
+          <hr
+                    style={
+                              Object {
+                                        "marginTop": "500px",
+                                      }
+                    } />
           <ButtonSet
                     buttons={
                               Array [
@@ -490,6 +508,12 @@ ShallowWrapper {
           </div>
           <div
                     className="body" />
+          <hr
+                    style={
+                              Object {
+                                        "marginTop": "500px",
+                                      }
+                    } />
           <ButtonSet
                     buttons={
                               Array [

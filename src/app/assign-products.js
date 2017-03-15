@@ -1,11 +1,10 @@
-import React, {Component/*, PropTypes as t*/} from 'react';
+import React, {Component} from 'react';
 import WizardSteps from '../share/wizard-steps';
 import Select from '../share/select';
 import './assign-products.css';
 
 class AssignProducts extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   /*
   onSomeEvent = event => {
@@ -20,7 +19,7 @@ class AssignProducts extends Component {
   render() {
     const wizardSteps = {
       steps: ['Assign Products', 'Add Trail Data', 'Add Observations'],
-      activeIndex: 0
+      activeIndex: 0,
     };
 
     return (
@@ -33,7 +32,10 @@ class AssignProducts extends Component {
         <div className="select-container">
           <Select
             onChange={() => console.log('changed selection')}
-            options={[{text: 'Corn', value: 'corn'}, {text: 'Broccoli', value: 'broccoli'}]}
+            options={[
+              {text: 'Corn', value: 'corn'},
+              {text: 'Broccoli', value: 'broccoli'},
+            ]}
             size={2}
             value="hello"
           />
