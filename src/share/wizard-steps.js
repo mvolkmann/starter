@@ -1,14 +1,14 @@
 // @flow
-import React, {PropTypes as t} from 'react'
+import React, {PropTypes as t} from 'react';
 
-type PropsType = {steps: Array<string>}
+type PropsType = {steps: Array<string>};
 
 const styles = {
   container: {
     display: 'flex',
-    justifyContent: 'space-around'
-  }
-}
+    justifyContent: 'space-around',
+  },
+};
 
 const WizardSteps = ({steps}: PropsType) => (
   <div className="wizard-steps-container" style={styles.container}>
@@ -18,12 +18,12 @@ const WizardSteps = ({steps}: PropsType) => (
       </div>
     ))}
   </div>
-)
+);
 
-WizardSteps.displayName = 'WizardSteps'
+WizardSteps.displayName = 'WizardSteps';
 
 WizardSteps.propTypes = {
   steps: t.arrayOf(t.string),
-}
+};
 
-export default WizardSteps
+export default WizardSteps;

@@ -1,18 +1,18 @@
 // @flow
-import React, {PropTypes as t} from 'react'
+import React, {PropTypes as t} from 'react';
 
 type PropsType = {
   img: string,
   onChange?: () => any,
   onSubmit: () => any
-}
+};
 
 type EventType = {
   target: {
     name: string,
     value: string
   }
-}
+};
 
 const styles = {
   container: {
@@ -29,7 +29,7 @@ const styles = {
     flex: '9 9 0px',
     paddingRight: '32px',
   },
-}
+};
 
 const LookupInput = ({img, onChange, onSubmit}: PropsType) => (
   <div className="lookup-input-container" style={styles.container}>
@@ -46,12 +46,12 @@ const LookupInput = ({img, onChange, onSubmit}: PropsType) => (
       style={styles.icon}
     />
   </div>
-)
+);
 
 LookupInput.propTypes = t.shape({
   img: t.string.isRequired,
   onChange: t.func,
   onClick: t.func,
-}).isRequired
+}).isRequired;
 
-export default LookupInput
+export default LookupInput;

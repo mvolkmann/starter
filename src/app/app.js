@@ -19,7 +19,7 @@ import './app.css';
 type BreadcrumbType = {
   id: number,
   label: string
-}
+};
 
 async function loadProductCategories() {
   const url = getUrl('product-categories');
@@ -36,21 +36,21 @@ async function loadProductCategories() {
 }
 
 async function loadProjects() {
-  const url = getUrl('project')
+  const url = getUrl('project');
   try {
-    const res = await fetch(url)
-    if (!res.ok) return handleError(url, res)
+    const res = await fetch(url);
+    if (!res.ok) return handleError(url, res);
 
-    const projects = await res.json()
+    const projects = await res.json();
 
-    const projectMap = {}
+    const projectMap = {};
     for (const project of projects) {
-      projectMap[project.id] = project
+      projectMap[project.id] = project;
     }
 
-    setState({projectMap})
+    setState({projectMap});
   } catch (e) {
-    handleError(url, e)
+    handleError(url, e);
   }
 }
 
@@ -91,10 +91,10 @@ class App extends Component {
     this.state.startDate = (this.state.endDate = date);
 
     // Allow any component to change the state of this top-most component.
-    defineSetState(this)
+    defineSetState(this);
 
     // Re-render any time the URL hash changes.
-    window.addEventListener('hashchange', () => this.forceUpdate())
+    window.addEventListener('hashchange', () => this.forceUpdate());
   }
 
   componentDidMount() {
@@ -153,13 +153,13 @@ class App extends Component {
         kind: 'danger',
         onClick: () => console.log('cancelled!'),
       },
-    ]
+    ];
 
     const input = {
       img: 'search',
       onChange: (event = {}) => console.log(event.target.value),
       onSubmit: () => console.log('clicked!'),
-    }
+    };
 
     const dropupBtnParams = {
       btn: {
@@ -179,15 +179,11 @@ class App extends Component {
           text: 'link 2',
         },
       ],
-    }
+    };
 
     const wizardSteps = {
-      steps: [
-        'Assign Products',
-        'Add Trail Data',
-        'Add Observations'
-      ]
-    }
+      steps: ['Assign Products', 'Add Trail Data', 'Add Observations'],
+    };
 
     const categoryOptions = productCategories.map(cat => ({
       text: cat,
@@ -235,8 +231,8 @@ class App extends Component {
           <WizardSteps {...wizardSteps} />
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
