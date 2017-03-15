@@ -54,7 +54,6 @@ describe('DropupBtn', () => {
     const wrapper = mount(<DropupBtn {...props} />);
     const btn = wrapper.find('.btn');
     btn.simulate('click');
-    console.log(wrapper.find('.open').length);
     expect(wrapper.find('.open').length).toBe(1);
   });
 });
