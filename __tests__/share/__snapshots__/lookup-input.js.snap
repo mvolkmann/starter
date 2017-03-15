@@ -1,6 +1,6 @@
 exports[`LookupInput should render 1`] = `
 <div
-  className="lookup-input-container"
+  className="lookup-input"
   style={
     Object {
       "alignItems": "center",
@@ -8,7 +8,7 @@ exports[`LookupInput should render 1`] = `
     }
   }>
   <input
-    className="form-control lookup-input-input"
+    className="form-control"
     onChange={undefined}
     onKeyPress={[Function]}
     style={
@@ -20,7 +20,7 @@ exports[`LookupInput should render 1`] = `
     }
     type="text" />
   <i
-    className="lookup-input-icon fa fa-search"
+    className="icon fa fa-search"
     onClick={undefined}
     style={
       Object {

@@ -7,6 +7,7 @@ import DataEntry from './data-entry';
 import DateRange from '../share/date-range';
 import DropupBtn from '../share/dropup-button';
 import LookupInput from '../share/lookup-input';
+import WizardSteps from '../share/wizard-steps';
 import moment from 'moment';
 import NotImplemented from '../share/not-implemented';
 import TargetSelect from './target-select';
@@ -163,8 +164,9 @@ class App extends Component {
 
     const dropupBtnParams = {
       btn: {
-        text: 'My button',
+        disabled: false,
         kind: 'danger',
+        btnText: 'My button',
       },
       links: [
         {
@@ -172,7 +174,17 @@ class App extends Component {
           separator: false,
           text: 'link 1',
         },
+        {
+          onClick: () => console.log('clicked2'),
+          separator: false,
+          text: 'link 2',
+        },
       ],
+    };
+
+    const wizardSteps = {
+      steps: ['Assign Products', 'Add Trail Data', 'Add Observations'],
+      activeIndex: 0,
     };
 
     const categoryOptions = productCategories.map(cat => ({
@@ -236,6 +248,7 @@ class App extends Component {
             onStartDateChanged={this.onStartDateChanged}
             onEndDateChanged={this.onEndDateChanged}
           />
+          <WizardSteps {...wizardSteps} />
         </div>
 
         <TargetSelect

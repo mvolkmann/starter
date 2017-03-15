@@ -1,4 +1,4 @@
-exports[`DataEntry should render 1`] = `
+exports[`ButtonSet should render 1`] = `
 <div
   className="button-set">
   <button
