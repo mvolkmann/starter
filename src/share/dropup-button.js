@@ -1,65 +1,78 @@
 // @flow
-import React, {PropTypes as t} from 'react';
+import React, {Component, PropTypes as t} from 'react';
 import {Dropdown} from 'bootstrap.native';
 
 type BtnKindType =
   | 'danger'
   | 'default'
   | 'info'
+  | 'link'
   | 'primary'
-  | 'secondary'
   | 'success';
 
 type BtnLinkType = {
   className?: string,
   onClick: () => any,
   separator: boolean,
-  text: string
+  text?: string
 };
 
 /* eslint-disable react/no-unused-prop-types */
 type BtnType = {
-  text: string,
-  kind: BtnKindType
+  disabled: boolean,
+  kind: BtnKindType,
+  btnText: string
 };
 /* eslint-enable react/no-unused-prop-types */
 
-type DropupBtnPropsType = {btn: BtnType, links: Array<BtnLinkType>};
+type PropsType = {btn: BtnType, links: Array<BtnLinkType>};
 
-const DropupBtn = ({btn, links}: DropupBtnPropsType) => {
-  function toggleElement() {
+class DropupBtn extends Component {
+  top = {};
+  toggleElement = () => {
     const dropdown = document.querySelector('.dropdown-toggle');
-    new Dropdown(dropdown).toggle();
-  }
+    // this was done to support testing because we cannot query the dom from a
+    // test
+    if (dropdown) {
+      new Dropdown(dropdown).toggle();
+    } else {
+      this.top.className += ' open';
+    }
+  };
 
-  return (
-    <div className="btn-group dropup">
-      <button type="button" className={`btn btn-${btn.kind}`}>
-        {btn.text}
-      </button>
-      <button
-        type="button"
-        className="btn btn-default dropdown-toggle"
-        onClick={() => toggleElement()}
+  render() {
+    const {btn, links}: PropsType = this.props;
+    return (
+      <div
+        className="btn-group dropup dropup-button"
+        ref={top => this.top = top}
       >
-        <span className="caret" />
-        <span className="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul className="dropdown-menu">
-        {links.map(l => (
-          <li
-            key={l.text}
-            className={l.className}
-            onClick={l.onClick}
-            role={l.separator ? 'separator' : ''}
-          >
-            {l.text}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+        <button
+          className={`btn btn-${btn.kind} dropdown-toggle`}
+          disabled={btn.disabled}
+          onClick={this.toggleElement}
+          type="button"
+        >
+          {btn.btnText + ' '}
+          <span className="caret" />
+          <span className="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul className="dropdown-menu">
+          {links.map(l => (
+            <li
+              key={l.text}
+              className={l.className}
+              onClick={l.onClick}
+              role={l.separator ? 'separator' : ''}
+            >
+              {l.text}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
 
 DropupBtn.propTypes = {
   btn: t.shape({
@@ -67,18 +80,19 @@ DropupBtn.propTypes = {
       'danger',
       'default',
       'info',
+      'link',
       'primary',
-      'secondary',
       'success',
     ]).isRequired,
-    text: t.string.isRequired,
+    btnText: t.string.isRequired,
+    disabled: t.bool.isRequired,
   }),
   links: t.arrayOf(
     t.shape({
       className: t.string,
       onClick: t.func.isRequired,
       separator: t.bool.isRequired,
-      text: t.string.isRequired,
+      text: t.string,
     }).isRequired,
   ),
 };

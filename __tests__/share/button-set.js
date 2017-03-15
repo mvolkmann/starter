@@ -3,7 +3,7 @@ import ButtonSet from '../../src/share/button-set';
 import {mount} from 'enzyme';
 import snapshot from '../snapshot';
 
-describe('DataEntry', () => {
+describe('ButtonSet', () => {
   it('should render', () => {
     const buttons = [
       {
