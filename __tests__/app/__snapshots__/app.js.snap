@@ -76,11 +76,16 @@ ShallowWrapper {
                     },
                   ]
             } />
-        <DateRange
-            endDate={"2017-03-14T22:20:13.846Z"}
-            onEndDateChanged={[Function]}
-            onStartDateChanged={[Function]}
-            startDate={"2017-03-14T22:20:13.846Z"} />
+        <div>
+            <label>
+                Date Range
+            </label>
+            <DateRange
+                endDate={"2017-03-14T22:20:13.846Z"}
+                onEndDateChanged={[Function]}
+                onStartDateChanged={[Function]}
+                startDate={"2017-03-14T22:20:13.846Z"} />
+        </div>
         <TargetSelect
             categories={Array []}
             onChange={[Function]}
@@ -160,11 +165,16 @@ ShallowWrapper {
                               },
                             ]
                   } />
-            <DateRange
-                  endDate={"2017-03-14T22:20:13.846Z"}
-                  onEndDateChanged={[Function]}
-                  onStartDateChanged={[Function]}
-                  startDate={"2017-03-14T22:20:13.846Z"} />
+            <div>
+                  <label>
+                        Date Range
+                  </label>
+                  <DateRange
+                        endDate={"2017-03-14T22:20:13.846Z"}
+                        onEndDateChanged={[Function]}
+                        onStartDateChanged={[Function]}
+                        startDate={"2017-03-14T22:20:13.846Z"} />
+            </div>
             <TargetSelect
                   categories={Array []}
                   onChange={[Function]}
@@ -311,11 +321,16 @@ ShallowWrapper {
                                                   },
                                                 ]
                               } />
-                    <DateRange
-                              endDate={"2017-03-14T22:20:13.846Z"}
-                              onEndDateChanged={[Function]}
-                              onStartDateChanged={[Function]}
-                              startDate={"2017-03-14T22:20:13.846Z"} />
+                    <div>
+                              <label>
+                                        Date Range
+                              </label>
+                              <DateRange
+                                        endDate={"2017-03-14T22:20:13.846Z"}
+                                        onEndDateChanged={[Function]}
+                                        onStartDateChanged={[Function]}
+                                        startDate={"2017-03-14T22:20:13.846Z"} />
+                    </div>
                     <TargetSelect
                               categories={Array []}
                               onChange={[Function]}
@@ -395,11 +410,16 @@ ShallowWrapper {
                                                   },
                                                 ]
                               } />
-                    <DateRange
-                              endDate={"2017-03-14T22:20:13.846Z"}
-                              onEndDateChanged={[Function]}
-                              onStartDateChanged={[Function]}
-                              startDate={"2017-03-14T22:20:13.846Z"} />
+                    <div>
+                              <label>
+                                        Date Range
+                              </label>
+                              <DateRange
+                                        endDate={"2017-03-14T22:20:13.846Z"}
+                                        onEndDateChanged={[Function]}
+                                        onStartDateChanged={[Function]}
+                                        startDate={"2017-03-14T22:20:13.846Z"} />
+                    </div>
                     <TargetSelect
                               categories={Array []}
                               onChange={[Function]}
