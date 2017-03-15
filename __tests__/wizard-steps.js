@@ -1,6 +1,6 @@
-import React from 'react'
-import WizardSteps from '../src/share/wizard-steps'
-import snapshot from './snapshot'
+import React from 'react';
+import WizardSteps from '../src/share/wizard-steps';
+import snapshot from './snapshot';
 
 describe('WizardSteps', () => {
   it('should render', () => {
@@ -10,8 +10,8 @@ describe('WizardSteps', () => {
         'Add Trail Data',
         'Add Observations'
       ]
-    }
+    };
 
-    snapshot(<WizardSteps {...props} />)
-  })
-})
+    snapshot(<WizardSteps {...props} />);
+  });
+});
