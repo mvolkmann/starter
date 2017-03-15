@@ -1,7 +1,7 @@
 // @flow
 import React, {PropTypes as t} from 'react';
 
-type PropsType = {steps: Array<string>};
+type PropsType = {steps: Array<string>, activeIndex: number};
 
 const styles = {
   container: {
@@ -10,20 +10,22 @@ const styles = {
   },
 };
 
-const WizardSteps = ({steps}: PropsType) => (
+const WizardSteps = ({steps, activeIndex}: PropsType) => (
   <div className="wizard-steps-container" style={styles.container}>
     {steps.map((s, i) => (
       <div className="step-container" key={i}>
-        <span className="badge">{i + 1}</span> {s}
+        <span className={activeIndex === i ? 'badge active' : 'badge'}>
+          {i + 1}
+        </span>
+        {s}
       </div>
     ))}
   </div>
 );
 
-WizardSteps.displayName = 'WizardSteps';
-
 WizardSteps.propTypes = {
-  steps: t.arrayOf(t.string),
+  activeIndex: t.number.isRequired,
+  steps: t.arrayOf(t.string).isRequired
 };
 
 export default WizardSteps;
