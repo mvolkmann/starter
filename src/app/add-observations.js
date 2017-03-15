@@ -1,5 +1,6 @@
-import React, {Component, PropTypes as t} from 'react';
-import {BootstrapTable, TableHeaderColumn} from '@monsantoit/react-bootstrap-table';
+import React, {Component} from 'react';
+import {BootstrapTable, TableHeaderColumn}
+  from '@monsantoit/react-bootstrap-table';
 
 class AddObservations extends Component {
   static propTypes = {
