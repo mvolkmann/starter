@@ -9,6 +9,10 @@ $space: 5px;
   .btn {
     margin-left: 0;
   }
+
+  label {
+    margin-right: $space * 2;
+  }
 }
 
 .data-display {

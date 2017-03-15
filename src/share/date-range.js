@@ -46,7 +46,7 @@ class DateRange extends Component {
     // sr-only is a Bootstrap class that means "screen reader only".
     // It hides the element on which it is applied.
     return (
-      <span className={className}>
+      <span className={`date-range ${className}`}>
         <span style={style}>
           <label className="sr-only control-label" htmlFor="start-date-picker">
             Start
