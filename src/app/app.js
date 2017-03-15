@@ -9,6 +9,7 @@ import DropupBtn from '../share/dropup-button';
 import LookupInput from '../share/lookup-input';
 import WizardSteps from '../share/wizard-steps';
 import moment from 'moment';
+import NotImplemented from '../share/not-implemented';
 import TargetSelect from './target-select';
 import {defineSetState, setState} from '../util/state-util';
 import {getLocationParts} from '../util/hash-route';
@@ -202,37 +203,60 @@ class App extends Component {
           items={this.breadcrumbs}
           onNavigate={this.onNavigate}
         />
+
         <div className="error">{error}</div>
+
+        <div className="route-btns">
+          <a className="btn btn-default" href="#display">
+            Display
+          </a>
+          <a className="btn btn-default" href="#entry">
+            Add
+          </a>
+          <a className="btn btn-default" href="#assign-products">
+            Assign Products
+          </a>
+          <a className="btn btn-default" href="#add-observations">
+            Add Observations
+          </a>
+        </div>
+
         <div className="body">
           {hash === 'display' ?
             <DataDisplay projectMap={projectMap} /> :
-            <DataEntry description={description} name={name} />}
+            hash === 'entry' ?
+              <DataEntry description={description} name={name} /> :
+                hash === 'assign-products' ?
+                  <NotImplemented name="AssignProducts" /> :
+                    hash === 'add-observations' ?
+                      <NotImplemented name="AddObservations" /> :
+                        null}
+        </div>
 
-          <ButtonSet buttons={buttons} />
+        <ButtonSet buttons={buttons} />
 
-          <LookupInput {...input} />
+        <LookupInput {...input} />
 
-          <DropupBtn {...dropupBtnParams} />
+        <DropupBtn {...dropupBtnParams} />
 
-          <div>
-            <label>Date Range</label>
-            <DateRange
-              startDate={startDate}
-              endDate={endDate}
-              onStartDateChanged={this.onStartDateChanged}
-              onEndDateChanged={this.onEndDateChanged}
-            />
-          </div>
-
-          <TargetSelect
-            categories={categoryOptions}
-            onChange={this.onCategorySelect}
-            selectedCategory={selectedCategory}
-            selectedTarget={selectedTarget}
-            targets={targetOptions}
+        <div>
+          <label>Date Range</label>
+          <DateRange
+            startDate={startDate}
+            endDate={endDate}
+            onStartDateChanged={this.onStartDateChanged}
+            onEndDateChanged={this.onEndDateChanged}
           />
           <WizardSteps {...wizardSteps} />
         </div>
+
+        <TargetSelect
+          categories={categoryOptions}
+          onChange={this.onCategorySelect}
+          selectedCategory={selectedCategory}
+          selectedTarget={selectedTarget}
+          targets={targetOptions}
+        />
       </div>
     );
   }

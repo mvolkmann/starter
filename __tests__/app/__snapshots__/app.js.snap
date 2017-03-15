@@ -30,39 +30,35 @@ ShallowWrapper {
     <div
         className="error" />
     <div
-        className="body">
-        <DataEntry
-            description=""
-            name="" />
-        <ButtonSet
-            buttons={
-                Array [
-                    Object {
-                      "disabled": true,
-                      "kind": "primary",
-                      "onClick": [Function],
-                      "text": "Save",
-                    },
-                    Object {
-                      "disabled": false,
-                      "kind": "info",
-                      "onClick": [Function],
-                      "text": "Info",
-                    },
-                    Object {
-                      "kind": "danger",
-                      "onClick": [Function],
-                      "text": "Cancel",
-                    },
-                  ]
-            } />
-        <LookupInput
-            img="search"
-            onChange={[Function]}
-            onSubmit={[Function]} />
-        <DropupBtn
-            btn={
+        className="route-btns">
+        <a
+            className="btn btn-default"
+            href="#display">
+            Display
+        </a>
+        <a
+            className="btn btn-default"
+            href="#entry">
+            Add
+        </a>
+        <a
+            className="btn btn-default"
+            href="#assign-products">
+            Assign Products
+        </a>
+        <a
+            className="btn btn-default"
+            href="#add-observations">
+            Add Observations
+        </a>
+    </div>
+    <div
+        className="body" />
+    <ButtonSet
+        buttons={
+            Array [
                 Object {
+<<<<<<< HEAD
                     "btnText": "My button",
                     "disabled": false,
                     "kind": "danger",
@@ -106,7 +102,62 @@ ShallowWrapper {
                     "Add Observations",
                   ]
             } />
+=======
+                  "disabled": true,
+                  "kind": "primary",
+                  "onClick": [Function],
+                  "text": "Save",
+                },
+                Object {
+                  "disabled": false,
+                  "kind": "info",
+                  "onClick": [Function],
+                  "text": "Info",
+                },
+                Object {
+                  "kind": "danger",
+                  "onClick": [Function],
+                  "text": "Cancel",
+                },
+              ]
+        } />
+    <LookupInput
+        img="search"
+        onChange={[Function]}
+        onSubmit={[Function]} />
+    <DropupBtn
+        btn={
+            Object {
+                "kind": "danger",
+                "text": "My button",
+              }
+        }
+        links={
+            Array [
+                Object {
+                  "onClick": [Function],
+                  "separator": false,
+                  "text": "link 1",
+                },
+              ]
+        } />
+    <div>
+        <label>
+            Date Range
+        </label>
+        <DateRange
+            endDate={"2017-03-14T22:20:13.846Z"}
+            onEndDateChanged={[Function]}
+            onStartDateChanged={[Function]}
+            startDate={"2017-03-14T22:20:13.846Z"} />
+>>>>>>> 006d93cdd7706d029b7d9b646fe42333488d30cc
     </div>
+    <TargetSelect
+        categories={Array []}
+        onChange={[Function]}
+        selectedCategory=""
+        selectedTarget=""
+        targets={Array []} />
 </div>,
   "nodes": Array [
     <div
@@ -133,38 +184,33 @@ ShallowWrapper {
       <div
             className="error" />
       <div
-            className="body">
-            <DataEntry
-                  description=""
-                  name="" />
-            <ButtonSet
-                  buttons={
-                        Array [
-                              Object {
-                                "disabled": true,
-                                "kind": "primary",
-                                "onClick": [Function],
-                                "text": "Save",
-                              },
-                              Object {
-                                "disabled": false,
-                                "kind": "info",
-                                "onClick": [Function],
-                                "text": "Info",
-                              },
-                              Object {
-                                "kind": "danger",
-                                "onClick": [Function],
-                                "text": "Cancel",
-                              },
-                            ]
-                  } />
-            <LookupInput
-                  img="search"
-                  onChange={[Function]}
-                  onSubmit={[Function]} />
-            <DropupBtn
-                  btn={
+            className="route-btns">
+            <a
+                  className="btn btn-default"
+                  href="#display">
+                  Display
+            </a>
+            <a
+                  className="btn btn-default"
+                  href="#entry">
+                  Add
+            </a>
+            <a
+                  className="btn btn-default"
+                  href="#assign-products">
+                  Assign Products
+            </a>
+            <a
+                  className="btn btn-default"
+                  href="#add-observations">
+                  Add Observations
+            </a>
+      </div>
+      <div
+            className="body" />
+      <ButtonSet
+            buttons={
+                  Array [
                         Object {
                               "btnText": "My button",
                               "disabled": false,
@@ -210,6 +256,12 @@ ShallowWrapper {
                             ]
                   } />
       </div>
+      <TargetSelect
+            categories={Array []}
+            onChange={[Function]}
+            selectedCategory=""
+            selectedTarget=""
+            targets={Array []} />
 </div>,
   ],
   "options": Object {},
@@ -303,39 +355,47 @@ ShallowWrapper {
           <div
                     className="error" />
           <div
-                    className="body">
-                    <DataEntry
-                              description=""
-                              name="" />
-                    <ButtonSet
-                              buttons={
-                                        Array [
-                                                  Object {
-                                                    "disabled": true,
-                                                    "kind": "primary",
-                                                    "onClick": [Function],
-                                                    "text": "Save",
-                                                  },
-                                                  Object {
-                                                    "disabled": false,
-                                                    "kind": "info",
-                                                    "onClick": [Function],
-                                                    "text": "Info",
-                                                  },
-                                                  Object {
-                                                    "kind": "danger",
-                                                    "onClick": [Function],
-                                                    "text": "Cancel",
-                                                  },
-                                                ]
-                              } />
-                    <LookupInput
-                              img="search"
-                              onChange={[Function]}
-                              onSubmit={[Function]} />
-                    <DropupBtn
-                              btn={
+                    className="route-btns">
+                    <a
+                              className="btn btn-default"
+                              href="#display">
+                              Display
+                    </a>
+                    <a
+                              className="btn btn-default"
+                              href="#entry">
+                              Add
+                    </a>
+                    <a
+                              className="btn btn-default"
+                              href="#assign-products">
+                              Assign Products
+                    </a>
+                    <a
+                              className="btn btn-default"
+                              href="#add-observations">
+                              Add Observations
+                    </a>
+          </div>
+          <div
+                    className="body" />
+          <ButtonSet
+                    buttons={
+                              Array [
                                         Object {
+                                          "disabled": true,
+                                          "kind": "primary",
+                                          "onClick": [Function],
+                                          "text": "Save",
+                                        },
+                                        Object {
+                                          "disabled": false,
+                                          "kind": "info",
+                                          "onClick": [Function],
+                                          "text": "Info",
+                                        },
+                                        Object {
+<<<<<<< HEAD
                                                   "btnText": "My button",
                                                   "disabled": false,
                                                   "kind": "danger",
@@ -379,7 +439,50 @@ ShallowWrapper {
                                                   "Add Observations",
                                                 ]
                               } />
+=======
+                                          "kind": "danger",
+                                          "onClick": [Function],
+                                          "text": "Cancel",
+                                        },
+                                      ]
+                    } />
+          <LookupInput
+                    img="search"
+                    onChange={[Function]}
+                    onSubmit={[Function]} />
+          <DropupBtn
+                    btn={
+                              Object {
+                                        "kind": "danger",
+                                        "text": "My button",
+                                      }
+                    }
+                    links={
+                              Array [
+                                        Object {
+                                          "onClick": [Function],
+                                          "separator": false,
+                                          "text": "link 1",
+                                        },
+                                      ]
+                    } />
+          <div>
+                    <label>
+                              Date Range
+                    </label>
+                    <DateRange
+                              endDate={"2017-03-14T22:20:13.846Z"}
+                              onEndDateChanged={[Function]}
+                              onStartDateChanged={[Function]}
+                              startDate={"2017-03-14T22:20:13.846Z"} />
+>>>>>>> 006d93cdd7706d029b7d9b646fe42333488d30cc
           </div>
+          <TargetSelect
+                    categories={Array []}
+                    onChange={[Function]}
+                    selectedCategory=""
+                    selectedTarget=""
+                    targets={Array []} />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -406,39 +509,35 @@ ShallowWrapper {
           <div
                     className="error" />
           <div
-                    className="body">
-                    <DataEntry
-                              description=""
-                              name="" />
-                    <ButtonSet
-                              buttons={
-                                        Array [
-                                                  Object {
-                                                    "disabled": true,
-                                                    "kind": "primary",
-                                                    "onClick": [Function],
-                                                    "text": "Save",
-                                                  },
-                                                  Object {
-                                                    "disabled": false,
-                                                    "kind": "info",
-                                                    "onClick": [Function],
-                                                    "text": "Info",
-                                                  },
-                                                  Object {
-                                                    "kind": "danger",
-                                                    "onClick": [Function],
-                                                    "text": "Cancel",
-                                                  },
-                                                ]
-                              } />
-                    <LookupInput
-                              img="search"
-                              onChange={[Function]}
-                              onSubmit={[Function]} />
-                    <DropupBtn
-                              btn={
+                    className="route-btns">
+                    <a
+                              className="btn btn-default"
+                              href="#display">
+                              Display
+                    </a>
+                    <a
+                              className="btn btn-default"
+                              href="#entry">
+                              Add
+                    </a>
+                    <a
+                              className="btn btn-default"
+                              href="#assign-products">
+                              Assign Products
+                    </a>
+                    <a
+                              className="btn btn-default"
+                              href="#add-observations">
+                              Add Observations
+                    </a>
+          </div>
+          <div
+                    className="body" />
+          <ButtonSet
+                    buttons={
+                              Array [
                                         Object {
+<<<<<<< HEAD
                                                   "btnText": "My button",
                                                   "disabled": false,
                                                   "kind": "danger",
@@ -482,7 +581,62 @@ ShallowWrapper {
                                                   "Add Observations",
                                                 ]
                               } />
+=======
+                                          "disabled": true,
+                                          "kind": "primary",
+                                          "onClick": [Function],
+                                          "text": "Save",
+                                        },
+                                        Object {
+                                          "disabled": false,
+                                          "kind": "info",
+                                          "onClick": [Function],
+                                          "text": "Info",
+                                        },
+                                        Object {
+                                          "kind": "danger",
+                                          "onClick": [Function],
+                                          "text": "Cancel",
+                                        },
+                                      ]
+                    } />
+          <LookupInput
+                    img="search"
+                    onChange={[Function]}
+                    onSubmit={[Function]} />
+          <DropupBtn
+                    btn={
+                              Object {
+                                        "kind": "danger",
+                                        "text": "My button",
+                                      }
+                    }
+                    links={
+                              Array [
+                                        Object {
+                                          "onClick": [Function],
+                                          "separator": false,
+                                          "text": "link 1",
+                                        },
+                                      ]
+                    } />
+          <div>
+                    <label>
+                              Date Range
+                    </label>
+                    <DateRange
+                              endDate={"2017-03-14T22:20:13.846Z"}
+                              onEndDateChanged={[Function]}
+                              onStartDateChanged={[Function]}
+                              startDate={"2017-03-14T22:20:13.846Z"} />
+>>>>>>> 006d93cdd7706d029b7d9b646fe42333488d30cc
           </div>
+          <TargetSelect
+                    categories={Array []}
+                    onChange={[Function]}
+                    selectedCategory=""
+                    selectedTarget=""
+                    targets={Array []} />
 </div>,
       },
       "_renderedNodeType": 0,
