@@ -1,14 +1,8 @@
 // @flow
 import React, {PropTypes as t} from 'react';
+import './wizard-steps.css';
 
 type PropsType = {steps: Array<string>, activeIndex: number};
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'space-around',
-  },
-};
 
 const WizardSteps = ({steps, activeIndex}: PropsType) => (
   <div className="wizard-steps" style={styles.container}>

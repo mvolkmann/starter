@@ -1,0 +1,17 @@
+@import './velocity.scss';
+
+.wizard-steps {
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .active {
+    background-color: $velocity-primary;
+  }
+
+  .step {
+    margin-right: 20px;
+  }
+}
