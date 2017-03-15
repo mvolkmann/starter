@@ -93,6 +93,14 @@ ShallowWrapper {
             selectedCategory=""
             selectedTarget=""
             targets={Array []} />
+        <WizardSteps
+            steps={
+                Array [
+                    "Assign Products",
+                    "Add Trail Data",
+                    "Add Observations",
+                  ]
+            } />
     </div>
 </div>,
   "nodes": Array [
@@ -183,6 +191,14 @@ ShallowWrapper {
                   selectedCategory=""
                   selectedTarget=""
                   targets={Array []} />
+            <WizardSteps
+                  steps={
+                        Array [
+                              "Assign Products",
+                              "Add Trail Data",
+                              "Add Observations",
+                            ]
+                  } />
       </div>
 </div>,
   ],
@@ -340,6 +356,14 @@ ShallowWrapper {
                               selectedCategory=""
                               selectedTarget=""
                               targets={Array []} />
+                    <WizardSteps
+                              steps={
+                                        Array [
+                                                  "Assign Products",
+                                                  "Add Trail Data",
+                                                  "Add Observations",
+                                                ]
+                              } />
           </div>
 </div>,
         "_debugID": 2,
@@ -430,6 +454,14 @@ ShallowWrapper {
                               selectedCategory=""
                               selectedTarget=""
                               targets={Array []} />
+                    <WizardSteps
+                              steps={
+                                        Array [
+                                                  "Assign Products",
+                                                  "Add Trail Data",
+                                                  "Add Observations",
+                                                ]
+                              } />
           </div>
 </div>,
       },
