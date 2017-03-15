@@ -1,5 +1,5 @@
 // @flow
-import React, {PropTypes as t, Component} from 'react';
+import React, {Component, PropTypes as t} from 'react';
 import {Dropdown} from 'bootstrap.native';
 
 type BtnKindType =
