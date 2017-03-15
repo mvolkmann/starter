@@ -43,7 +43,10 @@ class DropupBtn extends Component {
   render() {
     const {btn, links}: PropsType = this.props;
     return (
-      <div className="btn-group dropup" ref={top => this.top = top}>
+      <div
+        className="btn-group dropup dropup-button"
+        ref={top => this.top = top}
+      >
         <button
           className={`btn btn-${btn.kind} dropdown-toggle`}
           disabled={btn.disabled}
