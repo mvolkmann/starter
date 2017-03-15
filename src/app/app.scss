@@ -13,6 +13,14 @@ $space: 5px;
   label {
     margin-right: $space * 2;
   }
+
+  .route-btns {
+    margin-bottom: $space;
+
+    .btn {
+      margin-right: $space;
+    }
+  }
 }
 
 .data-display {
