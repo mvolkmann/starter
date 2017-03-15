@@ -16,8 +16,7 @@ const WizardSteps = ({steps, activeIndex}: PropsType) => (
       <div className="step-container" key={i}>
         <span className={activeIndex === i ? 'badge active' : 'badge'}>
           {i + 1}
-        </span>
-        {s}
+        </span> {s}
       </div>
     ))}
   </div>
