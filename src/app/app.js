@@ -1,5 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
+import AssignProducts from './assign-products';
 import Breadcrumbs from '../share/breadcrumbs';
 import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
@@ -228,12 +229,13 @@ class App extends Component {
             hash === 'entry' ?
               <DataEntry description={description} name={name} /> :
                 hash === 'assign-products' ?
-                  <NotImplemented name="AssignProducts" /> :
+                  <AssignProducts /> :
                     hash === 'add-observations' ?
                       <NotImplemented name="AddObservations" /> :
                         null}
         </div>
 
+        <hr style={{marginTop: '500px'}} />
         <ButtonSet buttons={buttons} />
 
         <LookupInput {...input} />
