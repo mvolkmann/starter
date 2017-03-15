@@ -1,4 +1,5 @@
 import React, {PropTypes as t} from 'react';
+import './data-input.css';
 
 const DataInput = (
   {autoFocus, className = '', label, name, onChange, onKeyPress, value},

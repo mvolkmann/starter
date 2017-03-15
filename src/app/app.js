@@ -214,12 +214,15 @@ class App extends Component {
 
           <DropupBtn {...dropupBtnParams} />
 
-          <DateRange
-            startDate={startDate}
-            endDate={endDate}
-            onStartDateChanged={this.onStartDateChanged}
-            onEndDateChanged={this.onEndDateChanged}
-          />
+          <div>
+            <label>Date Range</label>
+            <DateRange
+              startDate={startDate}
+              endDate={endDate}
+              onStartDateChanged={this.onStartDateChanged}
+              onEndDateChanged={this.onEndDateChanged}
+            />
+          </div>
 
           <TargetSelect
             categories={categoryOptions}
