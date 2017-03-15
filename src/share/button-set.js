@@ -1,5 +1,6 @@
 // @flow
 import React, {PropTypes as t} from 'react';
+import './button-set.css';
 
 // Types
 type ButtonKindType =

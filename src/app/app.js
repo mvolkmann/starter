@@ -59,7 +59,7 @@ type PropsType = {
 
 class App extends Component {
   static propTypes = {
-    date: t.object // moment (just for tests)
+    date: t.object, // moment (just for tests)
   };
 
   state = {
@@ -73,7 +73,7 @@ class App extends Component {
     projectMap: {},
     selectedCategory: '',
     selectedTarget: '',
-    startDate: undefined
+    startDate: undefined,
   };
 
   breadcrumbs = [
@@ -87,7 +87,7 @@ class App extends Component {
 
     const date = props.date ? props.date : moment();
     // eslint-disable-next-line react/no-direct-mutation-state
-    this.state.startDate = this.state.endDate = date;
+    this.state.startDate = (this.state.endDate = date);
 
     // Allow any component to change the state of this top-most component.
     defineSetState(this);
@@ -203,12 +203,15 @@ class App extends Component {
 
           <DropupBtn {...dropupBtnParams} />
 
-          <DateRange
-            startDate={startDate}
-            endDate={endDate}
-            onStartDateChanged={this.onStartDateChanged}
-            onEndDateChanged={this.onEndDateChanged}
-          />
+          <div>
+            <label>Date Range</label>
+            <DateRange
+              startDate={startDate}
+              endDate={endDate}
+              onStartDateChanged={this.onStartDateChanged}
+              onEndDateChanged={this.onEndDateChanged}
+            />
+          </div>
 
           <TargetSelect
             categories={categoryOptions}

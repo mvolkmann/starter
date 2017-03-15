@@ -1,0 +1,13 @@
+@import './velocity';
+
+.button-set {
+  .btn {
+    margin-right: 5px;
+  }
+
+  .btn-danger { background-color: $velocity-danger; }
+  .btn-default { background-color: $velocity-default; }
+  .btn-info { background-color: $velocity-info; }
+  .btn-primary { background-color: $velocity-primary; }
+  .btn-success { background-color: $velocity-success; }
+}
