@@ -40,11 +40,7 @@ const LookupInput = ({img, onChange, onSubmit}: PropsType) => (
       type="text"
       style={styles.input}
     />
-    <i
-      className={`icon fa fa-${img}`}
-      onClick={onSubmit}
-      style={styles.icon}
-    />
+    <i className={`icon fa fa-${img}`} onClick={onSubmit} style={styles.icon} />
   </div>
 );
 

@@ -18,7 +18,7 @@ const WizardSteps = ({steps, activeIndex}: PropsType) => (
 
 WizardSteps.propTypes = {
   activeIndex: t.number.isRequired,
-  steps: t.arrayOf(t.string).isRequired
+  steps: t.arrayOf(t.string).isRequired,
 };
 
 export default WizardSteps;
