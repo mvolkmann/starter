@@ -11,9 +11,9 @@ const styles = {
 };
 
 const WizardSteps = ({steps, activeIndex}: PropsType) => (
-  <div className="wizard-steps-container" style={styles.container}>
+  <div className="wizard-steps" style={styles.container}>
     {steps.map((s, i) => (
-      <div className="step-container" key={i}>
+      <div className="step" key={i}>
         <span className={activeIndex === i ? 'badge active' : 'badge'}>
           {i + 1}
         </span> {s}

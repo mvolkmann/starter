@@ -184,6 +184,7 @@ class App extends Component {
 
     const wizardSteps = {
       steps: ['Assign Products', 'Add Trail Data', 'Add Observations'],
+      activeIndex: 0
     };
 
     const categoryOptions = productCategories.map(cat => ({
