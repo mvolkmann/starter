@@ -9,7 +9,8 @@ describe('WizardSteps', () => {
         'Assign Products',
         'Add Trail Data',
         'Add Observations'
-      ]
+      ],
+      activeIndex: 0
     };
 
     snapshot(<WizardSteps {...props} />);

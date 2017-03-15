@@ -11,7 +11,7 @@ describe('LookupInput', () => {
   it('should call onChange fn when text is updated with entered text', () => {
     const onChange = jest.fn();
     const wrapper = mount(<LookupInput img="search" onChange={onChange} />);
-    const input = wrapper.find('.lookup-input-input');
+    const input = wrapper.find('input');
     input.simulate('change', {target: {value: 'foo'}});
     expect(onChange)
       .toHaveBeenCalledWith(
@@ -22,7 +22,7 @@ describe('LookupInput', () => {
   it('should call onClick fn when the icon is clicked', () => {
     const onClick = jest.fn();
     const wrapper = mount(<LookupInput img="search" onSubmit={onClick} />);
-    const icon = wrapper.find('.lookup-input-icon');
+    const icon = wrapper.find('.icon');
     icon.simulate('click');
     expect(onClick).toHaveBeenCalled();
   });
@@ -30,7 +30,7 @@ describe('LookupInput', () => {
   it('should call onClick fn when enter key is pressed', () => {
     const onEnterPress = jest.fn();
     const wrapper = mount(<LookupInput img="search" onSubmit={onEnterPress} />);
-    const input = wrapper.find('.lookup-input-input');
+    const input = wrapper.find('input');
     input.simulate('keyPress', {which: 13});
     expect(onEnterPress).toHaveBeenCalled();
   });

@@ -1,6 +1,6 @@
 exports[`DropupBtn should render 1`] = `
 <div
-  className="btn-group dropup">
+  className="btn-group dropup dropup-button">
   <button
     className="btn btn-danger dropdown-toggle"
     disabled={false}
