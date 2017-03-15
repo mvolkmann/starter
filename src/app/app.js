@@ -230,9 +230,7 @@ class App extends Component {
               <DataEntry description={description} name={name} /> :
                 hash === 'assign-products' ?
                   <NotImplemented name="AssignProducts" /> :
-                    hash === 'add-observations' ?
-                      <AddObservations /> :
-                        null}
+                    hash === 'add-observations' ? <AddObservations /> : null}
         </div>
 
         <ButtonSet buttons={buttons} />

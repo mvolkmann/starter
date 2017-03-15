@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {BootstrapTable, TableHeaderColumn}
-  from '@monsantoit/react-bootstrap-table';
+import {
+  BootstrapTable,
+  TableHeaderColumn,
+} from '@monsantoit/react-bootstrap-table';
 
 class AddObservations extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   /*
   onSomeEvent = event => {
@@ -20,15 +21,15 @@ class AddObservations extends Component {
         weight: 0.25,
         brTarget: 225,
         antebellumTarget: 225,
-        advancementTargets: [200, 198, 205]
+        advancementTargets: [200, 198, 205],
       },
       {
         name: 'FINAL',
         weight: 0.05,
         brTarget: 4,
         antebellumTarget: 4,
-        advancementTargets: [4, 4, 4]
-      }
+        advancementTargets: [4, 4, 4],
+      },
     ];
   }
 
