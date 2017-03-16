@@ -1,7 +1,7 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
 import AssignProducts from './assign-products';
-import AddObservations from './add-observations';
+//import AddObservations from './add-observations';
 import Breadcrumbs from '../share/breadcrumbs';
 import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
