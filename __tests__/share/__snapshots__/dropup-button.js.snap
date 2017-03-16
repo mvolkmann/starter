@@ -1,0 +1,33 @@
+exports[`DropupBtn should render 1`] = `
+<div
+  className="btn-group dropup dropup-button">
+  <button
+    className="btn btn-danger dropdown-toggle"
+    disabled={false}
+    onClick={[Function]}
+    type="button">
+    link1 
+    <span
+      className="caret" />
+    <span
+      className="sr-only">
+      Toggle Dropdown
+    </span>
+  </button>
+  <ul
+    className="dropdown-menu">
+    <li
+      className={undefined}
+      onClick={[Function]}
+      role="">
+      link 1
+    </li>
+    <li
+      className={undefined}
+      onClick={[Function]}
+      role="">
+      link 2
+    </li>
+  </ul>
+</div>
+`;
