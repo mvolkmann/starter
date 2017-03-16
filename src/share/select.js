@@ -9,21 +9,21 @@ type OptionType = {
 
 type OptionsType = Array<OptionType>;
 
+type PropsType = {
+  disabled?: boolean,
+  label?: string,
+  multiple?: boolean,
+  onChange: Function,
+  options: OptionsType,
+  size?: number,
+  value: string
+};
+
 const Option = (option: OptionType) => (
   <option key={option.value} value={option.value}>
     {option.text}
   </option>
 );
-
-type PropsType = {
-  disabled: boolean,
-  label: string,
-  multiple: boolean,
-  onChange: Function,
-  options: OptionsType,
-  size: number,
-  value: string
-};
 
 export default function Select(
   {
@@ -44,7 +44,7 @@ export default function Select(
         onChange={onChange}
         size={size}
         value={value}
-        disabled={disabled}
+        disabled={disabled || false}
         multiple={multiple}
       >
         {options.map(Option)}
