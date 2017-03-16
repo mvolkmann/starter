@@ -1,6 +1,7 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
-import AddObservations from './add-observations';
+import AssignProducts from './assign-products';
+//import AddObservations from './add-observations';
 import Breadcrumbs from '../share/breadcrumbs';
 import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
@@ -73,6 +74,9 @@ class App extends Component {
   };
 
   state = {
+    crops: [],
+    availableMcts: [],
+    availableRegions: [],
     activeCrumb: undefined,
     description: '',
     endDate: undefined,
@@ -83,6 +87,9 @@ class App extends Component {
     projectMap: {},
     selectedCategory: '',
     selectedTarget: '',
+    selectedCrop: '',
+    selectedMct: '',
+    selectedRegion: '',
     selected: '',
     startDate: undefined,
   };
@@ -209,6 +216,34 @@ class App extends Component {
       value: target,
     }));
 
+    const router = () => {
+      switch (hash) {
+        case 'display':
+          return <DataDisplay projectMap={projectMap} />;
+        case 'entry':
+          return <DataEntry description={description} name={name} />;
+        case 'assign-products':
+          return <AssignProducts crops={this.state.crops} />;
+        case 'add-observations':
+          return <NotImplemented name="AddObservations" />;
+        default:
+          return null;
+      }
+    };
+
+    const selectProps = {
+      disabled: false,
+      multiple: false,
+      onChange: this.onSelected,
+      options: [
+        {text: 'A', value: 'a'},
+        {text: 'B', value: 'b'},
+        {text: 'C', value: 'c'},
+      ],
+      size: 1,
+      value: this.state.selected,
+    };
+
     return (
       <div className="app">
         <h3>Breadcrumbs</h3>
@@ -237,16 +272,10 @@ class App extends Component {
         </div>
 
         <div className="body">
-          {hash === 'display' ?
-            <DataDisplay projectMap={projectMap} /> :
-            hash === 'entry' ?
-              <DataEntry description={description} name={name} /> :
-                hash === 'assign-products' ?
-                  <NotImplemented name="AssignProducts" /> :
-                    hash === 'add-observations' ? <AddObservations /> : null}
+          {router()}
         </div>
 
-        <hr />
+        <hr style={{marginTop: '500px'}} />
 
         <h3>ButtonSet Component</h3>
         <ButtonSet buttons={buttons} />

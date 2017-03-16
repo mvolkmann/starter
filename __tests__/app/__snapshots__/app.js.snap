@@ -60,7 +60,12 @@ ShallowWrapper {
     </div>
     <div
         className="body" />
-    <hr />
+    <hr
+        style={
+            Object {
+                "marginTop": "500px",
+              }
+        } />
     <h3>
         ButtonSet Component
     </h3>
@@ -237,7 +242,12 @@ ShallowWrapper {
       </div>
       <div
             className="body" />
-      <hr />
+      <hr
+            style={
+                  Object {
+                        "marginTop": "500px",
+                      }
+            } />
       <h3>
             ButtonSet Component
       </h3>
@@ -399,6 +409,9 @@ ShallowWrapper {
         "refs": Object {},
         "state": Object {
           "activeCrumb": undefined,
+          "availableMcts": Array [],
+          "availableRegions": Array [],
+          "crops": Array [],
           "description": "",
           "endDate": "2017-03-14T22:20:13.846Z",
           "error": "",
@@ -408,6 +421,9 @@ ShallowWrapper {
           "projectMap": Object {},
           "selected": "",
           "selectedCategory": "",
+          "selectedCrop": "",
+          "selectedMct": "",
+          "selectedRegion": "",
           "selectedTarget": "",
           "startDate": "2017-03-14T22:20:13.846Z",
         },
@@ -483,7 +499,12 @@ ShallowWrapper {
           </div>
           <div
                     className="body" />
-          <hr />
+          <hr
+                    style={
+                              Object {
+                                        "marginTop": "500px",
+                                      }
+                    } />
           <h3>
                     ButtonSet Component
           </h3>
@@ -660,7 +681,12 @@ ShallowWrapper {
           </div>
           <div
                     className="body" />
-          <hr />
+          <hr
+                    style={
+                              Object {
+                                        "marginTop": "500px",
+                                      }
+                    } />
           <h3>
                     ButtonSet Component
           </h3>
