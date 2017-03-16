@@ -8,6 +8,9 @@ ShallowWrapper {
   "length": 1,
   "node": <div
     className="app">
+    <h3>
+        Breadcrumbs
+    </h3>
     <Breadcrumbs
         activeCrumb={undefined}
         items={
@@ -29,6 +32,9 @@ ShallowWrapper {
         onNavigate={[Function]} />
     <div
         className="error" />
+    <h3>
+        Routes
+    </h3>
     <div
         className="route-btns">
         <a
@@ -60,6 +66,9 @@ ShallowWrapper {
                 "marginTop": "500px",
               }
         } />
+    <h3>
+        ButtonSet Component
+    </h3>
     <ButtonSet
         buttons={
             Array [
@@ -82,10 +91,18 @@ ShallowWrapper {
                 },
               ]
         } />
+    <hr />
+    <h3>
+        LookupInput Component
+    </h3>
     <LookupInput
         img="search"
         onChange={[Function]}
         onSubmit={[Function]} />
+    <hr />
+    <h3>
+        DropupBtn Component
+    </h3>
     <DropupBtn
         btn={
             Object {
@@ -108,6 +125,10 @@ ShallowWrapper {
                 },
               ]
         } />
+    <hr />
+    <h3>
+        DateRange Component
+    </h3>
     <div>
         <label>
             Date Range
@@ -117,26 +138,60 @@ ShallowWrapper {
             onEndDateChanged={[Function]}
             onStartDateChanged={[Function]}
             startDate={"2017-03-14T22:20:13.846Z"} />
-        <WizardSteps
-            activeIndex={0}
-            steps={
-                Array [
-                    "Assign Products",
-                    "Add Trail Data",
-                    "Add Observations",
-                  ]
-            } />
     </div>
+    <hr />
+    <h3>
+        WizardSteps Component
+    </h3>
+    <WizardSteps
+        activeIndex={0}
+        steps={
+            Array [
+                "Assign Products",
+                "Add Trail Data",
+                "Add Observations",
+              ]
+        } />
+    <hr />
+    <h3>
+        TargetSelect Component
+    </h3>
     <TargetSelect
         categories={Array []}
         onChange={[Function]}
         selectedCategory=""
         selectedTarget=""
         targets={Array []} />
+    <hr />
+    <Select
+        disabled={false}
+        multiple={false}
+        onChange={[Function]}
+        options={
+            Array [
+                Object {
+                  "text": "A",
+                  "value": "a",
+                },
+                Object {
+                  "text": "B",
+                  "value": "b",
+                },
+                Object {
+                  "text": "C",
+                  "value": "c",
+                },
+              ]
+        }
+        size={1}
+        value="" />
 </div>,
   "nodes": Array [
     <div
       className="app">
+      <h3>
+            Breadcrumbs
+      </h3>
       <Breadcrumbs
             activeCrumb={undefined}
             items={
@@ -158,6 +213,9 @@ ShallowWrapper {
             onNavigate={[Function]} />
       <div
             className="error" />
+      <h3>
+            Routes
+      </h3>
       <div
             className="route-btns">
             <a
@@ -189,6 +247,9 @@ ShallowWrapper {
                         "marginTop": "500px",
                       }
             } />
+      <h3>
+            ButtonSet Component
+      </h3>
       <ButtonSet
             buttons={
                   Array [
@@ -211,10 +272,18 @@ ShallowWrapper {
                         },
                       ]
             } />
+      <hr />
+      <h3>
+            LookupInput Component
+      </h3>
       <LookupInput
             img="search"
             onChange={[Function]}
             onSubmit={[Function]} />
+      <hr />
+      <h3>
+            DropupBtn Component
+      </h3>
       <DropupBtn
             btn={
                   Object {
@@ -237,6 +306,10 @@ ShallowWrapper {
                         },
                       ]
             } />
+      <hr />
+      <h3>
+            DateRange Component
+      </h3>
       <div>
             <label>
                   Date Range
@@ -246,22 +319,53 @@ ShallowWrapper {
                   onEndDateChanged={[Function]}
                   onStartDateChanged={[Function]}
                   startDate={"2017-03-14T22:20:13.846Z"} />
-            <WizardSteps
-                  activeIndex={0}
-                  steps={
-                        Array [
-                              "Assign Products",
-                              "Add Trail Data",
-                              "Add Observations",
-                            ]
-                  } />
       </div>
+      <hr />
+      <h3>
+            WizardSteps Component
+      </h3>
+      <WizardSteps
+            activeIndex={0}
+            steps={
+                  Array [
+                        "Assign Products",
+                        "Add Trail Data",
+                        "Add Observations",
+                      ]
+            } />
+      <hr />
+      <h3>
+            TargetSelect Component
+      </h3>
       <TargetSelect
             categories={Array []}
             onChange={[Function]}
             selectedCategory=""
             selectedTarget=""
             targets={Array []} />
+      <hr />
+      <Select
+            disabled={false}
+            multiple={false}
+            onChange={[Function]}
+            options={
+                  Array [
+                        Object {
+                          "text": "A",
+                          "value": "a",
+                        },
+                        Object {
+                          "text": "B",
+                          "value": "b",
+                        },
+                        Object {
+                          "text": "C",
+                          "value": "c",
+                        },
+                      ]
+            }
+            size={1}
+            value="" />
 </div>,
   ],
   "options": Object {},
@@ -295,6 +399,7 @@ ShallowWrapper {
         "onCategorySelect": [Function],
         "onEndDateChanged": [Function],
         "onNavigate": [Function],
+        "onSelected": [Function],
         "onStartDateChanged": [Function],
         "props": Object {
           "date": "2017-03-14T22:20:13.846Z",
@@ -302,6 +407,9 @@ ShallowWrapper {
         "refs": Object {},
         "state": Object {
           "activeCrumb": undefined,
+          "availableMcts": Array [],
+          "availableRegions": Array [],
+          "crops": Array [],
           "description": "",
           "endDate": "2017-03-14T22:20:13.846Z",
           "error": "",
@@ -309,7 +417,11 @@ ShallowWrapper {
           "productCategories": Array [],
           "productTargets": Array [],
           "projectMap": Object {},
+          "selected": "",
           "selectedCategory": "",
+          "selectedCrop": "",
+          "selectedMct": "",
+          "selectedRegion": "",
           "selectedTarget": "",
           "startDate": "2017-03-14T22:20:13.846Z",
         },
@@ -333,6 +445,9 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
           className="app">
+          <h3>
+                    Breadcrumbs
+          </h3>
           <Breadcrumbs
                     activeCrumb={undefined}
                     items={
@@ -354,6 +469,9 @@ ShallowWrapper {
                     onNavigate={[Function]} />
           <div
                     className="error" />
+          <h3>
+                    Routes
+          </h3>
           <div
                     className="route-btns">
                     <a
@@ -385,6 +503,9 @@ ShallowWrapper {
                                         "marginTop": "500px",
                                       }
                     } />
+          <h3>
+                    ButtonSet Component
+          </h3>
           <ButtonSet
                     buttons={
                               Array [
@@ -407,10 +528,18 @@ ShallowWrapper {
                                         },
                                       ]
                     } />
+          <hr />
+          <h3>
+                    LookupInput Component
+          </h3>
           <LookupInput
                     img="search"
                     onChange={[Function]}
                     onSubmit={[Function]} />
+          <hr />
+          <h3>
+                    DropupBtn Component
+          </h3>
           <DropupBtn
                     btn={
                               Object {
@@ -433,6 +562,10 @@ ShallowWrapper {
                                         },
                                       ]
                     } />
+          <hr />
+          <h3>
+                    DateRange Component
+          </h3>
           <div>
                     <label>
                               Date Range
@@ -442,26 +575,60 @@ ShallowWrapper {
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
                               startDate={"2017-03-14T22:20:13.846Z"} />
-                    <WizardSteps
-                              activeIndex={0}
-                              steps={
-                                        Array [
-                                                  "Assign Products",
-                                                  "Add Trail Data",
-                                                  "Add Observations",
-                                                ]
-                              } />
           </div>
+          <hr />
+          <h3>
+                    WizardSteps Component
+          </h3>
+          <WizardSteps
+                    activeIndex={0}
+                    steps={
+                              Array [
+                                        "Assign Products",
+                                        "Add Trail Data",
+                                        "Add Observations",
+                                      ]
+                    } />
+          <hr />
+          <h3>
+                    TargetSelect Component
+          </h3>
           <TargetSelect
                     categories={Array []}
                     onChange={[Function]}
                     selectedCategory=""
                     selectedTarget=""
                     targets={Array []} />
+          <hr />
+          <Select
+                    disabled={false}
+                    multiple={false}
+                    onChange={[Function]}
+                    options={
+                              Array [
+                                        Object {
+                                          "text": "A",
+                                          "value": "a",
+                                        },
+                                        Object {
+                                          "text": "B",
+                                          "value": "b",
+                                        },
+                                        Object {
+                                          "text": "C",
+                                          "value": "c",
+                                        },
+                                      ]
+                    }
+                    size={1}
+                    value="" />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
           className="app">
+          <h3>
+                    Breadcrumbs
+          </h3>
           <Breadcrumbs
                     activeCrumb={undefined}
                     items={
@@ -483,6 +650,9 @@ ShallowWrapper {
                     onNavigate={[Function]} />
           <div
                     className="error" />
+          <h3>
+                    Routes
+          </h3>
           <div
                     className="route-btns">
                     <a
@@ -514,6 +684,9 @@ ShallowWrapper {
                                         "marginTop": "500px",
                                       }
                     } />
+          <h3>
+                    ButtonSet Component
+          </h3>
           <ButtonSet
                     buttons={
                               Array [
@@ -536,10 +709,18 @@ ShallowWrapper {
                                         },
                                       ]
                     } />
+          <hr />
+          <h3>
+                    LookupInput Component
+          </h3>
           <LookupInput
                     img="search"
                     onChange={[Function]}
                     onSubmit={[Function]} />
+          <hr />
+          <h3>
+                    DropupBtn Component
+          </h3>
           <DropupBtn
                     btn={
                               Object {
@@ -562,6 +743,10 @@ ShallowWrapper {
                                         },
                                       ]
                     } />
+          <hr />
+          <h3>
+                    DateRange Component
+          </h3>
           <div>
                     <label>
                               Date Range
@@ -571,22 +756,53 @@ ShallowWrapper {
                               onEndDateChanged={[Function]}
                               onStartDateChanged={[Function]}
                               startDate={"2017-03-14T22:20:13.846Z"} />
-                    <WizardSteps
-                              activeIndex={0}
-                              steps={
-                                        Array [
-                                                  "Assign Products",
-                                                  "Add Trail Data",
-                                                  "Add Observations",
-                                                ]
-                              } />
           </div>
+          <hr />
+          <h3>
+                    WizardSteps Component
+          </h3>
+          <WizardSteps
+                    activeIndex={0}
+                    steps={
+                              Array [
+                                        "Assign Products",
+                                        "Add Trail Data",
+                                        "Add Observations",
+                                      ]
+                    } />
+          <hr />
+          <h3>
+                    TargetSelect Component
+          </h3>
           <TargetSelect
                     categories={Array []}
                     onChange={[Function]}
                     selectedCategory=""
                     selectedTarget=""
                     targets={Array []} />
+          <hr />
+          <Select
+                    disabled={false}
+                    multiple={false}
+                    onChange={[Function]}
+                    options={
+                              Array [
+                                        Object {
+                                          "text": "A",
+                                          "value": "a",
+                                        },
+                                        Object {
+                                          "text": "B",
+                                          "value": "b",
+                                        },
+                                        Object {
+                                          "text": "C",
+                                          "value": "c",
+                                        },
+                                      ]
+                    }
+                    size={1}
+                    value="" />
 </div>,
       },
       "_renderedNodeType": 0,

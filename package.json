@@ -1,5 +1,5 @@
 {
-  "name": "starter2",
+  "name": "starter",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -21,9 +21,10 @@
     "react-scripts": "0.9.5",
     "react-test-renderer": "^15.4.2",
     "react-test-utils": "^0.0.1",
-    "stylelint": "^7.9.0"
+    "stylelint": "~7"
   },
   "dependencies": {
+    "@monsantoit/react-bootstrap-table": "^1.2.0",
     "bootstrap": "^3.3.7",
     "bootstrap.native": "^2.0.6",
     "compression": "^1.6.2",

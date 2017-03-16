@@ -1,6 +1,7 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
 import AssignProducts from './assign-products';
+import AddObservations from './add-observations';
 import Breadcrumbs from '../share/breadcrumbs';
 import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
@@ -8,6 +9,7 @@ import DataEntry from './data-entry';
 import DateRange from '../share/date-range';
 import DropupBtn from '../share/dropup-button';
 import LookupInput from '../share/lookup-input';
+import Select from '../share/select';
 import WizardSteps from '../share/wizard-steps';
 import moment from 'moment';
 import NotImplemented from '../share/not-implemented';
@@ -21,6 +23,12 @@ import './app.css';
 type BreadcrumbType = {
   id: number,
   label: string
+};
+
+type EventType = {
+  target: {
+    value: string
+  }
 };
 
 async function loadProductCategories() {
@@ -82,6 +90,7 @@ class App extends Component {
     selectedCrop: '',
     selectedMct: '',
     selectedRegion: '',
+    selected: '',
     startDate: undefined,
   };
 
@@ -125,6 +134,9 @@ class App extends Component {
   onStartDateChanged = (startDate: Object) => {
     this.setState({startDate});
   };
+
+  onSelected = (event: EventType) =>
+    this.setState({selected: event.target.value});
 
   render() {
     const {hash} = getLocationParts(window.location);
@@ -219,8 +231,22 @@ class App extends Component {
       }
     };
 
+    const selectProps = {
+      disabled: false,
+      multiple: false,
+      onChange: this.onSelected,
+      options: [
+        {text: 'A', value: 'a'},
+        {text: 'B', value: 'b'},
+        {text: 'C', value: 'c'},
+      ],
+      size: 1,
+      value: this.state.selected,
+    };
+
     return (
       <div className="app">
+        <h3>Breadcrumbs</h3>
         <Breadcrumbs
           activeCrumb={activeCrumb}
           items={this.breadcrumbs}
@@ -229,6 +255,7 @@ class App extends Component {
 
         <div className="error">{error}</div>
 
+        <h3>Routes</h3>
         <div className="route-btns">
           <a className="btn btn-default" href="#display">
             Display
@@ -249,12 +276,23 @@ class App extends Component {
         </div>
 
         <hr style={{marginTop: '500px'}} />
+
+        <h3>ButtonSet Component</h3>
         <ButtonSet buttons={buttons} />
 
+        <hr />
+
+        <h3>LookupInput Component</h3>
         <LookupInput {...input} />
 
+        <hr />
+
+        <h3>DropupBtn Component</h3>
         <DropupBtn {...dropupBtnParams} />
 
+        <hr />
+
+        <h3>DateRange Component</h3>
         <div>
           <label>Date Range</label>
           <DateRange
@@ -263,9 +301,16 @@ class App extends Component {
             onStartDateChanged={this.onStartDateChanged}
             onEndDateChanged={this.onEndDateChanged}
           />
-          <WizardSteps {...wizardSteps} />
         </div>
 
+        <hr />
+
+        <h3>WizardSteps Component</h3>
+        <WizardSteps {...wizardSteps} />
+
+        <hr />
+
+        <h3>TargetSelect Component</h3>
         <TargetSelect
           categories={categoryOptions}
           onChange={this.onCategorySelect}
@@ -273,6 +318,10 @@ class App extends Component {
           selectedTarget={selectedTarget}
           targets={targetOptions}
         />
+
+        <hr />
+
+        <Select {...selectProps} />
       </div>
     );
   }
