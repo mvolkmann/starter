@@ -2,10 +2,12 @@
 import React, {PropTypes as t} from 'react';
 import './select.css';
 
-type OptionType = {
+type OptionObjectType = {
   text: string,
   value: string
 };
+
+type OptionType = string | OptionObjectType;
 
 type OptionsType = Array<OptionType>;
 
@@ -19,11 +21,18 @@ type PropsType = {
   value: string
 };
 
-const Option = (option: OptionType) => (
-  <option key={option.value} value={option.value}>
-    {option.text}
-  </option>
-);
+const Option = (option: OptionType) => {
+  const isString = typeof option === 'string';
+  // $FlowFixMe
+  const value = isString ? option : option.value;
+  // $FlowFixMe
+  const text = isString ? option : option.text;
+  return (
+    <option key={value} value={value}>
+      {text}
+    </option>
+  );
+};
 
 export default function Select(
   {
@@ -58,7 +67,9 @@ Select.propTypes = {
   label: t.string,
   multiple: t.bool,
   onChange: t.func.isRequired,
-  options: t.arrayOf(t.shape({text: t.string, value: t.string})).isRequired,
+  options: t.arrayOf(
+    t.oneOfType([t.string, t.shape({text: t.string, value: t.string})])
+  ).isRequired,
   size: t.number,
   value: t.string.isRequired,
 };
