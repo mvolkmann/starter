@@ -163,9 +163,10 @@ ShallowWrapper {
         selectedTarget=""
         targets={Array []} />
     <hr />
+    <h3>
+        Select Component
+    </h3>
     <Select
-        disabled={false}
-        multiple={false}
         onChange={[Function]}
         options={
             Array [
@@ -344,9 +345,10 @@ ShallowWrapper {
             selectedTarget=""
             targets={Array []} />
       <hr />
+      <h3>
+            Select Component
+      </h3>
       <Select
-            disabled={false}
-            multiple={false}
             onChange={[Function]}
             options={
                   Array [
@@ -600,9 +602,10 @@ ShallowWrapper {
                     selectedTarget=""
                     targets={Array []} />
           <hr />
+          <h3>
+                    Select Component
+          </h3>
           <Select
-                    disabled={false}
-                    multiple={false}
                     onChange={[Function]}
                     options={
                               Array [
@@ -781,9 +784,10 @@ ShallowWrapper {
                     selectedTarget=""
                     targets={Array []} />
           <hr />
+          <h3>
+                    Select Component
+          </h3>
           <Select
-                    disabled={false}
-                    multiple={false}
                     onChange={[Function]}
                     options={
                               Array [

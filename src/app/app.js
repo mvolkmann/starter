@@ -321,7 +321,18 @@ class App extends Component {
 
         <hr />
 
-        <Select {...selectProps} />
+        <h3>Select Component</h3>
+        <Select
+          onChange={this.onSelected}
+          options={[
+            {text: 'A', value: 'a'},
+            {text: 'B', value: 'b'},
+            {text: 'C', value: 'c'},
+          ]}
+          size={1}
+          value={this.state.selected}
+        />
+
       </div>
     );
   }

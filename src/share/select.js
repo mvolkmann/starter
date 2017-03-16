@@ -53,7 +53,7 @@ export default function Select(
         onChange={onChange}
         size={size}
         value={value}
-        disabled={disabled || false}
+        disabled={disabled}
         multiple={multiple}
       >
         {options.map(Option)}
