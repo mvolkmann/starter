@@ -216,10 +216,10 @@ class App extends Component {
       options: [
         {text: 'A', value: 'a'},
         {text: 'B', value: 'b'},
-        {text: 'C', value: 'c'}
+        {text: 'C', value: 'c'},
       ],
       size: 1,
-      value: this.state.selected
+      value: this.state.selected,
     };
 
     return (

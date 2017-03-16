@@ -68,7 +68,7 @@ Select.propTypes = {
   multiple: t.bool,
   onChange: t.func.isRequired,
   options: t.arrayOf(
-    t.oneOfType([t.string, t.shape({text: t.string, value: t.string})])
+    t.oneOfType([t.string, t.shape({text: t.string, value: t.string})]),
   ).isRequired,
   size: t.number,
   value: t.string.isRequired,
