@@ -1,3 +1,4 @@
+/*
 import React, {Component} from 'react';
 import {
   BootstrapTable,
@@ -7,10 +8,8 @@ import {
 class AddObservations extends Component {
   static propTypes = {};
 
-  /*
   onSomeEvent = event => {
   };
-  */
 
   constructor() {
     super();
@@ -57,3 +56,4 @@ class AddObservations extends Component {
 }
 
 export default AddObservations;
+*/
