@@ -1,5 +1,6 @@
 // @flow
 import React, {Component, PropTypes as t} from 'react';
+import AddObservations from './add-observations';
 import Breadcrumbs from '../share/breadcrumbs';
 import ButtonSet from '../share/button-set';
 import DataDisplay from './data-display';
@@ -255,9 +256,7 @@ class App extends Component {
               <DataEntry description={description} name={name} /> :
                 hash === 'assign-products' ?
                   <NotImplemented name="AssignProducts" /> :
-                    hash === 'add-observations' ?
-                      <NotImplemented name="AddObservations" /> :
-                        null}
+                    hash === 'add-observations' ? <AddObservations /> : null}
         </div>
 
         <hr />
