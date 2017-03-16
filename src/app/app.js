@@ -209,19 +209,6 @@ class App extends Component {
       value: target,
     }));
 
-    const selectProps = {
-      disabled: false,
-      multiple: false,
-      onChange: this.onSelected,
-      options: [
-        {text: 'A', value: 'a'},
-        {text: 'B', value: 'b'},
-        {text: 'C', value: 'c'},
-      ],
-      size: 1,
-      value: this.state.selected,
-    };
-
     return (
       <div className="app">
         <h3>Breadcrumbs</h3>
@@ -305,7 +292,18 @@ class App extends Component {
 
         <hr />
 
-        <Select {...selectProps} />
+        <h3>Select Component</h3>
+        <Select
+          onChange={this.onSelected}
+          options={[
+            {text: 'A', value: 'a'},
+            {text: 'B', value: 'b'},
+            {text: 'C', value: 'c'},
+          ]}
+          size={1}
+          value={this.state.selected}
+        />
+
       </div>
     );
   }
