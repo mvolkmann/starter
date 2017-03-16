@@ -231,19 +231,6 @@ class App extends Component {
       }
     };
 
-    const selectProps = {
-      disabled: false,
-      multiple: false,
-      onChange: this.onSelected,
-      options: [
-        {text: 'A', value: 'a'},
-        {text: 'B', value: 'b'},
-        {text: 'C', value: 'c'},
-      ],
-      size: 1,
-      value: this.state.selected,
-    };
-
     return (
       <div className="app">
         <h3>Breadcrumbs</h3>
