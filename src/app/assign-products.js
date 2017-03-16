@@ -29,10 +29,8 @@ async function loadCrops() {
     if (!res.ok) return handleError(url, res);
 
     const crops = await res.json();
-    const cropObj = crops.map(crop => ({text: crop, value: crop}));
-
-    console.log('assign-products.js: ', {cropObj});
-    setState({crops: cropObj});
+    console.log('assign-products.js: ', {crops});
+    setState({crops});
   } catch (e) {
     handleError(url, e);
   }
