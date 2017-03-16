@@ -36,7 +36,7 @@ class AssignProducts extends Component {
               {text: 'Corn', value: 'corn'},
               {text: 'Broccoli', value: 'broccoli'},
             ]}
-            size={2}
+            size={1}
             value="hello"
           />
         </div>

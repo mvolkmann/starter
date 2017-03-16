@@ -198,6 +198,22 @@ class App extends Component {
       value: target,
     }));
 
+    const router = () => {
+      switch (hash) {
+        case 'display':
+          return <DataDisplay projectMap={projectMap} />;
+        case 'entry':
+          return <DataEntry description={description} name={name} />;
+        case 'assign-products':
+          return <AssignProducts />;
+        case 'add-observations':
+          return <NotImplemented name="AddObservations" />;
+        default:
+          return null;
+      }
+    };
+
+
     return (
       <div className="app">
         <Breadcrumbs
@@ -224,15 +240,7 @@ class App extends Component {
         </div>
 
         <div className="body">
-          {hash === 'display' ?
-            <DataDisplay projectMap={projectMap} /> :
-            hash === 'entry' ?
-              <DataEntry description={description} name={name} /> :
-                hash === 'assign-products' ?
-                  <AssignProducts /> :
-                    hash === 'add-observations' ?
-                      <NotImplemented name="AddObservations" /> :
-                        null}
+          {router()}
         </div>
 
         <hr style={{marginTop: '500px'}} />
