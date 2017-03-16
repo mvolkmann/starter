@@ -66,6 +66,9 @@ class App extends Component {
   };
 
   state = {
+    crops: [],
+    availableMcts: [],
+    availableRegions: [],
     activeCrumb: undefined,
     description: '',
     endDate: undefined,
@@ -76,6 +79,9 @@ class App extends Component {
     projectMap: {},
     selectedCategory: '',
     selectedTarget: '',
+    selectedCrop: '',
+    selectedMct: '',
+    selectedRegion: '',
     startDate: undefined,
   };
 
@@ -205,7 +211,7 @@ class App extends Component {
         case 'entry':
           return <DataEntry description={description} name={name} />;
         case 'assign-products':
-          return <AssignProducts />;
+          return <AssignProducts crops={this.state.crops} />;
         case 'add-observations':
           return <NotImplemented name="AddObservations" />;
         default:

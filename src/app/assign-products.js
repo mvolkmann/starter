@@ -1,10 +1,53 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes as t} from 'react';
 import WizardSteps from '../share/wizard-steps';
 import Select from '../share/select';
+import {setState} from '../util/state-util';
+import {getUrl} from '../util/url-util';
+import {handleError} from '../util/error';
 import './assign-products.css';
 
+/*
+async function loadData(data: string) {
+  const url = getUrl(data);
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return handleError(url, res);
+
+    const jsonData = await res.json();
+
+    setState({[data]: jsonData});
+  } catch (e) {
+    handleError(url, e);
+  }
+}
+*/
+
+async function loadCrops() {
+  const url = getUrl('crops');
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return handleError(url, res);
+
+    const crops = await res.json();
+    const cropObj = crops.map(crop => ({text: crop, value: crop}));
+
+    console.log('assign-products.js: ', {cropObj});
+    setState({crops: cropObj});
+  } catch (e) {
+    handleError(url, e);
+  }
+}
+
 class AssignProducts extends Component {
-  static propTypes = {};
+  static propTypes = {
+    crops: t.arrayOf(t.string),
+    //availableMcts: t.arrayOf(t.string),
+    //availableRegions: t.arrayOf(t.string),
+  };
+
+  componentDidMount() {
+    loadCrops();
+  }
 
   /*
   onSomeEvent = event => {
@@ -17,6 +60,7 @@ class AssignProducts extends Component {
   */
 
   render() {
+    const {crops} = this.props;
     const wizardSteps = {
       steps: ['Assign Products', 'Add Trail Data', 'Add Observations'],
       activeIndex: 0,
@@ -30,12 +74,9 @@ class AssignProducts extends Component {
         </div>
         <h4>Assign Products to PMT</h4>
         <div className="select-container">
-          <Select
+          <Select name="crop"
             onChange={() => console.log('changed selection')}
-            options={[
-              {text: 'Corn', value: 'corn'},
-              {text: 'Broccoli', value: 'broccoli'},
-            ]}
+            options={crops}
             size={1}
             value="hello"
           />
