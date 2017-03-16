@@ -74,7 +74,8 @@ class AssignProducts extends Component {
         </div>
         <h4>Assign Products to PMT</h4>
         <div className="select-container">
-          <Select name="crop"
+          <Select
+            name="crop"
             onChange={() => console.log('changed selection')}
             options={crops}
             size={1}
